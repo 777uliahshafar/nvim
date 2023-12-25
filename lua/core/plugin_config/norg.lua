@@ -7,9 +7,9 @@ require("neorg").setup {
         -- icon_preset = "diamond",
         icons = {
           todo = {
-            undone = { icon = " " },
-            done = { icon = "o" },
-            pending = { icon = "X" },
+            undone = { icon = "✗" },
+            done = { icon = "󱎖" },
+            pending = { icon = "✓" },
           },
           heading = {
             icons = {
