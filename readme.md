@@ -9,7 +9,8 @@
 5. fd `scoop install fd` required for nvim-tree.
 6. zig `scoop install zig` required for nvim-treesitter. `:TSInstallInfo` available language, `:TSUpdate` update parsers unconditionally.
 11. nvim-neorg, create/move folder for neorg workspace manually if it doesn't provide automatically `~/notes/main`. You've stored it in GDrive.
-13. latexindent.pl configuration : create indentconfig.yaml in home directory `C:\Users\<username>\` which contains the path to your `defaultSettings.yaml` in nvim directory. You may need install its package from Miktex.
+12. place .latexmkrc in home directory `C:\Users\<username>\`. This contain command to delete all generated aux files (as latexmk -C) and other command you wish for.
+13. latexindent.pl configuration : place indentconfig.yaml in home directory `C:\Users\<username>\` which contains the path to your `defaultSettings.yaml` in nvim directory. You may need install its package from Miktex.
 
 Windows users may find that they have to end .yaml files with a blank line.
 
