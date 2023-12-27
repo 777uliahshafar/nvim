@@ -54,17 +54,6 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
 ---------------------------------------------
--- nvim-r
--- Use Space for Send Line and lp replace gp
-map("n", "<leader><Space>", "<Plug>RDSendLine")
-map("v", "<leader><Space>", "<Plug>RDSendSelection")
-map("n", "<localleader>lp", "<Plug>RSyncFor")
-
-map("n", "<localleader>ln", "<Plug>RNextRChunk")
-map("n", "<localleader>lN", "<Plug>RPreviousRChunk")
-
--- Use jk for enter normal mode from terminal mode
-map("t", "jk", [[<C-\><C-n>]], opts)
 
 -- nvim-tree
 map("n", "<leader>e", require("nvim-tree.api").tree.toggle)
