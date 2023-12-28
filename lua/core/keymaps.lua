@@ -30,6 +30,10 @@ map("n", "<c-j>", "<c-w>j")
 map("n", "<c-k>", "<c-w>k")
 map("n", "<c-l>", "<c-w>l")
 
+-- Change split orientation
+map("n", "<leader>tk", "<C-w>t<C-w>K") -- change vertical to horizontal
+map("n", "<leader>th", "<C-w>t<C-w>H") -- change horizontal to vertical
+
 -- split resize
 map("n", "+", "<cmd>res +5<CR>", opts)
 map("n", "_", "<cmd>res -5<CR>", opts)
@@ -88,7 +92,7 @@ map("i", "<c-j>", function()
 end)
 
 -- trouble
-map("n", "<leader>t", "<CMD>TroubleToggle<cr>")
+map("n", "<leader>tt", "<CMD>TroubleToggle<cr>")
 
 -- quickfix built-in
 vim.cmd [[
