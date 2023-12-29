@@ -145,7 +145,10 @@ cmp.setup {
 
 dict.setup {
   exact = -1,
-  max_items = 5,
+  async = false,
+  capacity = 5,
+  debug = false,
+  max_items = 7,
 }
 
 dict.switcher {
