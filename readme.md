@@ -8,6 +8,7 @@
 4. Ripgrep `scoop install ripgrep`, required for nvim-tree.
 5. fd `scoop install fd` required for nvim-tree.
 6. zig `scoop install zig` required for nvim-treesitter. `:TSInstallInfo` available language, `:TSUpdate` update parsers unconditionally.
+7. python `scoop install python` and python client to nvim `pip3 install pynvim` required for thesaurus_query.
 11. nvim-neorg, create/move folder for neorg workspace manually if it doesn't provide automatically `~/notes/main`. You've stored it in GDrive.
 12. place .latexmkrc in home directory `C:\Users\<username>\`. This contain command to delete all generated aux files (as latexmk -C) and other command you wish for.
 13. latexindent.pl configuration : place indentconfig.yaml in home directory `C:\Users\<username>\` which contains the path to your `defaultSettings.yaml` in nvim directory. You may need install its package from Miktex.
