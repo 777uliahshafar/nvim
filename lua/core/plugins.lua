@@ -119,6 +119,7 @@ local plugins = {
       }
     end,
   },
+  "ron89/thesaurus_query.vim",
   {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
