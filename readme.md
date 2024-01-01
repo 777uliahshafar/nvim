@@ -25,6 +25,8 @@ paths:
 
 15. Luasnip use snipmate sourcecode for snippet.
 
+16. Place additional files on lexicon folder for dictionary and thesaurus under the home directory. You've stored it in GDrive (textediting folder).
+
 PS. Check your nvim config `:checkhealth`
 
 # Faq vimtex
