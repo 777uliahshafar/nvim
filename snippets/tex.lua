@@ -69,7 +69,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "framep",
+    "frame",
     fmt(
       [[
     \begin{{frame}}[{},mybg={},mytitle={},{}{}]
