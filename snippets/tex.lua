@@ -72,7 +72,7 @@ ls.add_snippets("tex", {
     "frame",
     fmt(
       [[
-    \begin{{frame}}[{},mybg={},mytitle={},{}{}]%rmve mycolor when use mybg
+    \begin{{frame}}[{},mybg={},mytitle={},{}{}]%rmve mycolor when use mybg\\labelonfirst
     \frametitle{{{}}}
     {}
     \end{{frame}}]],
@@ -89,8 +89,8 @@ ls.add_snippets("tex", {
   ), --end of snip
   s(
     "img",
-    fmt("\\includegraphics[{},width={}]{{{}}}", {
-      c(1, { t "", t "draft" }),
+    fmt("\\includegraphics[{}width={}]{{{}}}", {
+      c(1, { t "", t "draft," }),
       c(2, { t "40mm", t ".9\\textwidth" }),
       i(3, "placeholder"),
     })
