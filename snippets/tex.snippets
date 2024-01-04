@@ -214,7 +214,7 @@ snippet mkt maketitle
 	\\maketitle
 
 snippet pos texpos
-	\\begin{textblock*}{50mm}(95mm,130mm) % {block width} (x,y.mm coords)
+	\\begin{textblock*}{50mm}(130mm,95mm) % {block width} (x,y.mm coords)
 	${1}
 	\\end{textblock*} $0
 
@@ -553,7 +553,7 @@ snippet sum \sum^{}_{}
 snippet lim \lim_{}
 	\\lim_{${1:n \\to \\infty}} ${0}
 snippet box block environment
-	\\boxes{${1:digiPH_gray}}{${2:digiPH_writer}}{${0:${VISUAL}}}
+	\\boxes{${1:digiPH_gray}}{${2:digiPH_black}}{${0:${VISUAL}}}
 snippet block block environment
 	\\begin{block}{${1:title}}
 		${0:${VISUAL}}

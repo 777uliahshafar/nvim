@@ -13,9 +13,9 @@ local fmt = require("luasnip.extras.fmt").fmt
 ls.add_snippets("tex", {
   s(
     "boxp",
-    fmt("\\boxes{{{}}}{{{}}}{{{}}}", {
-      i(1, "digiPH_gray"),
-      i(2, "digiPH_writer"),
+    fmt("\\boxes{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+      c(1, { t "gray", t "navyblue" }),
+      c(2, { t "black", t "" }),
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
@@ -28,7 +28,7 @@ ls.add_snippets("tex", {
     "posp",
     fmt("\\begin{{textblock*}}{{{}}}({}){}\\end{{textblock*}}", {
       i(1, "50mm"),
-      i(2, "95mm,130mm"),
+      i(2, "130mm,95mm"),
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
