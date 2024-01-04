@@ -14,8 +14,23 @@ ls.add_snippets("tex", {
   s(
     "boxp",
     fmt("\\boxes{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
-      c(1, { t "gray", t "navyblue" }),
-      c(2, { t "black", t "" }),
+      c(1, {
+        t "gray",
+        t "navyblue",
+        t "darkorange",
+        t "lightorange",
+        t "purple",
+        t "red",
+        t "creamy",
+        t "cream",
+        t "yellow",
+        t "blue",
+      }),
+      c(2, {
+        t "black",
+        t "lightorange",
+        t "white",
+      }),
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
@@ -25,10 +40,35 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
+    "box",
+    fmt("\\boxes{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+      c(1, {
+        t "gray",
+        t "navyblue",
+        t "darkorange",
+        t "lightorange",
+        t "purple",
+        t "red",
+        t "creamy",
+        t "cream",
+        t "yellow",
+        t "blue",
+      }),
+      c(2, {
+        t "black",
+        t "lightorange",
+        t "white",
+      }),
+      i(3, ""),
+    })
+  ), --end of snip
+
+  s(
     "posp",
-    fmt("\\begin{{textblock*}}{{{}}}({}){}\\end{{textblock*}}", {
-      i(1, "50mm"),
-      i(2, "130mm,95mm"),
+    fmt("\\begin{{textblock*}}{{{}}}({}mm,{}mm){}\\end{{textblock*}}", {
+      i(1, "50"),
+      i(2, "130"),
+      i(3, "95"),
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
@@ -36,6 +76,17 @@ ls.add_snippets("tex", {
       end, {}),
     })
   ), --end of snip
+
+  s(
+    "pos",
+    fmt("\\begin{{textblock*}}{{{}}}({}mm,{}mm){}\\end{{textblock*}}", {
+      i(1, "50"),
+      i(2, "130"),
+      i(3, "95"),
+      i(4, ""),
+    })
+  ), --end of snip
+
   s(
     "ovop",
     fmt("\\only<{}>{{{}}}", {
