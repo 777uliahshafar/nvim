@@ -16,8 +16,8 @@ require("neorg").setup {
               "❖",
               "⟡",
               "⋄",
-              "◆",
               "◇",
+              --"◆",
               "",
             },
           },
@@ -51,8 +51,8 @@ require("neorg").setup {
               title = "+@attribute",
             },
             ["4"] = {
-              prefix = "+@function",
-              title = "+@function",
+              prefix = "+NvimTreeExecFile",
+              title = "+NvimTreeExecFile",
             },
           },
           links = {
