@@ -121,7 +121,7 @@ require("neorg").setup {
           keybinds.map("norg", "n", "<leader>lc", "<cmd>Neorg presenter start<CR>")
           keybinds.map("norg", "n", "<leader>ls", "<cmd>Neorg generate-workspace-summary<CR>")
           keybinds.map("norg", "n", "<BS>", "<c-6>")
-          keybinds.map("norg", "n", "<leader>d", "<CMD>put =strftime('* %m-%d')<CR>")
+          keybinds.map("norg", "n", "<leader>d", "i<C-R>=strftime(' %m-%d')<CR><ESC>")
         end,
       },
     },
