@@ -12,14 +12,15 @@ require("neorg").setup {
             undone = { icon = " " },
           },
           heading = {
-            icons = {
-              "❖",
-              "⟡",
-              "⋄",
-              "◇",
-              --"◆",
-              "",
-            },
+            false,
+            -- icons = {
+            --   "❖",
+            --   "⟡",
+            --   "⋄",
+            --   "◇",
+            --   --"◆",
+            --   "",
+            -- },
           },
         },
       },
@@ -50,9 +51,13 @@ require("neorg").setup {
               prefix = "+@attribute",
               title = "+@attribute",
             },
+            ["3"] = {
+              prefix = "+@function",
+              title = "+@function",
+            },
             ["4"] = {
-              prefix = "+NvimTreeExecFile",
-              title = "+NvimTreeExecFile",
+              prefix = "+@constant",
+              title = "+@constant",
             },
           },
           links = {
