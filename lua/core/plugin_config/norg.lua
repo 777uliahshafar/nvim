@@ -44,16 +44,16 @@ require("neorg").setup {
           },
           headings = {
             ["1"] = {
+              prefix = "+@storageclass",
+              title = "+@storageclass",
+            },
+            ["2"] = {
               prefix = "+@type.definition",
               title = "+@type.definition",
             },
-            ["2"] = {
+            ["3"] = {
               prefix = "+@attribute",
               title = "+@attribute",
-            },
-            ["3"] = {
-              prefix = "+@function",
-              title = "+@function",
             },
             ["4"] = {
               prefix = "+@constant",
