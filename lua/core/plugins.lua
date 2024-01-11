@@ -130,14 +130,6 @@ local plugins = {
     build = ":Neorg sync-parsers",
     dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
   },
-  {
-    "epwalsh/obsidian.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-      "nvim-telescope/telescope.nvim",
-    },
-  },
   "jalvesaq/Nvim-R",
   "777uliahshafar/vim-myhelp",
 }
