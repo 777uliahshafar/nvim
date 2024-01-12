@@ -79,7 +79,7 @@ require("neorg").setup {
         },
       },
     },
-    -- ["core.integrations.telescope"] = {},
+    ["core.integrations.telescope"] = {},
     ["core.integrations.treesitter"] = {},
     ["core.integrations.nvim-cmp"] = {},
     ["core.completion"] = {
