@@ -1,26 +1,29 @@
 require("neorg").setup {
   load = {
-    ["core.defaults"] = {}, -- Loads default behaviour
-
+    ["core.defaults"] = {
+      config = {
+        disable = {
+          "core.autocommands",
+          "core.itero",
+        },
+      },
+    }, -- Loads default behaviour
     ["core.concealer"] = {
       config = {
-        -- icon_preset = "diamond",
         icons = {
+          code_block = { false },
+          definition = { false },
+          delimiter = { false },
+          footnote = { false },
+          heading = { false },
+          list = { false },
+          markup = { false },
+          ordered = { false },
+          quote = { false },
           todo = {
             done = { icon = "󱎖" },
             pending = { icon = "✓" },
             undone = { icon = " " },
-          },
-          heading = {
-            false,
-            -- icons = {
-            --   "❖",
-            --   "⟡",
-            --   "⋄",
-            --   "◇",
-            --   --"◆",
-            --   "",
-            -- },
           },
         },
       },
@@ -76,8 +79,14 @@ require("neorg").setup {
         },
       },
     },
-    ["core.integrations.telescope"] = {},
+    -- ["core.integrations.telescope"] = {},
     ["core.integrations.treesitter"] = {},
+    ["core.integrations.nvim-cmp"] = {},
+    ["core.completion"] = {
+      config = {
+        engine = "nvim-cmp",
+      },
+    },
     ["core.summary"] = {},
     ["core.esupports.metagen"] = {
       config = {
@@ -102,18 +111,6 @@ require("neorg").setup {
         },
       },
     },
-    ["core.completion"] = {
-      config = {
-        engine = "nvim-cmp",
-      },
-    },
-    ["core.integrations.nvim-cmp"] = {},
-    -- ["core.presenter"] = {
-    --   config = {
-    --     zen_mode = "zen-mode",
-    --   },
-    -- },
-
     ["core.keybinds"] = {
       config = {
         hook = function(keybinds)
