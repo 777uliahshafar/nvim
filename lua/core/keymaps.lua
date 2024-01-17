@@ -22,7 +22,7 @@ map("n", "k", "gk", { noremap = true })
 -- maps for  spellcheck
 map("n", "<leader>o", "<CMD>setlocal spell! spelllang=id<CR>")
 
-map("n", "<F7>", "<CMD>setlocal spell! spelllang=en_us<CR>")
+map("n", "<leader>us", "<CMD>setlocal spell! spelllang=en_us<CR>")
 
 -- maps split navigation
 map("n", "<c-h>", "<c-w>h")
