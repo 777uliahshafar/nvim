@@ -11,6 +11,7 @@ end, {})
 require("gruvbox").setup {
   palette_overrides = {
     faded_green = "#79740e",
+    light0 = "#f2e5bc",
   },
 }
 
