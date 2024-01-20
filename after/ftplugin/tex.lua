@@ -2,6 +2,8 @@ vim.opt_local.conceallevel = 2
 vim.opt_local.shiftwidth = 0
 vim.opt.updatetime = 1000
 vim.opt.swapfile = true
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us", "id" }
 
 local kind_icons = {
   Text = "",
