@@ -2,9 +2,9 @@ local create_cmd = vim.api.nvim_create_user_command
 
 create_cmd("ToggleBackground", function()
   if vim.o.background == "dark" then
-    vim.cmd "set bg=light"
+    vim.o.background = "light"
   else
-    vim.cmd "set bg=dark"
+    vim.o.background = "dark"
   end
 end, {})
 
