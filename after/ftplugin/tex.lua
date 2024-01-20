@@ -6,7 +6,7 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_us", "id" }
 
 local kind_icons = {
-  Text = "",
+  Text = "",
   Snippet = "",
   File = "",
   Interface = "",
