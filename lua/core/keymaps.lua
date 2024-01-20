@@ -121,3 +121,4 @@ map("n", "<leader>gw", "<CMD>Gwrite<CR>", opts)
 
 -- thesaurus_query
 map("n", "<leader>cs", "<CMD>ThesaurusQueryReplaceCurrentWord<CR>", opts)
+vim.cmd [[vnoremap <Leader>cs y:ThesaurusQueryReplace <C-r>"<CR>]]
