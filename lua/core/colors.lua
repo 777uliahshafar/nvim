@@ -9,6 +9,7 @@ create_cmd("ToggleBackground", function()
 end, {})
 
 require("gruvbox").setup {
+  contrast = "",
   palette_overrides = {
     faded_green = "#79740e",
     light0 = "#f2e5bc",
