@@ -27,6 +27,19 @@ snippet tmplt "Template"
 		    $0
 	\\end{document}
 
+snippet tmpltsub "Sub Template"
+	%! TEX root = ${1:part1}.tex
+	% the main TeX file which is intended to compile, :VimtexReload after adjustment
+	% :h vimtex-tex-root
+	\\documentclass[../main.tex]{subfiles}
+	$2
+	\\begin{document}
+
+	$0
+
+	\\bibliography{../${3:filename}.bib} % required for citecompletion, not work in mainfile
+	\\end{document}
+
 snippet tmpltb "Beamer Template"
 	\\documentclass{beamer}
 	\\input{preamble}
@@ -64,6 +77,8 @@ snippet tmpltb "Beamer Template"
 		}
 	\\end{frame}
 	\\end{document}
+
+
 
 snippet tmpltbsub "Sub Beamer Template"
 	%! TEX root = ${1:part1}.tex
