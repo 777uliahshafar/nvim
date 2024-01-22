@@ -11,6 +11,8 @@ g.vimtex_fold_types = {
   comments = { enabled = true },
 }
 
+g.vimtex_syntax_nospell_comments = true
+
 -- change defaul compiler engine
 g.vimtex_compiler_latexmk_engines = {
   _ = "-lualatex",
