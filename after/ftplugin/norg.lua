@@ -1,5 +1,6 @@
 vim.opt_local.linebreak = true
 -- vim.opt_local.conceallevel = 2
+vim.opt.spell = false
 
 local kind_icons = {
   Text = "",
