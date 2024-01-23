@@ -146,4 +146,11 @@ ls.add_snippets("tex", {
       i(3, "placeholder"),
     })
   ), --end of snip
+
+  s(
+    "subfile",
+    fmt("\\subfile{{subfiles/{}.tex}}", {
+      i(1, "filename"),
+    })
+  ), --end of snip
 }) -- end all
