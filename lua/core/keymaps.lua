@@ -116,8 +116,10 @@ map("n", "gz", "<CMD>ZoomToggle<cr>")
 map("n", "<leader>lw", "<CMD>Neorg workspace main<CR>")
 
 -- vim fugitive
-map("n", "<leader>gf", "<CMD>G<CR>", opts)
-map("n", "<leader>gw", "<CMD>Gwrite<CR>", opts)
+map("n", "<leader>gg", "<CMD>G<CR>", opts)
+map("n", "<leader>ga", "<CMD>Gwrite<CR>", opts)
+map("n", "<leader>gp", "<CMD>Git push<CR>", opts)
+map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
 
 -- thesaurus_query
 map("n", "<leader>cs", "<CMD>ThesaurusQueryReplaceCurrentWord<CR>", opts)
