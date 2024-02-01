@@ -9,7 +9,7 @@ create_cmd("ToggleBackground", function()
 end, {})
 
 require("gruvbox").setup {
-  contrast = "", -- can be "hard", "soft" or empty string
+  contrast = "hard", -- can be "hard", "soft" or empty string
   palette_overrides = {
     faded_green = "#79740e",
     -- light0 = "#f2e5bc",
