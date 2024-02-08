@@ -8,7 +8,7 @@ configs.setup {
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = { "latex" }, -- list of language that will be disabled
+    disable = { "latex", "markdown" }, -- list of language that will be disabled
   },
   indent = { enable = true, disable = { "python", "css" } },
   rainbow = {
