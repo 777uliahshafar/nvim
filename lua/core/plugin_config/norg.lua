@@ -89,6 +89,11 @@ require("neorg").setup {
     },
     ["core.summary"] = {},
     ["core.export"] = {},
+    ["core.presenter"] = {
+      config = {
+        zen_mode = "zen-mode",
+      },
+    },
     ["core.esupports.metagen"] = {
       config = {
         tab = "  ",
@@ -121,6 +126,7 @@ require("neorg").setup {
           keybinds.remap_event("norg", "i", "<c-l>", "core.integrations.telescope.insert_link")
           keybinds.remap_event("norg", "n", "<leader><Space>", "core.qol.todo_items.todo.task_cycle")
           keybinds.remap_event("norg", "n", "<leader>nn", "core.dirman.new.note")
+          keybinds.map("norg", "n", "<leader>s", "<cmd>Neorg presenter start<CR>")
           keybinds.map("norg", "n", "<leader>ll", "<cmd>Neorg toc qflist<CR>")
           keybinds.map("norg", "n", "<leader>ls", "<cmd>Neorg generate-workspace-summary<CR>")
           keybinds.map("norg", "n", "<BS>", "<c-6>")
