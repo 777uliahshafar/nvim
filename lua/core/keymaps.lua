@@ -11,7 +11,7 @@ map("i", "<C-E>", "<ESC>A")
 map("i", "<C-A>", "<ESC>I")
 
 -- Load recent sessions
-map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
+-- map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
 
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
 
