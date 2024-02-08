@@ -89,11 +89,11 @@ require("neorg").setup {
     },
     ["core.summary"] = {},
     ["core.export"] = {},
-    ["core.presenter"] = {
-      config = {
-        zen_mode = "zen-mode",
-      },
-    },
+    -- ["core.presenter"] = {
+    --   config = {
+    --     zen_mode = "zen-mode",
+    --   },
+    -- },
     ["core.esupports.metagen"] = {
       config = {
         tab = "  ",
