@@ -11,7 +11,7 @@ telescope.setup {
     wrap_results = true,
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    path_display = { "shorten" },
     layout_config = {
       prompt_position = "bottom",
       horizontal = {
