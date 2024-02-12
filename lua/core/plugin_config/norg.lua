@@ -63,6 +63,25 @@ require("neorg").setup {
               title = "+@constant",
             },
           },
+          quotes = {
+            ["1"] = {
+              prefix = "+@storageclass",
+              title = "+@storageclass",
+            },
+            ["2"] = {
+              prefix = "+@type.definition",
+              title = "+@type.definition",
+            },
+            ["3"] = {
+              prefix = "+@attribute",
+              title = "+@attribute",
+            },
+            ["4"] = {
+              prefix = "+@constant",
+              title = "+@constant",
+            },
+          },
+
           links = {
             description = "+@text.uri",
             file = "+@string",
@@ -123,7 +142,7 @@ require("neorg").setup {
           keybinds.remap_event("norg", "n", "<Tab>", "core.integrations.treesitter.next.heading")
           keybinds.remap_event("norg", "n", "<S-Tab>", "core.integrations.treesitter.previous.heading")
           keybinds.remap_event("norg", "n", "<leader>ff", "core.integrations.telescope.find_linkable")
-          keybinds.remap_event("norg", "i", "<c-l>", "core.integrations.telescope.insert_link")
+          keybinds.remap_event("norg", "i", "<c-o>", "core.integrations.telescope.insert_link")
           keybinds.remap_event("norg", "n", "<leader><Space>", "core.qol.todo_items.todo.task_cycle")
           keybinds.remap_event("norg", "n", "<leader>nn", "core.dirman.new.note")
           keybinds.map("norg", "n", "<leader>ll", "<cmd>Neorg toc qflist<CR>")
