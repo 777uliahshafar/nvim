@@ -27,6 +27,11 @@ autocmd("FileType", {
   command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]],
 })
 
+autocmd("FileType", {
+  pattern = { "fugitive", "fugitiveblame" },
+  command = [[nmap <buffer> q gq]],
+})
+
 -- wrap preview telescope
 autocmd("User", {
   pattern = { "TelescopePreviewerLoaded" },
