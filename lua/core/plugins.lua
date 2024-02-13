@@ -86,8 +86,7 @@ local plugins = {
       },
     },
   },
-
-  "chentoast/marks.nvim",
+  -- "chentoast/marks.nvim",
   {
     "numToStr/Comment.nvim",
     config = function()
