@@ -15,7 +15,7 @@ autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
--- clear msg in cmdline
+-- clear msg in cmdline immediately
 autocmd({ "CursorHold" }, {
   pattern = { "*" },
   command = [[echon ""]],
