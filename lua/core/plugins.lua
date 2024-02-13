@@ -95,7 +95,7 @@ local plugins = {
   },
 
   -- Tim Pope Plugins --
-  "tpope/vim-surround",
+  -- "tpope/vim-surround",
   "tpope/vim-fugitive",
 
   -- Colorscheme --
