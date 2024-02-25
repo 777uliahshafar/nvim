@@ -120,6 +120,16 @@ local plugins = {
   },
   "ron89/thesaurus_query.vim",
   {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+  {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
   },
