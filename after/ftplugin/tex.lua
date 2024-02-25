@@ -4,6 +4,7 @@ vim.opt.updatetime = 1000
 vim.opt.swapfile = true
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us", "id" }
+vim.opt.diffopt:append { "followwrap" } -- prevent unwrap gdiffsplit
 
 local kind_icons = {
   Text = "",
