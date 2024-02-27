@@ -1,5 +1,9 @@
 require("chatgpt").setup {
   chat = {
+    question_sign = "", -- 🙂
+    answer_sign = "ﮧ", -- 🤖
+    border_left_sign = "",
+    border_right_sign = "",
     keymaps = {
       yank_last = "<C-y>",
       scroll_up = "<C-u>",
