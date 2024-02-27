@@ -84,12 +84,6 @@ telescope.setup {
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
-
-        -- disable maps in window
-        ["<C-h>"] = false,
-        ["<C-j>"] = false,
-        ["<C-k>"] = false,
-        ["<C-l>"] = false,
       },
     },
   },
