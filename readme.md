@@ -40,4 +40,8 @@ PS. Check your nvim config `:checkhealth`
 2. Lag in a long line and large file
 - Refresh fold with `<F6>`, from fastfold vim plugin.
 
+3. Fix incomplete msgpack string (neorg problem)
+- delete neorg.mpack file on nvim-data folder
+`C:\Users\<username>\AppData\Local\nvim-data`
+
 
