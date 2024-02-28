@@ -39,6 +39,6 @@
   "vim-matchup": { "branch": "master", "commit": "e2cca1747ab175b8d839a5d28679427564643a57" },
   "vim-myhelp": { "branch": "master", "commit": "d00a2a98b3481e9d7122a290434aaca3856e8dee" },
   "vimtex": { "branch": "master", "commit": "f9b19d09ee6f0ba70dad0b5c2e710dd700681000" },
-  "wrapping.nvim": { "branch": "master", "commit": "696febba72939cf9082e0fd9cb9c603254cfa8a6" },
+  "wrapping.nvim": { "branch": "master", "commit": "2b74a9fa326ad42e2a509f9e49543471d2d7c1ea" },
   "zen-mode.nvim": { "branch": "main", "commit": "50e2e2a36cc97847d9ab3b1a3555ba2ef6839b50" }
 }
