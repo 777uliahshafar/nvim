@@ -124,7 +124,7 @@ ins_left {
 ins_left {
   "filename",
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.fg, gui = "bold" },
+  color = { fg = colors.fg },
 }
 
 ins_left { "progress", color = { fg = colors.choco, gui = "bold" } }
