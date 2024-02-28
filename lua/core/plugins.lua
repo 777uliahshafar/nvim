@@ -131,12 +131,12 @@ local plugins = {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
   },
-  {
-    "nvim-neorg/neorg",
-    -- tag = "v5.0.0",
-    build = ":Neorg sync-parsers",
-    dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
-  },
+  -- {
+  --   "nvim-neorg/neorg",
+  --   -- tag = "v5.0.0",
+  --   build = ":Neorg sync-parsers",
+  --   dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+  -- },
   "jalvesaq/Nvim-R",
   "777uliahshafar/vim-myhelp",
 }
