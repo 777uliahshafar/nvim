@@ -127,7 +127,7 @@ ins_left {
   color = { fg = colors.fg },
 }
 
-ins_left { "progress", color = { fg = colors.choco, gui = "bold" } }
+ins_left { "progress", color = { fg = colors.choco } }
 
 ins_left {
   "diagnostics",
@@ -145,7 +145,7 @@ ins_right {
   "o:encoding", -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
-  color = { fg = colors.green, gui = "bold" },
+  color = { fg = colors.green },
 }
 
 ins_right {
