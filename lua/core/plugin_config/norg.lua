@@ -146,6 +146,7 @@ require("neorg").setup {
           keybinds.remap_event("norg", "n", "<leader><Space>", "core.qol.todo_items.todo.task_cycle")
           keybinds.remap_event("norg", "n", "<leader>nn", "core.dirman.new.note")
           keybinds.map("norg", "n", "<leader>ll", "<cmd>Neorg toc qflist<CR>")
+          keybinds.map("norg", "n", "<c-c>", "<cmd>Neorg return<CR>")
           keybinds.map("norg", "n", "<leader>ls", "<cmd>Neorg generate-workspace-summary<CR>")
           keybinds.map("norg", "n", "<BS>", "<c-6>")
           keybinds.map("norg", "n", "<leader>d", "i<C-R>=strftime(' %m-%d')<CR><ESC>")
