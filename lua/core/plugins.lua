@@ -116,6 +116,7 @@ local plugins = {
       }
     end,
   },
+  "junegunn/vim-easy-align",
   "ron89/thesaurus_query.vim",
   {
     "jackMort/ChatGPT.nvim",

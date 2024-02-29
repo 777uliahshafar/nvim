@@ -126,3 +126,8 @@ map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
 -- thesaurus_query
 map("n", "<leader>cs", "<CMD>ThesaurusQueryReplaceCurrentWord<CR>", opts)
 vim.cmd [[vnoremap <Leader>cs y:ThesaurusQueryReplace <C-r>"<CR>]]
+
+-- easy align
+-- Do easyalign for a motion/text object (e.g. gaip) 0
+map("n", "ga", "<plug>(EasyAlign)", opts)
+map("x", "ga", "<plug>(EasyAlign)", opts)
