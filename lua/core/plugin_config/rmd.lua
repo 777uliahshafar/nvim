@@ -25,3 +25,4 @@ function! Compilemd()
         endif
 endfunction
 ]]
+-- eisvogel : https://github.com/Wandmalfarbe/pandoc-latex-template
