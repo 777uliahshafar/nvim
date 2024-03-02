@@ -15,3 +15,4 @@ g.tex_conceal = ""
 g.vim_markdown_math = 1
 g.vim_markdown_auto_insert_bullets = 0
 g.vim_markdown_new_list_item_indent = 0
+g.vim_markdown_follow_anchor = 1 -- Allow to follow link of header within file [first header](#first-header) with ge
