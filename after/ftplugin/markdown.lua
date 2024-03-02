@@ -1,3 +1,8 @@
+-- vim-markdown plugin
+vim.g.vim_markdown_frontmatter = 1
+vim.g.tex_conceal = ""
+vim.g.vim_markdown_math = 1
+
 -- markdown ftplugin
 vim.opt_local.colorcolumn = "101"
 vim.opt.autoindent = true

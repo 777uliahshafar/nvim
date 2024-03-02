@@ -177,6 +177,7 @@ local plugins = {
       } -- end setup
     end,
   },
+  "preservim/vim-markdown",
   "jalvesaq/Nvim-R",
   "777uliahshafar/vim-myhelp",
 }
