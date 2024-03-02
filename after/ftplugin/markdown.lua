@@ -1,17 +1,25 @@
+local g = vim.g
+local o = vim.opt
+
 -- vim-markdown plugin
-vim.g.vim_markdown_frontmatter = 1
-vim.g.tex_conceal = ""
-vim.g.vim_markdown_math = 1
+g.vim_markdown_frontmatter = 1
+g.tex_conceal = ""
+g.vim_markdown_math = 1
+g.vim_markdown_auto_insert_bullets = 0
+g.vim_markdown_new_list_item_indent = 0
 
 -- markdown ftplugin
 vim.opt_local.colorcolumn = "101"
-vim.opt.autoindent = true
-vim.opt.linebreak = true
+o.autoindent = true
+o.linebreak = true
 -- @TODOUA:
 -- spell is not staying local for some reason
 -- have to set nospell in other fts that are opened after a markdown
-vim.opt_local.spell = true
 vim.opt_local.conceallevel = 2
+vim.opt_local.shiftwidth = 0
+vim.opt_local.spell = true
+o.spelllang = { "en_us", "id" }
+o.updatetime = 1000
 
 -- *markdown surround maps - with nvim-surround and without*
 -- wrap selection in markdown link
