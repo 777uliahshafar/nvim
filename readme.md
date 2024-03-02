@@ -5,7 +5,7 @@
 
 # Nvim Installation
 1. Package manager is using lazy nvim plugin manager.
-4. Ripgrep `scoop install ripgrep`, required for nvim-tree.
+4. Ripgrep `scoop install ripgrep`, required for nvim-tree & Obsidian.
 5. fd `scoop install fd` required for nvim-tree.
 6. zig `scoop install zig` required for nvim-treesitter. `:TSInstallInfo` available language, `:TSUpdate` update parsers unconditionally.
 7. python `scoop install python` and python client to nvim `pip3 install pynvim` required for thesaurus_query.
