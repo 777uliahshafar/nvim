@@ -21,7 +21,7 @@ vim.cmd [[
 function! Compilemd()
         let extension = expand('%:e')
         if extension == "md"
-                execute "! pandoc -V geometry:a5paper,margin=17mm -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=26pt --pdf-engine=xelatex % --template=eisvogel -s -o %:t:r.pdf"
+                execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --template=eisvogel -s -o pdfs/%:t:r.pdf"
         endif
 endfunction
 ]]
