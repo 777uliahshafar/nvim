@@ -132,11 +132,32 @@ local plugins = {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
   },
+  -- {
+  --   "nvim-neorg/neorg",
+  --   -- tag = "v5.0.0",
+  --   build = ":Neorg sync-parsers",
+  --   dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+  -- },
   {
-    "nvim-neorg/neorg",
-    -- tag = "v5.0.0",
-    build = ":Neorg sync-parsers",
-    dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+    "epwalsh/obsidian.nvim",
+    tag = "*", -- recommended, use latest release instead of latest commit
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "telescope.nvim",
+    },
+    config = function()
+      require("obsidian").setup {
+        workspaces = {
+          {
+            name = "personal",
+            path = "C:\\Users\\uliah\\obs",
+          },
+        },
+        picker = {
+          name = "telescope.nvim",
+        },
+      }
+    end,
   },
   "jalvesaq/Nvim-R",
   "777uliahshafar/vim-myhelp",
