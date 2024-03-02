@@ -22,10 +22,13 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>_", "ysiW_", { noremap = false })
 
 -- Markdown Preview
 -- For Glow, just type :Glow
-vim.api.nvim_buf_set_keymap(0, "n", ",md", "<Plug>MarkdownPreview", { noremap = false })
+-- vim.api.nvim_buf_set_keymap(0, "n", ",md", "<Plug>MarkdownPreview", { noremap = false })
 
 -- toggle TS highlighting for markdown
-vim.api.nvim_buf_set_keymap(0, "n", ",th", ":TSBufToggle highlight<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { noremap = false })
+
+-- pandoc converter
+vim.api.nvim_buf_set_keymap(0, "n", ",md", "<CMD>call Compilemd()<CR>", { noremap = false })
 
 vim.api.nvim_exec(
   [[

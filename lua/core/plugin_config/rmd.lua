@@ -16,3 +16,12 @@ g.vim_markdown_math = 1
 g.vim_markdown_auto_insert_bullets = 0
 g.vim_markdown_new_list_item_indent = 0
 g.vim_markdown_follow_anchor = 1 -- Allow to follow link of header within file [first header](#first-header) with ge
+
+vim.cmd [[
+function! Compilemd()
+        let extension = expand('%:e')
+        if extension == "md"
+                execute "! pandoc -V geometry:a5paper,margin=17mm -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=26pt --pdf-engine=xelatex % --template=eisvogel -s -o %:t:r.pdf"
+        endif
+endfunction
+]]
