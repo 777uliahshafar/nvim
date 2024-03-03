@@ -140,7 +140,7 @@ local plugins = {
   -- },
   {
     "epwalsh/obsidian.nvim",
-    tag = "*", -- recommended, use latest release instead of latest commit
+    -- tag = "*", -- recommended, use latest release instead of latest commit
     requires = {
       "nvim-lua/plenary.nvim",
       "telescope.nvim",
@@ -161,28 +161,6 @@ local plugins = {
           date_format = "%Y-%m-%d-%a",
           time_format = "%H:%M",
         }, -- end template
-        keys = {
-          {
-            "<leader>nb",
-            "<cmd>ObsidianBacklinks<cr>",
-            desc = "Show backlinks for current note",
-          },
-          {
-            "<leader>nn",
-            "<cmd>ObsidianNew<cr>",
-            desc = "Create new note",
-          },
-          {
-            "<leader>nq",
-            "<cmd>ObsidianQuickSwitch<cr>",
-            desc = "Switch to another note",
-          },
-          {
-            "<leader>ns",
-            "<cmd>ObsidianSearch<cr>",
-            desc = "Search notes",
-          },
-        },
       } -- end setup
     end,
   },
