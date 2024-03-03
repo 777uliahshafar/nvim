@@ -32,6 +32,7 @@ vim.api.nvim_buf_set_keymap(0, "n", ",md", "<CMD>call Compilemd()<CR>", { norema
 
 -- obsidian
 
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ff", "<CMD>ObsidianSearch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ls", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>lc", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>le", "<CMD>ObsidianLinks<CR>", { noremap = false })
