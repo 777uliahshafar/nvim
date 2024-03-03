@@ -132,45 +132,50 @@ local plugins = {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
   },
+
   {
     "epwalsh/obsidian.nvim",
-    tag = "*", -- recommended, use latest release instead of latest commit
-    requires = {
+    version = "*", -- recommended, use latest release instead of latest commit
+    dependencies = {
+      -- Required.
       "nvim-lua/plenary.nvim",
       "telescope.nvim",
-    },
-    config = function()
-      require("obsidian").setup {
-        workspaces = {
-          {
-            name = "personal",
-            path = "C:\\Users\\uliah\\obs",
-          },
-        },
-        picker = {
-          name = "telescope.nvim",
-        },
-        templates = {
-          subdir = "templates",
-          date_format = "%Y-%m-%d-%a",
-          time_format = "%H:%M",
-        }, -- end template
-        note_frontmatter_func = function(note)
-          -- This is equivalent to the default frontmatter function.
-          local out = { id = note.id, aliases = note.aliases, tags = note.tags, links = "" }
 
-          -- `note.metadata` contains any manually added fields in the frontmatter.
-          -- So here we just make sure those fields are kept in the frontmatter.
-          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-            for k, v in pairs(note.metadata) do
-              out[k] = v
-            end
+      -- see below for full list of optional dependencies 👇
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "personal",
+          path = "C:\\Users\\uliah\\obs",
+        },
+      },
+      picker = {
+        name = "telescope.nvim",
+      },
+      templates = {
+        subdir = "templates",
+        date_format = "%Y-%m-%d-%a",
+        time_format = "%H:%M",
+      }, -- end template
+      note_frontmatter_func = function(note)
+        -- This is equivalent to the default frontmatter function.
+        local out = { id = note.id, aliases = note.aliases, tags = note.tags, links = "" }
+
+        -- `note.metadata` contains any manually added fields in the frontmatter.
+        -- So here we just make sure those fields are kept in the frontmatter.
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
           end
-          return out
-        end,
-      } -- end setup
-    end,
+        end
+        return out
+      end,
+
+      -- see below for full list of options 👇
+    },
   },
+
   "preservim/vim-markdown",
   "jalvesaq/Nvim-R",
   "777uliahshafar/vim-myhelp",
