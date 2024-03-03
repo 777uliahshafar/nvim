@@ -42,8 +42,6 @@ local kind_icons = {
   TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
-local dict = require "cmp_dictionary"
-
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -141,19 +139,4 @@ cmp.setup {
   enabled = function()
     return vim.g.cmptoggle
   end,
-}
-
-dict.setup {
-  exact = -1,
-  async = false,
-  capacity = 5,
-  debug = false,
-  max_items = 7,
-}
-
-dict.switcher {
-  spelllang = {
-    id = "~/lexicon/id-cmp.dict",
-    en_us = "~/lexicon/en-cmp.dict",
-  },
 }

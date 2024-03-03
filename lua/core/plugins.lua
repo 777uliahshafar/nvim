@@ -45,7 +45,7 @@ local plugins = {
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/cmp-omni",
-  "uga-rosa/cmp-dictionary",
+  -- "uga-rosa/cmp-dictionary",
   "hrsh7th/cmp-nvim-lsp",
   "saadparwaiz1/cmp_luasnip",
 
@@ -161,19 +161,28 @@ local plugins = {
           date_format = "%Y-%m-%d-%a",
           time_format = "%H:%M",
         }, -- end template
-        note_frontmatter_func = function(note)
-          -- This is equivalent to the default frontmatter function.
-          local out = { id = note.id, aliases = note.aliases, tags = note.tags, links = "" }
-
-          -- `note.metadata` contains any manually added fields in the frontmatter.
-          -- So here we just make sure those fields are kept in the frontmatter.
-          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-            for k, v in pairs(note.metadata) do
-              out[k] = v
-            end
-          end
-          return out
-        end,
+        keys = {
+          {
+            "<leader>nb",
+            "<cmd>ObsidianBacklinks<cr>",
+            desc = "Show backlinks for current note",
+          },
+          {
+            "<leader>nn",
+            "<cmd>ObsidianNew<cr>",
+            desc = "Create new note",
+          },
+          {
+            "<leader>nq",
+            "<cmd>ObsidianQuickSwitch<cr>",
+            desc = "Switch to another note",
+          },
+          {
+            "<leader>ns",
+            "<cmd>ObsidianSearch<cr>",
+            desc = "Search notes",
+          },
+        },
       } -- end setup
     end,
   },
