@@ -30,6 +30,14 @@ vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { n
 -- pandoc converter
 vim.api.nvim_buf_set_keymap(0, "n", ",md", "<CMD>call Compilemd()<CR>", { noremap = false })
 
+-- obsidian
+
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ls", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>lc", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>le", "<CMD>ObsidianLinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>ll", "<CMD>ObsidianLink<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>ln", "<CMD>ObsidianLinkNew<CR>", { noremap = false })
+
 vim.api.nvim_exec(
   [[
 " arrows
