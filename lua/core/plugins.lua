@@ -132,15 +132,9 @@ local plugins = {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
   },
-  -- {
-  --   "nvim-neorg/neorg",
-  --   -- tag = "v5.0.0",
-  --   build = ":Neorg sync-parsers",
-  --   dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
-  -- },
   {
     "epwalsh/obsidian.nvim",
-    -- tag = "*", -- recommended, use latest release instead of latest commit
+    tag = "*", -- recommended, use latest release instead of latest commit
     requires = {
       "nvim-lua/plenary.nvim",
       "telescope.nvim",
