@@ -58,6 +58,8 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
 ---------------------------------------------
+-- obsidian
+map("n", "<leader>lw", "<CMD>ObsidianSearch<CR>")
 
 -- nvim-tree
 map("n", "<leader>e", require("nvim-tree.api").tree.toggle)
