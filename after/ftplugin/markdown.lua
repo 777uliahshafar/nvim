@@ -2,7 +2,7 @@ local o = vim.opt
 
 -- markdown ftplugin
 vim.opt_local.colorcolumn = "101"
-o.autoindent = true
+-- o.autoindent = true
 o.linebreak = true
 -- @TODOUA:
 -- spell is not staying local for some reason
