@@ -6,9 +6,39 @@ local i = ls.insert_node
 local sn = ls.snippet_node
 local f = ls.function_node
 local c = ls.choice_node
-local dynamicn = ls.dynamic_node
+local d = ls.dynamic_node
 
 local fmt = require("luasnip.extras.fmt").fmt
+local rec_item
+local rec_itemly
+
+rec_item = function()
+  return sn(nil, {
+    c(1, {
+      -- important!! Having the sn(...) as the first choice will cause infinite recursion.
+      t { "" },
+      -- The same dynamicNode as in the snippet (also note: self reference).
+      sn(nil, { t { "", "\t\\item " }, i(1), d(2, rec_item, {}) }),
+    }),
+  })
+end
+
+rec_itemly = function()
+  return sn(nil, {
+    c(1, {
+      -- important!! Having the sn(...) as the first choice will cause infinite recursion.
+      t { "" },
+      -- The same dynamicNode as in the snippet (also note: self reference).
+      sn(nil, {
+        t { "", "\t\\item<" },
+        i(1, ""),
+        t { "-> " },
+        i(2),
+        d(3, rec_itemly, {}),
+      }),
+    }),
+  })
+end
 
 ls.add_snippets("tex", {
   s(
@@ -88,7 +118,7 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "ovop",
+    "onlyp",
     fmt("\\only<{}>{{{}}}", {
       i(1, "1-"),
       f(function(_, snip)
@@ -99,7 +129,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "ovsp",
+    "onslidep",
     fmt("\\onslide<{}>{{{}}}", {
       i(1, "1-"),
       f(function(_, snip)
@@ -153,4 +183,22 @@ ls.add_snippets("tex", {
       i(1, "filename"),
     })
   ), --end of snip
+
+  s("item", {
+    t { "\\begin{itemize}", "\t\\item " },
+    i(1),
+    d(2, rec_item, {}),
+    t { "", "\\end{itemize}" },
+    i(0),
+  }),
+
+  s("itemly", {
+    t { "\\begin{itemize}", "\t\\item<" },
+    i(1, ""),
+    t { "-> " },
+    i(2),
+    d(3, rec_itemly, {}),
+    t { "", "\\end{itemize}" },
+    i(0),
+  }),
 }) -- end all

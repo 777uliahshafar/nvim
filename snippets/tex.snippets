@@ -386,15 +386,10 @@ snippet enumi enumerate environment
 		\\item ${0}
 	\\end{enumerate}
 # Itemize
-snippet item itemize environment
-	\\begin{itemize}
-		\\item ${0}
-	\\end{itemize}
-snippet ite \item
-	\\item ${1:${VISUAL}}
-
-snippet ovi \item<1->
-	\\item<${1:1}->${0}
+# snippet item itemize environment
+# 	\\begin{itemize}
+# 		\\item ${0}
+# 	\\end{itemize}
 
 # Description
 snippet desc description environment
@@ -402,9 +397,14 @@ snippet desc description environment
 		\\item[${1}] ${0}
 	\\end{description}
 # Endless new item
-snippet ]i \item (recursive)
-	\\item ${1}
-		${0:]i}
+# snippet ]i \item (recursive)
+# 	\\item ${1}
+# 		${0:]i}
+#
+# snippet ]it \item<1-> (recursive)
+# 	\\item<${1:1}-> ${2}
+# 		${0:]it}
+
 # Matrix
 snippet mat smart matrix environment
 	\\begin{${1:p/b/v/V/B/small}matrix}
@@ -550,9 +550,9 @@ snippet ft \footnote
 	\\footnote{${1:${VISUAL:text}}}${0}
 snippet note \notes
 	\\notes{${1:text}}${0}
-snippet ovs \onslide
+snippet onslide \onslide
 	\\onslide<${1:1}->{${2}}${0}
-snippet ovo \only
+snippet only \only
 	\\only<${1:1}->{${2}}${0}
 
 snippet imgbg background block
