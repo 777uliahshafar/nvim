@@ -177,113 +177,38 @@ snippet tmpltbsub "Sub Beamer Template"
 	\\end{document}
 
 #img rowcolumn
+snippet vrtwoimg "Vertical Right two Image"
+	\\vrtwoimg{${1:placeholder}}{${2:placeholder}} ${0}
 
-snippet imgrow2 "Row Image"
-	\\begin{textblock*}{62mm}(64mm,12mm)%(130mm,95mm)
-		\\includegraphics[width=62mm,height=39mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{62mm}(64mm,56mm)
-		\\includegraphics[width=62mm,height=39mm]{${2:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet vltwoimg "Vertical Left two Image"
+	\\vltwoimg{${1:placeholder}}{${2:placeholder}} ${0}
 
-snippet imglrow2 "Row Image"
-	\\begin{textblock*}{64mm}(0mm,12mm)%(130mm,95mm)
-		\\includegraphics[width=64mm,height=39mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{64mm}(0mm,56mm)
-		\\includegraphics[width=64mm,height=39mm]{${2:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet vrthreeimg "Vertical Right three Image"
+	\\vrthreeimg{${1:placeholder}}{${2:placeholder}}{${3:placeholder}} ${0}
 
-snippet imgrow3 "Row Image"
-	\\begin{textblock*}{44mm}(84mm,10mm)%(130mm,95mm)
-		\\includegraphics[width=44mm,height=28mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{44mm}(84mm,39mm)
-		\\includegraphics[width=44mm,height=28mm]{${2:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{44mm}(84mm,68mm)
-		\\includegraphics[width=44mm,height=28mm]{${3:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet vlthreeimg "Vertical Left three Image"
+	\\vlthreeimg{${1:placeholder}}{${2:placeholder}}{${3:placeholder}} ${0}
 
-snippet imglrow3 "Row Image"
-	\\begin{textblock*}{44mm}(0mm,10mm)%(130mm,95mm)
-		\\includegraphics[width=44mm,height=28mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{44mm}(0mm,39mm)
-		\\includegraphics[width=44mm,height=28mm]{${2:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{44mm}(0mm,68mm)
-		\\includegraphics[width=44mm,height=28mm]{${3:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet htwoimg "Horizontal two Image"
+	\\htwoimg{${1:placeholder}}{${2:placeholder}} ${0}
 
-snippet imgright "Row Image"
-	\\begin{textblock*}{60mm}(68mm,20mm)%(130mm,95mm)
-		\\includegraphics[width=60mm,height=76mm]{${1:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet hthreeimg "Horizontal three Image"
+	\\hthreeimg{${1:placeholder}}{${2:placeholder}}{${3:placeholder}} ${0}
 
-snippet imgleft "Row Image"
-	\\begin{textblock*}{60mm}(0mm,20mm)%(130mm,95mm)
-		\\includegraphics[width=60mm,height=76mm]{${1:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet limg "left Image"
+	\\limg{${1:placeholder}} ${0}
 
-snippet imgcolumn2 "Row Image"
-	\\begin{textblock*}{63mm}(0mm,54mm)%(130mm,95mm)
-		\\includegraphics[width=64mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{62mm}(65mm,54mm)
-		\\includegraphics[width=64mm]{${2:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet rimg "right Image"
+	\\rimg{${1:placeholder}} ${0}
 
-snippet imgcolumn3 "Row Image"
-	\\begin{textblock*}{42mm}(0mm,66mm)%(130mm,95mm)
-		\\includegraphics[width=42mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{42mm}(43mm,66mm)
-		\\includegraphics[width=42mm]{${2:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{42mm}(86mm,66mm)
-		\\includegraphics[width=42mm]{${3:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet ltxt "left Text"
+	\\ltxt{${1:bg}}{${2:fg}}{${3:text}} ${0}
 
-snippet imgrowcolumn2 "Row Image"
-	\\begin{textblock*}{63mm}(0mm,54mm)%(130mm,95mm)
-		\\includegraphics[width=62mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{62mm}(65mm,54mm)
-		\\includegraphics[width=62mm]{${2:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{62mm}(65mm,19mm)
-		\\includegraphics[width=62mm]{${3:placeholder}}
-	\\end{textblock*}
-	${0}
+snippet rtxt "right Text"
+	\\rtxt{${1:bg}}{${2:fg}}{${3:text}} ${0}
 
-snippet imgrowcolumn3 "Row Image"
-	\\begin{textblock*}{42mm}(0mm,66mm)%(130mm,95mm)
-		\\includegraphics[width=42mm]{${1:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{42mm}(43mm,66mm)
-		\\includegraphics[width=42mm]{${2:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{42mm}(86mm,66mm)
-		\\includegraphics[width=42mm]{${3:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{42mm}(86mm,18mm)
-		\\includegraphics[width=42mm]{${4:placeholder}}
-	\\end{textblock*}
-	\\begin{textblock*}{42mm}(86mm,42mm)
-		\\includegraphics[width=42mm]{${5:placeholder}}
-	\\end{textblock*}
-	${0}
-
-
+snippet utxt "up Text"
+	\\utxt{${1:bg}}{${2:fg}}{${3:text}} ${0}
 
 #newcommand
 snippet nc \newcommand

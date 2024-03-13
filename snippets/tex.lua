@@ -42,8 +42,8 @@ end
 
 ls.add_snippets("tex", {
   s(
-    "boxp",
-    fmt("\\boxes{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    "txtp",
+    fmt("\\txt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
       c(1, {
         t "gray",
         t "navyblue",
@@ -70,8 +70,8 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "box",
-    fmt("\\boxes{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    "txt",
+    fmt("\\txt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
       c(1, {
         t "gray",
         t "navyblue",
@@ -95,7 +95,7 @@ ls.add_snippets("tex", {
 
   s(
     "posp",
-    fmt("\\begin{{textblock*}}{{{}}}({}mm,{}mm){}\\end{{textblock*}}", {
+    fmt("\\begin{{textblock*}}{{{}mm}}({}mm,{}mm){}\\end{{textblock*}}", {
       i(1, "50"),
       i(2, "130"),
       i(3, "95"),
@@ -109,7 +109,7 @@ ls.add_snippets("tex", {
 
   s(
     "pos",
-    fmt("\\begin{{textblock*}}{{{}}}({}mm,{}mm){}\\end{{textblock*}}", {
+    fmt("\\begin{{textblock*}}{{{}mm}}({}mm,{}mm){}\\end{{textblock*}}", {
       i(1, "50"),
       i(2, "130"),
       i(3, "95"),
