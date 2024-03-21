@@ -115,12 +115,12 @@ command! ZoomToggle call s:ZoomToggle()
 map("n", "gz", "<CMD>ZoomToggle<cr>")
 
 -- vim fugitive
-map("n", "<leader>gg", "<CMD>G<CR>", opts)
-map("n", "<leader>ga", "<CMD>Gwrite<CR>", opts)
-map("n", "<leader>gd", "<CMD>Gvdiffsplit head<CR>", opts)
-map("n", "<localleader>gd", "<CMD>Gvdiffsplit head~1<CR>", opts)
-map("n", "<leader>gp", "<CMD>Git push<CR>", opts)
-map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
+map("n", "<leader>g", "<CMD>G<CR>", opts)
+map("n", "<leader>fa", "<CMD>Gwrite<CR>", opts)
+map("n", "<leader>fd", "<CMD>Gvdiffsplit head<CR>", opts)
+map("n", "<localleader>fd", "<CMD>Gvdiffsplit head~1<CR>", opts)
+map("n", "<leader>fp", "<CMD>Git push<CR>", opts)
+map("n", "<leader>fc", "<CMD>Git commit<CR>", opts)
 
 -- thesaurus_query
 map("n", "<leader>cs", "<CMD>ThesaurusQueryReplaceCurrentWord<CR>", opts)
