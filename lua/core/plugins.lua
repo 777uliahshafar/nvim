@@ -12,6 +12,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- greeter --
+  {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+    end,
+  },
   -- Telescope --
   {
     "nvim-telescope/telescope.nvim",
@@ -20,7 +28,6 @@ local plugins = {
   },
   "nvim-telescope/telescope-file-browser.nvim",
   "nvim-telescope/telescope-ui-select.nvim",
-
   -- Syntax
   {
     "nvim-treesitter/nvim-treesitter",
@@ -38,7 +45,6 @@ local plugins = {
   "jay-babu/mason-null-ls.nvim",
   "neovim/nvim-lspconfig",
   "jose-elias-alvarez/null-ls.nvim",
-
   -- Completion --
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-buffer",
@@ -49,13 +55,6 @@ local plugins = {
   "hrsh7th/cmp-nvim-lsp",
   "saadparwaiz1/cmp_luasnip",
 
-  -- Issues --
-  {
-    "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup()
-    end,
-  },
   -- Snippet --
   {
     "L3MON4D3/LuaSnip",
@@ -86,25 +85,14 @@ local plugins = {
       },
     },
   },
-  -- "chentoast/marks.nvim",
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end,
-  },
-
   -- Tim Pope Plugins --
   -- "tpope/vim-surround",
   "tpope/vim-fugitive",
-
   -- Colorscheme --
-  --
   {
     "777uliahshafar/mygruvbox.nvim",
     priority = 1000,
   },
-
   -- Writing
   { "lervag/vimtex", lazy = false },
   { "andymass/vim-matchup", lazy = false },
@@ -124,13 +112,9 @@ local plugins = {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
+      -- "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim",
     },
-  },
-  {
-    "shellRaining/hlchunk.nvim",
-    event = { "UIEnter" },
   },
 
   {
@@ -175,9 +159,26 @@ local plugins = {
       -- see below for full list of options 👇
     },
   },
-
   "preservim/vim-markdown",
-  "jalvesaq/Nvim-R",
+  -- "jalvesaq/Nvim-R",
+  -- utility --
+  -- "chentoast/marks.nvim",
+  {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup()
+    end,
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  },
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
+  },
   "777uliahshafar/vim-myhelp",
 }
 
