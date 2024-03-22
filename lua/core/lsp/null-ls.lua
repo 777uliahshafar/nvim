@@ -12,6 +12,9 @@ null_ls.setup {
   sources = {
     formatting.stylua,
     formatting.latexindent,
+    formatting.prettier.with {
+      filetypes = { "html", "json", "yaml", "markdown" },
+    },
   },
   on_attach = function(current_client, bufnr)
     if current_client.supports_method "textDocument/formatting" then

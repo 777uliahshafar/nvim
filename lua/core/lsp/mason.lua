@@ -27,6 +27,7 @@ mason_null_ls.setup {
   ensure_installed = {
     "stylua",
     "latexindent",
+    "prettier",
   },
   automatic_installation = true,
 }
