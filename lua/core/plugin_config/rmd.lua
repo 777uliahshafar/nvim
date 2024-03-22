@@ -19,10 +19,17 @@ g.vim_markdown_follow_anchor = 1 -- Allow to follow link of header within file [
 g.vim_markdown_borderless_table = 1
 
 vim.cmd [[
-function! Compilemd()
+function! Potraitmd()
         let extension = expand('%:e')
         if extension == "md"
                 execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --template=eisvogel -s -o pdfs/%:t:r.pdf"
+        endif
+endfunction
+
+function! Landsmd()
+        let extension = expand('%:e')
+        if extension == "md"
+                execute "! pandoc -V geometry:a4paper,landscape -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --template=eisvogel -s -o pdfs/%:t:r.pdf"
         endif
 endfunction
 ]]
