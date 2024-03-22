@@ -28,7 +28,8 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>_", "ysiW_", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { noremap = false })
 
 -- pandoc converter
-vim.api.nvim_buf_set_keymap(0, "n", ",md", "<CMD>call Compilemd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", ",md", "<CMD>call Potraitmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<localleader>md", "<CMD>call Landsmd()<CR>", { noremap = false })
 
 -- obsidian
 
