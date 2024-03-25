@@ -154,6 +154,15 @@ local plugins = {
       picker = {
         name = "telescope.nvim",
       },
+      ui = {
+        checkboxes = {
+          [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+          ["="] = { char = "", hl_group = "ObsidianTodo" },
+          ["x"] = { char = "", hl_group = "ObsidianDone" },
+          [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+          ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+        },
+      },
       templates = {
         subdir = "templates",
         date_format = "%Y-%m-%d-%a",
