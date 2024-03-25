@@ -154,6 +154,14 @@ local plugins = {
       picker = {
         name = "telescope.nvim",
       },
+      mappings = {
+        ["fo"] = {
+          action = function()
+            return require("obsidian").util.gf_passthrough()
+          end,
+          opts = { noremap = false, expr = true, buffer = true },
+        },
+      },
       ui = {
         checkboxes = {
           [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
