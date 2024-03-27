@@ -16,7 +16,7 @@
   "mason-lspconfig.nvim": { "branch": "main", "commit": "21d33d69a81f6351e5a5f49078b2e4f0075c8e73" },
   "mason-null-ls.nvim": { "branch": "main", "commit": "e270134d83ba59425edc53356c6fd337b61bb8dd" },
   "mason.nvim": { "branch": "main", "commit": "3b5068f0fc565f337d67a2d315d935f574848ee7" },
-  "mygruvbox.nvim": { "branch": "master", "commit": "fbed9ac41cf7fdc9c95b51f9f4b0786b160eccba" },
+  "mygruvbox.nvim": { "branch": "master", "commit": "42c793c8ff0f52477668b92f314f4b0922dc47d6" },
   "nui.nvim": { "branch": "main", "commit": "b81333d12f824dbed5eb231c8a4409a290fdd848" },
   "null-ls.nvim": { "branch": "main", "commit": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7" },
   "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
