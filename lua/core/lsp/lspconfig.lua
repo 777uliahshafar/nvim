@@ -49,6 +49,33 @@ lspconfig["lua_ls"].setup {
   },
 }
 
+lspconfig["eslint"].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig["html"].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig["jsonls"].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig["tailwindcss"].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig["tsserver"].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  cmd = { "typescript-language-server", "--stdio" },
+}
+
 -- lspconfig["texlab"].setup {
 --   capabilities = capabilities,
 --   on_attach = on_attach,

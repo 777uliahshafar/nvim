@@ -13,7 +13,19 @@ null_ls.setup {
     formatting.stylua,
     formatting.latexindent,
     formatting.prettier.with {
-      filetypes = { "html", "json", "yaml", "markdown" },
+      filetypes = {
+        "html",
+        "json",
+        "javascript",
+        "typescript",
+        "css",
+        "scss",
+        "graphql",
+        "yaml",
+        "markdown",
+        "md",
+        "txt",
+      },
     },
   },
   on_attach = function(current_client, bufnr)
