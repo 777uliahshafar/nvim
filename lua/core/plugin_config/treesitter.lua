@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+-- local hlmap = vim.treesitter.TSHighlighter.hl_map
+
 configs.setup {
   ensure_installed = { "json", "lua", "markdown", "markdown_inline", "latex", "javascript" }, -- one of "all" or a list of languages
   ignore_install = { "" }, -- List of parsers to ignore installing
@@ -16,3 +18,5 @@ configs.setup {
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
   },
 }
+
+-- hlmap.error = nil

@@ -72,8 +72,13 @@ lspconfig["tailwindcss"].setup {
 lspconfig["tsserver"].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
+  init_options = {
+    preferences = {
+      disableSuggestions = true,
+    },
+  },
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
+  -- cmd = { "typescript-language-server", "--stdio" },
 }
 
 -- lspconfig["texlab"].setup {
