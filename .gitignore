@@ -1,3 +1,2 @@
 *.log
-*.add
-*.add.spl
+spell/
