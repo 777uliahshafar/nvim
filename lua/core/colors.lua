@@ -10,13 +10,6 @@ end, {})
 
 require("gruvbox").setup {
   contrast = "hard", -- can be "hard", "soft" or empty string
-  palette_overrides = {
-    faded_green = "#79740e",
-    dark10 = "#1c1c1c",
-    dark0_hard = "#181616",
-    light0_hard = "#f2e5bc",
-    -- light0 = "#f2e5bc",
-  },
 }
 
 vim.cmd [[colorscheme gruvbox]]
