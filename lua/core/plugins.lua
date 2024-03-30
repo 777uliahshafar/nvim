@@ -122,6 +122,13 @@ local plugins = {
     end,
   },
   -- "junegunn/vim-easy-align",
+  {
+    "echasnovski/mini.align",
+    version = "*",
+    config = function()
+      require("mini.align").setup()
+    end,
+  },
   "ron89/thesaurus_query.vim",
   {
     "jackMort/ChatGPT.nvim",
