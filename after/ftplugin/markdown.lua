@@ -24,6 +24,9 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>_", "ysiW_", { noremap = false })
 -- For Glow, just type :Glow
 -- vim.api.nvim_buf_set_keymap(0, "n", ",md", "<Plug>MarkdownPreview", { noremap = false })
 
+-- toggle TS highlighting for markdown
+vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { noremap = false })
+
 -- pandoc converter
 vim.api.nvim_buf_set_keymap(0, "n", ",md", "<CMD>call Potraitmd()<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<localleader>md", "<CMD>call Landsmd()<CR>", { noremap = false })
@@ -31,15 +34,15 @@ vim.api.nvim_buf_set_keymap(0, "n", "<localleader>md", "<CMD>call Landsmd()<CR>"
 -- obsidian
 
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ff", "<CMD>ObsidianSearch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>bq", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>bb", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>be", "<CMD>ObsidianLinks<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>bt", "<CMD>ObsidianTags<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "v", "<leader>bl", "<CMD>ObsidianLink<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "v", "<leader>bn", "<CMD>ObsidianLinkNew<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>lq", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>lb", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>le", "<CMD>ObsidianLinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>lt", "<CMD>ObsidianTags<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>ll", "<CMD>ObsidianLink<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>ln", "<CMD>ObsidianLinkNew<CR>", { noremap = false })
 
 -- vim markdown
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>to", "<CMD>Toc<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>lc", "<CMD>Toch<CR>", { noremap = false })
 
 vim.api.nvim_exec(
   [[
