@@ -10,7 +10,7 @@ configs.setup {
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = { "latex", "markdown" }, -- list of language that will be disabled
+    disable = { "latex" }, -- list of language that will be disabled
   },
   indent = { enable = true, disable = { "python", "css" } },
   rainbow = {
@@ -18,5 +18,3 @@ configs.setup {
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
   },
 }
-
--- hlmap.error = nil
