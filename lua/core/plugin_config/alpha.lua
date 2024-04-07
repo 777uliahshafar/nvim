@@ -19,7 +19,7 @@ startify.section.header.val = {
 startify.section.top_buttons.val = {
   startify.button("e", " > New File", "<cmd>ene<CR>"),
   startify.button("a", "AAS essay", "<cmd>e D:/essay/subfiles/aasessay.tex<CR>"),
-  startify.button("k", "Karakter", "<cmd>e D:/karakter/karakter.tex<CR>"),
+  startify.button("b", "Karakter", "<cmd>e D:/karakter/karakter.tex<CR>"),
 }
 
 startify.section.bottom_buttons.val = {
