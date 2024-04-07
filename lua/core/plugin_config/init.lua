@@ -1,3 +1,4 @@
+require "core.plugin_config.alpha"
 require "core.plugin_config.cmps"
 require "core.plugin_config.luasnip"
 require "core.plugin_config.latex"
