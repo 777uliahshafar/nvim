@@ -28,8 +28,14 @@ g.vimtex_compiler_latexmk = {
   },
 }
 
-g.vimtex_view_general_viewer = "SumatraPDF"
-g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
+-- /// sumatra
+-- g.vimtex_view_general_viewer = "SumatraPDF"
+-- g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
+-- /// sioyek
+g.vimtex_view_method = "sioyek"
+-- /// okular
+-- vim.g.vimtex_view_general_viewer = "okular"
+-- vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"
 
 -- warning errors
 g.vimtex_quickfix_mode = 0
