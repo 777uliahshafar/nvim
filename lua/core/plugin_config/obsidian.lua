@@ -12,7 +12,7 @@ require("obsidian").setup {
   },
 
   mappings = {
-    ["fo"] = {
+    ["gk"] = {
       action = function()
         return require("obsidian").util.gf_passthrough()
       end,
