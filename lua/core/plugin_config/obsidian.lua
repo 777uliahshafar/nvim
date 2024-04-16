@@ -22,12 +22,15 @@ require("obsidian").setup {
 
   ui = {
     checkboxes = {
-      [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-      ["="] = { char = "", hl_group = "ObsidianTodo" },
-      ["x"] = { char = "", hl_group = "ObsidianDone" },
-      [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-      ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+      [" "] = { char = "󰄱", hl_group = "GruvboxGray" },
+      ["="] = { char = "", hl_group = "GruvboxGreen" },
+      ["x"] = { char = "", hl_group = "GruvboxAqua" },
+      [">"] = { char = "", hl_group = "GruvboxOrange" },
+      ["~"] = { char = "󰰱", hl_group = "GruvboxRed" },
     },
+
+    bullets = { hl_group = "GruvboxOrange" },
+    reference_text = { hl_group = "markdownUrl" },
   },
 
   templates = {
