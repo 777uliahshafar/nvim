@@ -45,10 +45,3 @@ g.vimtex_log_ignore = {
   "specifier changed to",
   "Token not allowed in a PDF string",
 }
-
--- maps
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>lc", "<plug>(vimtex-compile)", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>le", "<plug>(vimtex-errors)", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>lv", "<plug>(vimtex-view)", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>ls", "<plug>(vimtex-toggle-main)", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>co", "<plug>(vimtex-toc-open)", { noremap = false })
