@@ -127,4 +127,5 @@ map("n", "<leader>cs", "<CMD>ThesaurusQueryReplaceCurrentWord<CR>", opts)
 vim.cmd [[vnoremap <Leader>cs y:ThesaurusQueryReplace <C-r>"<CR>]]
 
 -- chatGPT
+map("n", "<leader>cc", "<CMD>ChatGPT<CR>", opts)
 map({ "n", "v" }, "<leader>ct", "<CMD>ChatGPTRun translate<CR>", opts)
