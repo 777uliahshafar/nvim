@@ -12,6 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- Colorscheme --
+  {
+    "777uliahshafar/mygruvbox.nvim",
+    priority = 1000,
+  },
+  { "rebelot/kanagawa.nvim", priority = 1000 },
+
   -- greeter --
   {
     "goolord/alpha-nvim",
@@ -48,9 +55,9 @@ local plugins = {
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/cmp-omni",
-  -- "uga-rosa/cmp-dictionary",
   "hrsh7th/cmp-nvim-lsp",
   "saadparwaiz1/cmp_luasnip",
+  -- "uga-rosa/cmp-dictionary",
 
   -- Snippet --
   {
@@ -77,19 +84,14 @@ local plugins = {
           dimming = { alpha = 0.15 },
           context = 7,
           treesitter = true,
-          exclude = { "bib", "norg" },
+          exclude = { "bib", "md" },
         },
       },
     },
   },
   -- Tim Pope Plugins --
-  -- "tpope/vim-surround",
   "tpope/vim-fugitive",
-  -- Colorscheme --
-  {
-    "777uliahshafar/mygruvbox.nvim",
-    priority = 1000,
-  },
+  -- "tpope/vim-surround",
   -- Writing
   { "lervag/vimtex", lazy = false },
   { "andymass/vim-matchup", lazy = false },
@@ -101,7 +103,6 @@ local plugins = {
       }
     end,
   },
-  -- "junegunn/vim-easy-align",
   {
     "echasnovski/mini.align",
     version = "*",
@@ -109,6 +110,7 @@ local plugins = {
       require("mini.align").setup()
     end,
   },
+  -- "junegunn/vim-easy-align",
   "ron89/thesaurus_query.vim",
   {
     "jackMort/ChatGPT.nvim",
@@ -116,8 +118,8 @@ local plugins = {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      -- "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim",
+      -- "folke/trouble.nvim",
     },
   },
   {
@@ -132,12 +134,9 @@ local plugins = {
   -- "jalvesaq/Nvim-R",
 
   -- utility --
-  -- "chentoast/marks.nvim",
   {
-    "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup()
-    end,
+    "folke/which-key.nvim",
+    event = "VeryLazy",
   },
   {
     "numToStr/Comment.nvim",
@@ -149,7 +148,14 @@ local plugins = {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
   },
-  "777uliahshafar/vim-myhelp",
+  -- "chentoast/marks.nvim",
+  -- {
+  --   "folke/trouble.nvim",
+  --   config = function()
+  --     require("trouble").setup()
+  --   end,
+  -- },
+  -- "777uliahshafar/vim-myhelp",
 }
 
 local opts = {}
