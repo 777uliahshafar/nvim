@@ -31,6 +31,9 @@ wk.register({
     },
     c = { "<cmd>ChatGPT<cr>", "ChatGPT Promt" },
     t = { "<cmd>ChatGPTRun translate<cr>", "Chat translate", mode = { "v", "n" } },
+    b = { "<cmd>ToggleBackground<cr>", "Toggle background" },
+    k = { "<cmd>colorscheme kanagawa<cr>", "kanagawa" },
+    g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox" },
   }, -- end first key
   f = {
     f = {
@@ -93,8 +96,6 @@ wk.register({
 map("i", "<C-E>", "<ESC>A")
 map("i", "<C-A>", "<ESC>I")
 
-map("n", "<f5>", "<CMD>ToggleBackground<CR>")
-
 -- maps for go down and up
 map("n", "j", "gj", { noremap = true })
 map("n", "k", "gk", { noremap = true })
@@ -134,6 +135,9 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 -- map("n", "<leader>us", "<CMD>setlocal spell! spelllang=en_us<CR>")
 -- Load recent sessions
 -- map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
+
+-- map("n", "<f5>", "<CMD>ToggleBackground<CR>")
+
 ---------------------------------------------
 -- PLUGIN KEYBINDING
 ---------------------------------------------
