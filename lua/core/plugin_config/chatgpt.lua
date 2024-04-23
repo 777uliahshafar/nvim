@@ -12,6 +12,9 @@ require("chatgpt").setup {
       new_session = "<C-n>",
       cycle_windows = "<Tab>",
     },
+    buf_options = {
+      filetype = "tex",
+    },
   },
   popup_input = {
     submit = "<C-s>",
