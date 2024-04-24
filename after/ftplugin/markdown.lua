@@ -15,21 +15,21 @@ o.updatetime = 1000
 
 -- *markdown surround maps - with nvim-surround and without*
 -- wrap selection in markdown link
-vim.api.nvim_buf_set_keymap(0, "v", ",wl", [[c[<c-r>"]()<esc>]], { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>mf", [[c[<c-r>"]()<esc>]], { noremap = false })
 
 -- italicize Word - in visual: S{arg}
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>_", "ysiW_", { noremap = false })
+-- vim.api.nvim_buf_set_keymap(0, "n", "<leader>_", "ysiW_", { noremap = false })
 
 -- Markdown Preview
 -- For Glow, just type :Glow
 -- vim.api.nvim_buf_set_keymap(0, "n", ",md", "<Plug>MarkdownPreview", { noremap = false })
 
 -- toggle TS highlighting for markdown
-vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { noremap = false })
+-- vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { noremap = false })
 
 -- pandoc converter
-vim.api.nvim_buf_set_keymap(0, "n", ",md", "<CMD>call Potraitmd()<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<localleader>md", "<CMD>call Landsmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mc", "<CMD>call Potraitmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ml", "<CMD>call Landsmd()<CR>", { noremap = false })
 
 -- obsidian
 
