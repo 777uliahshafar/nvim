@@ -34,12 +34,12 @@ vim.api.nvim_buf_set_keymap(0, "n", "<localleader>md", "<CMD>call Landsmd()<CR>"
 -- obsidian
 
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ff", "<CMD>ObsidianSearch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>lq", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>lb", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>le", "<CMD>ObsidianLinks<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>lt", "<CMD>ObsidianTags<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "v", "<leader>ll", "<CMD>ObsidianLink<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "v", "<leader>ln", "<CMD>ObsidianLinkNew<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>oq", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ob", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>oe", "<CMD>ObsidianLinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ot", "<CMD>ObsidianTags<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>ol", "<CMD>ObsidianLink<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>on", "<CMD>ObsidianLinkNew<CR>", { noremap = false })
 
 -- vim markdown
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>co", "<CMD>Toch<CR>", { noremap = false })
