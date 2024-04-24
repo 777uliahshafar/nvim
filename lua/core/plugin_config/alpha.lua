@@ -24,8 +24,8 @@ startify.section.top_buttons.val = {
 }
 
 startify.section.bottom_buttons.val = {
-  startify.button("SPC pff", " > Find File", "<cmd>Telescope find_files<CR>"),
-  startify.button("SPC pfw", " > Find Word", "<cmd>Telescope live_grep<CR>"),
+  startify.button("SPC ff", " > Find File", "<cmd>Telescope find_files<CR>"),
+  startify.button("SPC fw", " > Find Word", "<cmd>Telescope live_grep<CR>"),
   startify.button("z", " > Find Config", "<cmd>e C:/Users/uliah/AppData/Local/nvim/init.lua<CR>"),
 }
 
