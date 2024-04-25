@@ -43,6 +43,7 @@ vim.api.nvim_buf_set_keymap(0, "v", "<leader>on", "<CMD>ObsidianLinkNew<CR>", { 
 
 -- vim markdown
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>co", "<CMD>Toch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ci", "<CMD>InsertToc 3<CR>", { noremap = false })
 
 vim.api.nvim_exec(
   [[
