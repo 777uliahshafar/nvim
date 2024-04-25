@@ -22,7 +22,7 @@ startify.section.top_buttons.val = {
   startify.button("b", "Karakter", "<cmd>e D:/karakter/karakter.tex<CR>"),
   startify.button("c", "BPI-en", "<cmd>e D:/proposal/subfiles/prop-en.tex<CR>"),
   startify.button("d", "uwagi", "<cmd>ex C:/wamp64/www/uwagi/<CR>"),
-  startify.button("o", "", "<cmd>ObsidianSearch<CR>"),
+  startify.button("o", "Obsidian", "<cmd>ObsidianSearch<CR>"),
 }
 
 startify.section.bottom_buttons.val = {
