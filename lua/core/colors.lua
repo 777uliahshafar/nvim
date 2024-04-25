@@ -15,7 +15,7 @@ require("gruvbox").setup {
 require("citruszest").setup {
   style = {
     -- This will change Constant foreground color and make it bold.
-    Normal = { fg = "#b1b4b9" },
+    Normal = { fg = "#f8f8f2" },
     CursorLine = { bg = "#121212" },
   },
 }
