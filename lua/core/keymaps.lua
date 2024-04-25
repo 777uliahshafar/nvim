@@ -29,7 +29,7 @@ wk.register({
       "Thesaurus Query",
       mode = { "v", "n" },
     },
-    c = { "<cmd>ChatGPT<cr>", "ChatGPT Promt" },
+    h = { "<cmd>ChatGPT<cr>", "ChatGPT Prompt" },
     t = { "<cmd>ChatGPTRun translate<cr>", "Chat translate", mode = { "v", "n" } },
     b = { "<cmd>ToggleBackground<cr>", "Toggle background" },
     n = { "<cmd>colorscheme citruszest<cr>", "citruszest" },
