@@ -17,7 +17,7 @@ local plugins = {
     "777uliahshafar/mygruvbox.nvim",
     priority = 1000,
   },
-  { "rebelot/kanagawa.nvim", priority = 1000 },
+  { "zootedb0t/citruszest.nvim", priority = 1000 },
 
   -- greeter --
   {

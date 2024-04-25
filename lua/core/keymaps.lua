@@ -32,7 +32,7 @@ wk.register({
     c = { "<cmd>ChatGPT<cr>", "ChatGPT Promt" },
     t = { "<cmd>ChatGPTRun translate<cr>", "Chat translate", mode = { "v", "n" } },
     b = { "<cmd>ToggleBackground<cr>", "Toggle background" },
-    k = { "<cmd>colorscheme kanagawa<cr>", "kanagawa" },
+    n = { "<cmd>colorscheme citruszest<cr>", "citruszest" },
     g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox" },
   }, -- end first key
   f = {

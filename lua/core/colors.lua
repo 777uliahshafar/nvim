@@ -12,4 +12,11 @@ require("gruvbox").setup {
   contrast = "hard", -- can be "hard", "soft" or empty string
 }
 
+require("citruszest").setup {
+  style = {
+    -- This will change Constant foreground color and make it bold.
+    Normal = { fg = "#F8F8F2" },
+  },
+}
+
 vim.cmd [[colorscheme gruvbox]]
