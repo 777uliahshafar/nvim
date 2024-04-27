@@ -21,7 +21,8 @@ startify.section.top_buttons.val = {
   startify.button("a", "AAS essay", "<cmd>e D:/essay/subfiles/aasessay.tex<CR>"),
   startify.button("b", "Karakter", "<cmd>e D:/karakter/karakter.tex<CR>"),
   startify.button("c", "BPI-en", "<cmd>e D:/proposal/subfiles/prop-en.tex<CR>"),
-  startify.button("d", "uwagi", "<cmd>ex C:/wamp64/www/uwagi/<CR>"),
+  startify.button("d", "essay", "<cmd>e D:/essay/subfiles/esai-en.tex<CR>"),
+  startify.button("e", "uwagi", "<cmd>ex C:/wamp64/www/uwagi/wp-content/themes/twentyuwagi<CR>"),
   startify.button("o", "Obsidian", "<cmd>ObsidianSearch<CR>"),
 }
 
