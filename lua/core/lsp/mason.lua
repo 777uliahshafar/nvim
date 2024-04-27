@@ -20,10 +20,6 @@ mason_lspconfig.setup {
     "lua_ls",
     "texlab",
     "eslint",
-    "html",
-    "jsonls",
-    "tailwindcss",
-    "tsserver",
   },
   automatic_installation = true,
 }
