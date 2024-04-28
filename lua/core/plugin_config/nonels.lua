@@ -1,16 +1,33 @@
 local null_ls = require "null-ls"
 
 local formatting = null_ls.builtins.formatting
--- local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 require("mason-null-ls").setup {
-  ensure_installed = { "stylua" },
+  ensure_installed = { "stylua", "latexindent", "prettier", "eslint_d" },
 }
 
 null_ls.setup {
   sources = {
     formatting.stylua,
+    formatting.latexindent,
+    formatting.prettier.with {
+      filetypes = {
+        "html",
+        "json",
+        "javascript",
+        "typescript",
+        "css",
+        "scss",
+        "graphql",
+        "yaml",
+        "markdown",
+        "md",
+        "txt",
+      },
+    },
+    diagnostics.eslint_d,
   },
   -- formatting when saving
   on_attach = function(current_client, bufnr)
