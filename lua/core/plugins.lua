@@ -46,8 +46,10 @@ local plugins = {
     build = ":MasonUpdate",
   },
   "williamboman/mason-lspconfig.nvim",
-  "jay-babu/mason-null-ls.nvim",
   "neovim/nvim-lspconfig",
+  -- lsp,linter,formating --
+  "jay-babu/mason-null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   -- "jose-elias-alvarez/null-ls.nvim",
   -- Completion --
   "hrsh7th/nvim-cmp",
