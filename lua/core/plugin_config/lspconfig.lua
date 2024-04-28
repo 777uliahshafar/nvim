@@ -4,6 +4,7 @@ require("mason").setup()
 -- mason-lspconfig --
 require("mason-lspconfig").setup {
   ensure_installed = { "lua_ls" },
+  automatic_installation = true,
 }
 
 -- nvim-lspconfig --
