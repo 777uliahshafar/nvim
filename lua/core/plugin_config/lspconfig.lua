@@ -3,7 +3,7 @@ require("mason").setup()
 
 -- mason-lspconfig --
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls" },
+  ensure_installed = { "lua_ls", "intelephense" },
   automatic_installation = true,
 }
 
@@ -22,7 +22,8 @@ local on_attach = function(_, bufnr)
   -- map("n", "gi", vim.lsp.buf.implementation, bufopts)
 end
 
--- local capabilities = cmp_nvim_lsp.default_capabilities()
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
+local capabilities = cmp_nvim_lsp.default_capabilities()
 local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
@@ -33,7 +34,7 @@ end
 local lspconfig = require "lspconfig"
 lspconfig.lua_ls.setup {
   on_attach = on_attach,
-  -- capabilities = capabilities,
+  capabilities = capabilities,
   settings = {
     Lua = {
       -- make the language server recognize "vim" global
@@ -46,6 +47,72 @@ lspconfig.lua_ls.setup {
           [vim.fn.expand "$VIMRUNTIME/lua"] = true,
           [vim.fn.stdpath "config" .. "/lua"] = true,
         },
+      },
+    },
+  },
+}
+
+lspconfig.intelephense.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    intelephense = {
+      stubs = {
+        "bcmath",
+        "bz2",
+        "Core",
+        "curl",
+        "date",
+        "dom",
+        "fileinfo",
+        "filter",
+        "gd",
+        "gettext",
+        "hash",
+        "iconv",
+        "imap",
+        "intl",
+        "json",
+        "libxml",
+        "mbstring",
+        "mcrypt",
+        "mysql",
+        "mysqli",
+        "password",
+        "pcntl",
+        "pcre",
+        "PDO",
+        "pdo_mysql",
+        "Phar",
+        "readline",
+        "regex",
+        "session",
+        "SimpleXML",
+        "sockets",
+        "sodium",
+        "standard",
+        "superglobals",
+        "tokenizer",
+        "xml",
+        "xdebug",
+        "xmlreader",
+        "xmlwriter",
+        "yaml",
+        "zip",
+        "zlib",
+        "wordpress-stubs",
+        "woocommerce-stubs",
+        "acf-pro-stubs",
+        "wordpress-globals",
+        "wp-cli-stubs",
+        "genesis-stubs",
+        "polylang-stubs",
+      },
+      environment = {
+        includePaths = { "/home/mte90/.composer/vendor/php-stubs/", "/home/mte90/.composer/vendor/wpsyntex/" },
+      },
+      files = {
+        maxSize = 5000000,
       },
     },
   },
