@@ -3,7 +3,7 @@ require("mason").setup()
 
 -- mason-lspconfig --
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "intelephense" },
+  ensure_installed = { "lua_ls", "intelephense", "jsonls", "html", "cssls", "tsserver", "emmet_ls" },
   automatic_installation = true,
 }
 
@@ -116,4 +116,28 @@ lspconfig.intelephense.setup {
       },
     },
   },
+}
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.emmet_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
