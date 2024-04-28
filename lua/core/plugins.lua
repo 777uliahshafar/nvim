@@ -49,7 +49,12 @@ local plugins = {
   "neovim/nvim-lspconfig",
   -- lsp,linter,formating --
   "jay-babu/mason-null-ls.nvim",
-  "nvimtools/none-ls.nvim",
+  {
+    "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
+  },
   -- "jose-elias-alvarez/null-ls.nvim",
   -- Completion --
   "hrsh7th/nvim-cmp",

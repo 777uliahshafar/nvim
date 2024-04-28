@@ -6,12 +6,12 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 require("mason-null-ls").setup {
   ensure_installed = { "stylua", "latexindent", "prettier", "eslint_d" },
+  automatic_installation = true,
 }
 
 null_ls.setup {
   sources = {
     formatting.stylua,
-    formatting.latexindent,
     formatting.prettier.with {
       filetypes = {
         "html",
@@ -27,7 +27,8 @@ null_ls.setup {
         "txt",
       },
     },
-    diagnostics.eslint_d,
+    require "none-ls.formatting.latexindent", -- requires none-ls-extras.nvim
+    require "none-ls.diagnostics.eslint_d",
   },
   -- formatting when saving
   on_attach = function(current_client, bufnr)
