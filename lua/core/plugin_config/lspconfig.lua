@@ -1,17 +1,16 @@
 -- mason --
-require("mason").setup ()
-
+require("mason").setup()
 
 -- mason-lspconfig --
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls" },
+  ensure_installed = { "lua_ls" },
 }
 
 -- nvim-lspconfig --
 -- keybinding-config
 local map = vim.keymap.set
 local on_attach = function(_, bufnr)
-local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   map("n", "K", vim.lsp.buf.hover, bufopts)
   map("n", "gd", vim.lsp.buf.definition, bufopts)
@@ -30,10 +29,10 @@ for type, icon in pairs(signs) do
 end
 
 -- lsp-setup
-local lspconfig = require('lspconfig')
-lspconfig.lua_ls.setup({
-on_attach = on_attach,
--- capabilities = capabilities,
+local lspconfig = require "lspconfig"
+lspconfig.lua_ls.setup {
+  on_attach = on_attach,
+  -- capabilities = capabilities,
   settings = {
     Lua = {
       -- make the language server recognize "vim" global
@@ -49,9 +48,4 @@ on_attach = on_attach,
       },
     },
   },
-})
-
-
-
-
-
+}
