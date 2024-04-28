@@ -19,7 +19,7 @@ local plugins = {
   },
   { "zootedb0t/citruszest.nvim", priority = 1000 },
 
-  -- greeter --
+  -- Greeter --
   {
     "goolord/alpha-nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -32,7 +32,7 @@ local plugins = {
   },
   "nvim-telescope/telescope-file-browser.nvim",
   "nvim-telescope/telescope-ui-select.nvim",
-  -- Syntax
+  -- Syntax --
   {
     "nvim-treesitter/nvim-treesitter",
     build = function()
@@ -48,7 +48,7 @@ local plugins = {
   "williamboman/mason-lspconfig.nvim",
   "jay-babu/mason-null-ls.nvim",
   "neovim/nvim-lspconfig",
-  "jose-elias-alvarez/null-ls.nvim",
+  -- "jose-elias-alvarez/null-ls.nvim",
   -- Completion --
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-buffer",
@@ -92,7 +92,7 @@ local plugins = {
   -- Tim Pope Plugins --
   "tpope/vim-fugitive",
   -- "tpope/vim-surround",
-  -- Writing
+  -- Writing --
   { "lervag/vimtex", lazy = false },
   { "andymass/vim-matchup", lazy = false },
   {
