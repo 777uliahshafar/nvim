@@ -38,7 +38,7 @@ require("obsidian").setup {
       ["="] = { char = "", hl_group = "GruvboxGreen" },
       ["x"] = { char = "", hl_group = "GruvboxAqua" },
       [">"] = { char = "", hl_group = "GruvboxOrange" },
-      ["~"] = { char = "󰰱", hl_group = "GruvboxRed" },
+      ["~"] = { char = "󰙧", hl_group = "GruvboxRed" },
     },
 
     bullets = { hl_group = "GruvboxOrange" },
