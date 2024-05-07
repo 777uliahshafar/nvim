@@ -34,6 +34,7 @@ wk.register({
     b = { "<cmd>ToggleBackground<cr>", "Toggle background" },
     n = { "<cmd>colorscheme citruszest<cr>", "citruszest" },
     g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox" },
+    d = { "<cmd>colorscheme bluloco<cr>", "blueloco" },
   }, -- end first key
   f = {
     f = {
@@ -136,7 +137,7 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 -- Load recent sessions
 -- map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
 
--- map("n", "<f5>", "<CMD>ToggleBackground<CR>")
+map("n", "<f5>", "<CMD>Alpha<CR>")
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING

@@ -11,6 +11,7 @@ require("chatgpt").setup {
       toggle_settings = "<C-o>",
       new_session = "<C-n>",
       cycle_windows = "<Tab>",
+      select_session = "<cr>",
     },
     buf_options = {
       filetype = "tex",
