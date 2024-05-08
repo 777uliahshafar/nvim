@@ -12,6 +12,7 @@ require("chatgpt").setup {
       new_session = "<C-n>",
       cycle_windows = "<Tab>",
       select_session = "<cr>",
+      edit_message = "<C-e>",
     },
     buf_options = {
       filetype = "tex",
