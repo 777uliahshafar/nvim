@@ -53,6 +53,7 @@ lspconfig.lua_ls.setup {
 }
 
 lspconfig.intelephense.setup {
+  -- requires composer local installation
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
