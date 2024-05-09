@@ -34,6 +34,7 @@ wk.register({
     n = { "<cmd>colorscheme citruszest<cr>", "citruszest" },
     g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox" },
     k = { "<cmd>colorscheme kanagawa<cr>", "kanagawa" },
+    p = { "y<cmd>Pantran<cr>p", "translate", mode = { "v", "n" } },
   }, -- end first key
   f = {
     f = {
@@ -89,7 +90,6 @@ wk.register({
   }, -- end first key
   d = {
     d = { "<cmd>TroubleToggle<cr>", "Trouble diagnostic" },
-    r = { "y<cmd>Pantran<cr>p", "translate", mode = { "v", "n" } },
   }, -- end first key
 }, { prefix = "<leader>" })
 
