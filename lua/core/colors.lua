@@ -22,4 +22,9 @@ require("citruszest").setup {
   },
 }
 
+require("neosolarized").setup {
+  comment_italics = true,
+  background_set = true,
+}
+
 vim.cmd [[colorscheme gruvbox]]

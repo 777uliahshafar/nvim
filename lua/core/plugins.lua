@@ -18,6 +18,7 @@ local plugins = {
     priority = 1000,
   },
   { "zootedb0t/citruszest.nvim", priority = 1000 },
+  { "svrana/neosolarized.nvim", priority = 1000, dependencies = { "tjdevries/colorbuddy.nvim" } },
   { "rebelot/kanagawa.nvim", priority = 1000 },
 
   -- Greeter --
@@ -120,6 +121,7 @@ local plugins = {
   },
   -- "junegunn/vim-easy-align",
   "ron89/thesaurus_query.vim",
+  "potamides/pantran.nvim",
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
