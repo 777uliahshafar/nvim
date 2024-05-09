@@ -89,6 +89,7 @@ wk.register({
   }, -- end first key
   d = {
     d = { "<cmd>TroubleToggle<cr>", "Trouble diagnostic" },
+    r = { "y<cmd>Pantran<cr>p", "translate", mode = { "v", "n" } },
   }, -- end first key
 }, { prefix = "<leader>" })
 
@@ -188,6 +189,8 @@ command! ZoomToggle call s:ZoomToggle()
 ]]
 
 map("n", "gz", "<CMD>ZoomToggle<cr>")
+
+-- map("v", "<leader>tr", "y<cmd>Pantran<cr>p")
 
 -- obsidian
 -- map("n", "<leader>lw", "<CMD>ObsidianSearch<CR>")
