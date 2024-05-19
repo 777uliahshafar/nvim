@@ -18,8 +18,8 @@ local plugins = {
     priority = 1000,
   },
   { "zootedb0t/citruszest.nvim", priority = 1000 },
-  { "svrana/neosolarized.nvim", priority = 1000, dependencies = { "tjdevries/colorbuddy.nvim" } },
   { "rebelot/kanagawa.nvim", priority = 1000 },
+  { "savq/melange-nvim" },
 
   -- Greeter --
   {

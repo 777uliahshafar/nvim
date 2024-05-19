@@ -21,10 +21,22 @@ require("citruszest").setup {
     CursorLine = { bg = "#121212" },
   },
 }
-
-require("neosolarized").setup {
-  comment_italics = true,
-  background_set = true,
+require("kanagawa").setup {
+  dimInactive = true,
+  colors = {
+    palette = {
+      dragonWhite = "#F8F8F2",
+      dragonBlack5 = "#282727",
+      fujiWhite = "#F8F8F2",
+      lotusInk1 = "#282727",
+      lotusWhite3 = "#fbf1c7",
+    },
+  },
+  background = { -- map the value of 'background' option to a theme
+    dark = "dragon", -- try "dragon" !
+    light = "lotus",
+  },
+  ...,
 }
 
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd.colorscheme "gruvbox"

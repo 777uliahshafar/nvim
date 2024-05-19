@@ -31,10 +31,10 @@ wk.register({
     },
     h = { "<cmd>ChatGPT<cr>", "ChatGPT Prompt" },
     t = { "<cmd>ChatGPTRun translate<cr>", "Chat translate", mode = { "v", "n" } },
-    n = { "<cmd>colorscheme citruszest<cr>", "citruszest" },
+    p = { "y<cmd>Pantran<cr>p", "translate", mode = { "v", "n" } },
+    n = { "<cmd>colorscheme melange<cr>", "melange" },
     g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox" },
     k = { "<cmd>colorscheme kanagawa<cr>", "kanagawa" },
-    p = { "y<cmd>Pantran<cr>p", "translate", mode = { "v", "n" } },
   }, -- end first key
   f = {
     f = {
@@ -55,7 +55,7 @@ wk.register({
       end,
       "Find buffers",
     },
-    r = {
+    h = {
       function()
         builtin.oldfiles()
       end,
@@ -71,9 +71,9 @@ wk.register({
       "<cmd>Gvdiffsplit head<cr>",
       "Git diff head",
     },
-    s = {
+    e = {
       "<cmd>Gvdiffsplit head~1<cr>",
-      "Git diff head one",
+      "Gvdiffsplit head~1",
     },
     c = {
       "<cmd>Git commit<cr>",
