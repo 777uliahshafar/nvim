@@ -23,4 +23,7 @@ require("pantran").setup {
       },
     },
   },
+  window = {
+    title_border = { " ", "" },
+  },
 }
