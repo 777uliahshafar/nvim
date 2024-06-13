@@ -118,7 +118,7 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "onlyp",
+    "ovip",
     fmt("\\only<{}>{{{}}}", {
       i(1, "1-"),
       f(function(_, snip)
@@ -129,7 +129,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "onslidep",
+    "ovop",
     fmt("\\onslide<{}>{{{}}}", {
       i(1, "1-"),
       f(function(_, snip)
@@ -140,7 +140,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "notep",
+    "nop",
     fmt("\\notes{{{}}}", {
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
@@ -150,18 +150,20 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "frame",
+    "fr",
     fmt(
       [[
-    \begin{{frame}}[{},mybg={},mytitle={},{}{}]%rmve mycolor when use mybg\\labelonfirst
+    \begin{{frame}}[{},mybg={},{}mytitle={},{}]
+    %rmve mycolor when use mybg,
+    %label at first arg.
     \frametitle{{{}}}
     {}
     \end{{frame}}]],
       {
-        i(1, "t"),
-        c(2, { t "placeholder", t "" }),
-        c(3, { t "standard", t "imageplus", t "center" }),
-        c(4, { t "mycolor=digiPH_gray,", t "mycolor=digiPH_leaf,", t "mycolor=digiPH_ocean,", t "" }),
+        c(1, { t "t", t "c" }),
+        c(2, { t "bg", t "" }),
+        c(3, { t "mycolor=digiPH_gray,", t "mycolor=digiPH_leaf,", t "mycolor=digiPH_ocean,", t "" }),
+        c(4, { t "standard", t "imageplus", t "center" }),
         c(5, { t "light", t "dark" }),
         i(6, "notitle"),
         i(7, "content"),
@@ -184,21 +186,21 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
 
-  s("item", {
-    t { "\\begin{itemize}", "\t\\item " },
+  s("ii", {
+    t { "\t\\item " },
     i(1),
     d(2, rec_item, {}),
-    t { "", "\\end{itemize}" },
+    t { "" },
     i(0),
   }),
 
-  s("itemly", {
-    t { "\\begin{itemize}", "\t\\item<" },
+  s("io", {
+    t { "\t\\item<" },
     i(1, ""),
     t { "-> " },
     i(2),
     d(3, rec_itemly, {}),
-    t { "", "\\end{itemize}" },
+    t { "" },
     i(0),
   }),
 }) -- end all

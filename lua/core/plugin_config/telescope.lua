@@ -22,7 +22,7 @@ telescope.setup {
       vertical = {
         width_padding = 0.05,
         height_padding = 1,
-        preview_height = 0.5,
+        preview_height = 0.8,
       },
     },
 
@@ -85,6 +85,11 @@ telescope.setup {
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
       },
+    },
+  },
+  pickers = {
+    live_grep = {
+      theme = "dropdown",
     },
   },
   extensions = {

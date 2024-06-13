@@ -172,6 +172,9 @@ map("i", "<c-j>", function()
   end
 end)
 
+--nvim surround
+map("i", "<c-s>s", "<Plug>(nvim-surround-insert)")
+
 -- quickfix built-in
 vim.cmd [[
 function! s:ZoomToggle() abort
