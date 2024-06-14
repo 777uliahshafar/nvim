@@ -36,8 +36,8 @@ require("obsidian").setup {
     checkboxes = {
       [" "] = { char = "󰄱", hl_group = "GruvboxGray" },
       ["="] = { char = "󱎖", hl_group = "GruvboxGreen" },
-      ["x"] = { char = "", hl_group = "GruvboxAqua" },
-      [">"] = { char = "", hl_group = "GruvboxOrange" },
+      ["x"] = { char = "", hl_group = "GruvboxForest" },
+      [">"] = { char = "󰁕", hl_group = "GruvboxAqua" },
       ["~"] = { char = "󱫪", hl_group = "GruvboxRed" },
       ["/"] = { char = "", hl_group = "GruvboxYellow" },
     },
