@@ -480,8 +480,8 @@ snippet only \only
 	\\only<${1:1}->{${2}}${0}
 
 snippet imgbg background block
-	\\begin{bgblock}{${1:130}mm}{${2:95}mm}
-		\\includegraphics[width=62mm]{${3}}
+	\\begin{bgblock}{${1:0}mm}{${2:0}mm}%130x95
+		\\includegraphics[width=\\paperwidth]{${3}}
 	\\end{bgblock}
 
 snippet fig figure environment (includegraphics)

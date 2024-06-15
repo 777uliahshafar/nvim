@@ -154,7 +154,7 @@ ls.add_snippets("tex", {
     fmt(
       [[
     \begin{{frame}}[{},mybg={},{}mytitle={},{}]
-    %rmve mycolor when use mybg,
+    %rmve mycolor when use mybg&bgblock,
     %label at first arg.
     \frametitle{{{}}}
     {}
