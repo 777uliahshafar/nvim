@@ -15,7 +15,7 @@ wk.register({
     s = { "<cmd>setlocal spell! spelllang=id<cr>", "bahasa spell" },
     o = { "<cmd>setlocal spell! spelllang=en_us<cr>", "english spell" },
   }, -- end first key
-  t = {
+  w = {
     k = { "<C-w>t<C-w>K", "switch to horizontal orientation" },
     h = { "<C-w>t<C-w>H", "switch to vertical orientation" },
   }, -- end first key
