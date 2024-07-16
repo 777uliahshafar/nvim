@@ -14,13 +14,16 @@ wk.register({
     name = "spell", -- optional group name
     s = { "<cmd>setlocal spell! spelllang=id<cr>", "bahasa spell" },
     o = { "<cmd>setlocal spell! spelllang=en_us<cr>", "english spell" },
+    c = { "<cmd>ObsidianExtractNote<cr>", "Obsidian extract note" },
+    a = { "<cmd>ObsidianLinkNew<cr>", "Obsidian link new" },
+    v = { "<cmd>ObsidianPasteImg<cr>", "Obsidian paste img" },
   }, -- end first key
   w = {
     k = { "<C-w>t<C-w>K", "switch to horizontal orientation" },
     h = { "<C-w>t<C-w>H", "switch to vertical orientation" },
   }, -- end first key
   c = {
-    m = {
+    k = {
       "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>",
       "toggle nvim-cmp",
     },
@@ -32,9 +35,9 @@ wk.register({
     h = { "<cmd>ChatGPT<cr>", "ChatGPT Prompt" },
     t = { "<cmd>ChatGPTRun translate<cr>", "Chat translate", mode = { "v", "n" } },
     p = { "y<cmd>Pantran<cr>p", "translate", mode = { "v", "n" } },
-    n = { "<cmd>colorscheme melange<cr>", "melange" },
+    m = { "<cmd>colorscheme melange<cr>", "melange" },
     g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox" },
-    k = { "<cmd>colorscheme kanagawa<cr>", "kanagawa" },
+    n = { "<cmd>colorscheme kanagawa<cr>", "kanagawa" },
   }, -- end first key
   f = {
     f = {
@@ -53,7 +56,7 @@ wk.register({
       function()
         builtin.buffers()
       end,
-      "Find buffers",
+      "buffers / backlinks",
     },
     h = {
       function()
@@ -90,6 +93,7 @@ wk.register({
   }, -- end first key
   d = {
     d = { "<cmd>TroubleToggle<cr>", "Trouble diagnostic" },
+    a = { "<cmd>pu=strftime('%b%d')<cr>", "Timestamp" },
   }, -- end first key
 }, { prefix = "<leader>" })
 

@@ -15,7 +15,7 @@ ls.add_snippets("markdown", {
     "file",
     fmt("[{}]({})", {
       i(1, "alt"),
-      i(2, "/"),
+      i(2, "~/"),
     })
   ), --end of snip
 }) -- end all

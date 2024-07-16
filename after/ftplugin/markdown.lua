@@ -39,8 +39,8 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>fb", "<CMD>ObsidianBacklinks<CR>", 
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ft", "<CMD>ObsidianTags<CR>", { noremap = false })
 
 -- vim markdown
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", "<CMD>Toch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<localleader>t", "<CMD>InsertToc 3<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", "<CMD>ObsidianTOC<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mt", "<CMD>InsertToc 3<CR>", { noremap = false })
 
 vim.api.nvim_exec(
   [[
@@ -75,29 +75,3 @@ vim.cmd "hi matchURL guifg=DodgerBlue"
 -- grey out for strikethrough
 vim.fn.matchadd("matchStrike", [[[~]\{2}.\+[~]\{2}]])
 vim.cmd "hi matchStrike guifg=gray"
-
--- Setup cmp setup buffer configuration - 👻 text off for markdown
-local cmp = require "cmp"
-cmp.setup.buffer {
-  sources = {
-    { name = "vsnip" },
-    { name = "spell" },
-    {
-      name = "buffer",
-      option = {
-        get_bufnrs = function()
-          -- @TODOUA: Trying out just populate from visible buffers. Keep?
-          local bufs = {}
-          for _, win in ipairs(vim.api.nvim_list_wins()) do
-            bufs[vim.api.nvim_win_get_buf(win)] = true
-          end
-          return vim.tbl_keys(bufs)
-        end,
-      },
-    },
-    { name = "path" },
-  },
-  experimental = {
-    ghost_text = false,
-  },
-}

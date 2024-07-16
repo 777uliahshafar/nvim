@@ -103,7 +103,7 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
-        neorg = "[norg]",
+        omni = (vim.inspect(vim_item.menu):gsub('%"', "")),
       })[entry.source.name]
       return vim_item
     end,
@@ -113,7 +113,6 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    { name = "neorg" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -141,3 +140,37 @@ cmp.setup {
     return vim.g.cmptoggle
   end,
 }
+
+-- Filetype
+cmp.setup.filetype("markdown", {
+  sources = cmp.config.sources({
+    { name = "luasnip" },
+    { name = "spell" },
+    {
+      name = "buffer",
+      option = {
+        get_bufnrs = function()
+          -- @TODOUA: Trying out just populate from visible buffers. Keep?
+          local bufs = {}
+          for _, win in ipairs(vim.api.nvim_list_wins()) do
+            bufs[vim.api.nvim_win_get_buf(win)] = true
+          end
+          return vim.tbl_keys(bufs)
+        end,
+      },
+    },
+    { name = "path" },
+  }, {
+    { name = "buffer" },
+  }),
+})
+
+cmp.setup.filetype("tex", {
+  sources = cmp.config.sources({
+    { name = "luasnip", keyword_length = 2 },
+    { name = "path" },
+    { name = "omni" },
+  }, {
+    { name = "buffer", keyword_length = 3 },
+  }),
+})
