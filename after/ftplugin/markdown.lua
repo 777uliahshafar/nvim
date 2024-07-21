@@ -42,6 +42,9 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>ft", "<CMD>ObsidianTags<CR>", { nor
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", "<CMD>ObsidianTOC<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mt", "<CMD>InsertToc 3<CR>", { noremap = false })
 
+-- Alpha
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>v", "<CMD>Alpha<CR>", { noremap = false })
+
 vim.api.nvim_exec(
   [[
 " arrows

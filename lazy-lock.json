@@ -20,7 +20,7 @@
   "mason.nvim": { "branch": "main", "commit": "3b5068f0fc565f337d67a2d315d935f574848ee7" },
   "melange-nvim": { "branch": "master", "commit": "5feb4a08876b81ccb61cae1adaffa2e737124922" },
   "mini.align": { "branch": "main", "commit": "f845218c5fea89e49074e48270dc5e1b9511a0f9" },
-  "mygruvbox.nvim": { "branch": "master", "commit": "f9c65cc568a17f416e299d4ff75155e5cbca7c89" },
+  "mygruvbox.nvim": { "branch": "master", "commit": "47e46b9b7df82b6a9761d88cf365539cd9f0cf41" },
   "none-ls-extras.nvim": { "branch": "main", "commit": "c7264e9b97a051ccb955ae178b6fb3e0e9936a45" },
   "none-ls.nvim": { "branch": "main", "commit": "709a5e56f4273deca737d43355212ac94c1b5083" },
   "nui.nvim": { "branch": "main", "commit": "a3597dc88b53489d3fddbddbbd13787355253bb0" },
