@@ -21,6 +21,7 @@ wk.register({
   w = {
     k = { "<C-w>t<C-w>K", "switch to horizontal orientation" },
     h = { "<C-w>t<C-w>H", "switch to vertical orientation" },
+    w = { "<cmd>Alpha<cr>", "Alpha" },
   }, -- end first key
   c = {
     k = {
@@ -94,10 +95,6 @@ wk.register({
   d = {
     d = { "<cmd>TroubleToggle<cr>", "Trouble diagnostic" },
     a = { "<cmd>pu=strftime('%b%d')<cr>", "Timestamp" },
-  }, -- end first key
-  a = {
-    "<cmd>Alpha<cr>",
-    "Alpha",
   }, -- end first key
 }, { prefix = "<leader>" })
 
