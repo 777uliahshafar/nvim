@@ -95,6 +95,10 @@ wk.register({
     d = { "<cmd>TroubleToggle<cr>", "Trouble diagnostic" },
     a = { "<cmd>pu=strftime('%b%d')<cr>", "Timestamp" },
   }, -- end first key
+  a = {
+    "<cmd>Alpha<cr>",
+    "Alpha",
+  }, -- end first key
 }, { prefix = "<leader>" })
 
 -- Mimic shell movements
