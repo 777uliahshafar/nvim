@@ -23,7 +23,8 @@ startify.section.top_buttons.val = {
   startify.button("b", "AAS prop", "<cmd>e D:/phdprop/subfiles/aasprop.tex<CR>"),
   startify.button("c", "ALLessay", "<cmd>e D:/essay/subfiles/<CR>"),
   startify.button("d", "ALLprop", "<cmd>e D:/phdprop/subfiles/<CR>"),
-  startify.button("g", "Karakter", "<cmd>e D:/karakter/karakter.tex<CR>"),
+  -- startify.button("g", "Karakter", "<cmd>e D:/karakter/karakter.tex<CR>"),
+  startify.button("g", "Obs easy english", "<cmd>e ~/obs/1719618861-VQGL.md<CR>"),
   startify.button("f", "infrastruktur", "<cmd>e D:/slideinfrastr/subfiles/meet1.tex<CR>"),
   startify.button("w", "Wordpress", "<cmd>e C:/Users/uliah/Downloads/university-static-master/index.html<CR>"),
 }
