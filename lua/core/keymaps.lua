@@ -108,10 +108,10 @@ map("n", "j", "gj", { noremap = true })
 map("n", "k", "gk", { noremap = true })
 
 -- maps split navigation
-map("n", "<c-h>", "<c-w>h")
+-- map("n", "<c-h>", "<c-w>h") <c-h> was taken by <c-bs>
 map("n", "<c-j>", "<c-w>j")
 map("n", "<c-k>", "<c-w>k")
-map("n", "<c-l>", "<c-w>l")
+map("n", "<c-l>", "<c-w>w")
 
 -- split resize
 map("n", "+", "<cmd>res +5<CR>", opts)
@@ -198,6 +198,10 @@ command! ZoomToggle call s:ZoomToggle()
 ]]
 
 map("n", "gz", "<CMD>ZoomToggle<cr>")
+
+-- windovigation
+map("n", "<bs>", "<cmd>WindovigationPreviousFile<cr>")
+map("n", "<c-h>", "<cmd>WindovigationNextFile<cr>")
 
 -- map("v", "<leader>tr", "y<cmd>Pantran<cr>p")
 

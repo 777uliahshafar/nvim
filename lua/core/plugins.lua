@@ -166,6 +166,11 @@ local plugins = {
       require("nvim-surround").setup {}
     end,
   },
+  {
+    "volskaya/windovigation.nvim",
+    lazy = false,
+    opts = {},
+  },
   -- "chentoast/marks.nvim",
   -- {
   --   "folke/trouble.nvim",
