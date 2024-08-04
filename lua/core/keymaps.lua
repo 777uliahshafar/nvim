@@ -14,9 +14,10 @@ wk.register({
     name = "spell", -- optional group name
     s = { "<cmd>setlocal spell! spelllang=id<cr>", "bahasa spell" },
     o = { "<cmd>setlocal spell! spelllang=en_us<cr>", "english spell" },
-    c = { "<cmd>ObsidianExtractNote<cr>", "Obsidian extract note" },
+    e = { "<cmd>ObsidianExtractNote<cr>", "Obsidian extract note" },
     a = { "<cmd>ObsidianLinkNew<cr>", "Obsidian link new" },
     v = { "<cmd>ObsidianPasteImg<cr>", "Obsidian paste img" },
+    m = { "<cmd>ObsidianTemplate<cr>", "Obsidian template" },
   }, -- end first key
   w = {
     k = { "<C-w>t<C-w>K", "switch to horizontal orientation" },

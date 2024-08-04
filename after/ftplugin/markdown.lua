@@ -36,12 +36,12 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>ml", "<CMD>call Landsmd()<CR>", { n
 
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ff", "<CMD>ObsidianSearch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>fq", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>fb", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>ft", "<CMD>ObsidianTags<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ob", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ol", "<CMD>ObsidianTags<CR>", { noremap = false })
 
 -- vim markdown
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", "<CMD>ObsidianTOC<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mt", "<CMD>InsertToc 3<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ot", "<CMD>InsertToc 3<CR>", { noremap = false })
 
 vim.api.nvim_exec(
   [[
