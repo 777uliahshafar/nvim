@@ -48,7 +48,7 @@ require("obsidian").setup {
 
   templates = {
     subdir = "templates",
-    date_format = "%Y-%m-%d-%a",
+    date_format = "%b %d",
     time_format = "%H:%M",
   }, -- end template
 
