@@ -18,7 +18,7 @@ wk.register({
     a = { "<cmd>ObsidianLinkNew<cr>", "Obsidian link new" },
     v = { "<cmd>ObsidianPasteImg<cr>", "Obsidian paste img" },
     m = { "<cmd>ObsidianTemplate<cr>", "Obsidian template" },
-    n = { "<cmd>ObsidianNew<cr>", "Obsidian new" },
+    n = { "<cmd>ObsidianNewFromTemplate<cr>", "Obsidian new from template" },
   }, -- end first key
   w = {
     k = { "<C-w>t<C-w>K", "switch to horizontal orientation" },
