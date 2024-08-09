@@ -19,3 +19,45 @@ ls.add_snippets("markdown", {
     })
   ), --end of snip
 }) -- end all
+
+ls.add_snippets("markdown", {
+  s(
+    "sum",
+    fmt("<details><summary>...</summary>{}</details>{}", {
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+      i(2, " "),
+    })
+  ), --end of snip
+}) -- end all
+
+ls.add_snippets("markdown", {
+  s(
+    "bb",
+    fmt("**{}**{}", {
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+      i(2, " "),
+    })
+  ), --end of snip
+}) -- end all
+
+ls.add_snippets("markdown", {
+  s(
+    "ii",
+    fmt("*{}*{}", {
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+      i(2, " "),
+    })
+  ), --end of snip
+}) -- end all
