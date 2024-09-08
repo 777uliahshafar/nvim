@@ -243,7 +243,7 @@ ls.add_snippets("tex", {
         c(3, { t "mycolor=digiPH_gray,", t "mycolor=digiPH_leaf,", t "mycolor=digiPH_ocean,", t "" }),
         c(4, { t "standard", t "imageplus", t "center" }),
         c(5, { t "light", t "dark" }),
-        i(6, "untitle"),
+        i(6, "untitled"),
         i(7, "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."),
       }
     )
