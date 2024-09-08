@@ -173,7 +173,7 @@ local plugins = {
   --     require("trouble").setup()
   --   end,
   -- },
-  -- "777uliahshafar/vim-myhelp",
+  "777uliahshafar/vim-myhelp",
 }
 
 local opts = {}
