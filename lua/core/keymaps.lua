@@ -19,6 +19,7 @@ wk.register({
     v = { "<cmd>ObsidianPasteImg<cr>", "Obsidian paste img" },
     m = { "<cmd>ObsidianTemplate<cr>", "Obsidian template" },
     n = { "<cmd>ObsidianNewFromTemplate<cr>", "Obsidian new from template" },
+    f = { "<cmd>ObsidianOpen<cr>", "Obsidian Open" },
   }, -- end first key
   w = {
     k = { "<C-w>t<C-w>K", "switch to horizontal orientation" },
@@ -155,6 +156,7 @@ map("n", "<leader>e", require("nvim-tree.api").tree.toggle)
 
 -- zen mode
 map("n", "<leader>z", require("zen-mode").toggle)
+map("n", "zz", require("zen-mode").toggle, opts)
 
 -- luasnip
 -- <c-j> is my expansion key
@@ -201,8 +203,7 @@ command! ZoomToggle call s:ZoomToggle()
 map("n", "gz", "<CMD>ZoomToggle<cr>")
 
 -- windovigation
-map("n", "<bs>", "<cmd>WindovigationPreviousFile<cr>")
-map("n", "<c-h>", "<cmd>WindovigationNextFile<cr>")
+map("n", "<bs>", "<c-^><cr>")
 
 -- map("v", "<leader>tr", "y<cmd>Pantran<cr>p")
 
