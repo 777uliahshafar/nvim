@@ -40,7 +40,7 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>ob", "<CMD>ObsidianBacklinks<CR>", 
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ol", "<CMD>ObsidianTags<CR>", { noremap = false })
 
 -- vim markdown
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", "<CMD>ObsidianTOC<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "t", "<CMD>ObsidianTOC<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ot", "<CMD>InsertToc 3<CR>", { noremap = false })
 
 vim.api.nvim_exec(
