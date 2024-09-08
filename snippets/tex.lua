@@ -196,7 +196,7 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "ovip",
+    "onlp",
     fmt("\\only<{}>{{{}}}", {
       i(1, "1-"),
       f(function(_, snip)
@@ -207,7 +207,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "ovop",
+    "onsp",
     fmt("\\onslide<{}>{{{}}}", {
       i(1, "1-"),
       f(function(_, snip)
@@ -264,7 +264,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
 
-  s("ii", {
+  s("item", {
     t { "\t\\item " },
     i(1),
     d(2, rec_item, {}),
@@ -272,13 +272,68 @@ ls.add_snippets("tex", {
     i(0),
   }),
 
-  s("io", {
+  s("ito", {
     t { "\t\\item<" },
     i(1, ""),
     t { "-> " },
     i(2),
     d(3, rec_itemly, {}),
     t { "" },
+    i(0),
+  }),
+
+  s("bf", {
+    t { "\\textbf{" },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
+    t { "} " },
+    i(0),
+  }),
+
+  s("it", {
+    t { "\\textit{" },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
+    t { "} " },
+    i(0),
+  }),
+
+  s("bb", {
+    t { "\\boldblue{" },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
+    t { "} " },
+    i(0),
+  }),
+
+  s("br", {
+    t { "\\boldred{" },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
+    t { "} " },
+    i(0),
+  }),
+
+  s("bw", {
+    t { "\\boldwhite{" },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
+    t { "} " },
     i(0),
   }),
 }) -- end all

@@ -424,16 +424,16 @@ snippet citey \citeyear
 snippet fcite \footcite[]{}
 	\\footcite[${1}]{${2}}${0}
 #Formating text: italic, bold, underline, small capital, emphase ..
-snippet it italic text
-	\\textit{${1}}${0}
-snippet bf bold face text
-	\\textbf{${1}}${0}
-snippet bb bold face text
-	\\boldblue{${1}}${0}
-snippet br bold face text
-	\\boldred{${1}}${0}
-snippet bw bold face text
-	\\boldwhite{${1}}${0}
+# snippet it italic text
+# 	\\textit{${1}}${0}
+# snippet bf bold face text
+# 	\\textbf{${1}}${0}
+# snippet bb bold face text
+# 	\\boldblue{${1}}${0}
+# snippet br bold face text
+# 	\\boldred{${1}}${0}
+# snippet bw bold face text
+# 	\\boldwhite{${1}}${0}
 snippet under underline text
 	\\underline{${1}}${0}
 snippet over overline text
@@ -465,9 +465,9 @@ snippet ft \footnote
 	\\footnote{${1:${VISUAL:text}}}${0}
 snippet note \notes
 	\\notes{${1:text}}${0}
-snippet onslide \onslide
+snippet ons \onslide
 	\\onslide<${1:1}->{${2}}${0}
-snippet only \only
+snippet onl \only
 	\\only<${1:1}->{${2}}${0}
 
 snippet imgbg background block
