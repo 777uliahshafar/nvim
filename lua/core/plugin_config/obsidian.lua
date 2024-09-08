@@ -52,6 +52,20 @@ require("obsidian").setup {
     time_format = "%H:%M",
   }, -- end template
 
+  ---@param title string|?
+  ---@return string
+  note_id_func = function(title)
+    local suffix = ""
+    if title ~= nil then
+      suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+    else
+      for _ = 1, 4 do
+        suffix = suffix .. string.char(math.random(65, 90))
+      end
+    end
+    return tostring(os.time()) .. "-" .. suffix
+  end, --end title
+
   note_frontmatter_func = function(note)
     -- This is equivalent to the default frontmatter function.
     local out = { id = note.id, aliases = note.aliases, tags = note.tags, links = "" }
@@ -64,5 +78,5 @@ require("obsidian").setup {
       end
     end
     return out
-  end,
+  end, -- end frontmatter
 } -- end setup
