@@ -9,97 +9,44 @@ local wk = require "which-key"
 local builtin = require "telescope.builtin"
 
 -- which-key
-wk.register({
-  o = {
-    name = "spell", -- optional group name
-    s = { "<cmd>setlocal spell! spelllang=id<cr>", "bahasa spell" },
-    o = { "<cmd>setlocal spell! spelllang=en_us<cr>", "english spell" },
-    e = { "<cmd>ObsidianExtractNote<cr>", "Obsidian extract note" },
-    a = { "<cmd>ObsidianLinkNew<cr>", "Obsidian link new" },
-    v = { "<cmd>ObsidianPasteImg<cr>", "Obsidian paste img" },
-    m = { "<cmd>ObsidianTemplate<cr>", "Obsidian template" },
-    n = { "<cmd>ObsidianNewFromTemplate<cr>", "Obsidian new from template" },
-    f = { "<cmd>ObsidianOpen<cr>", "Obsidian Open" },
-  }, -- end first key
-  w = {
-    k = { "<C-w>t<C-w>K", "switch to horizontal orientation" },
-    h = { "<C-w>t<C-w>H", "switch to vertical orientation" },
-  }, -- end first key
-  c = {
-    k = {
-      "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>",
-      "toggle nvim-cmp",
-    },
-    s = {
-      "<cmd>ThesaurusQueryReplaceCurrentWord<cr>",
-      "Thesaurus Query",
-      mode = { "v", "n" },
-    },
-    h = { "<cmd>ChatGPT<cr>", "ChatGPT Prompt" },
-    t = { "<cmd>ChatGPTRun translate<cr>", "Chat translate", mode = { "v", "n" } },
-    p = { "y<cmd>Pantran<cr>p", "translate", mode = { "v", "n" } },
-    m = { "<cmd>colorscheme melange<cr>", "melange" },
-    g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox" },
-    n = { "<cmd>colorscheme kanagawa<cr>", "kanagawa" },
-  }, -- end first key
-  f = {
-    f = {
-      function()
-        builtin.find_files()
-      end,
-      "Find files",
-    },
-    w = {
-      function()
-        builtin.live_grep()
-      end,
-      "Live_grep",
-    },
-    b = {
-      function()
-        builtin.buffers()
-      end,
-      "buffers / backlinks",
-    },
-    h = {
-      function()
-        builtin.oldfiles()
-      end,
-      "Old files",
-    },
-
-    g = { "<cmd>G<cr>", "Git" },
-    a = {
-      "<cmd>Gwrite<cr>",
-      "Git write",
-    },
-    d = {
-      "<cmd>Gvdiffsplit head<cr>",
-      "Git diff head",
-    },
-    e = {
-      "<cmd>Gvdiffsplit head~1<cr>",
-      "Gvdiffsplit head~1",
-    },
-    c = {
-      "<cmd>Git commit<cr>",
-      "Git commit m",
-    },
-    p = {
-      "<cmd>Git push<cr>",
-      "Git push",
-    },
-    o = {
-      "<cmd>ObsidianSearch<cr>",
-      "Obsidian search",
-    },
-  }, -- end first key
-  d = {
-    d = { "<cmd>TroubleToggle<cr>", "Trouble diagnostic" },
-    a = { "<cmd>pu=strftime('%b%d')<cr>", "Timestamp" },
-  }, -- end first key
-  v = { "<cmd>Alpha<cr>", "Alpha" }, -- end first key
-}, { prefix = "<leader>" })
+wk.add {
+  { "<leader>cg", "<cmd>colorscheme gruvbox<cr>", desc = "gruvbox" },
+  { "<leader>ch", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
+  { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
+  { "<leader>cm", "<cmd>colorscheme melange<cr>", desc = "melange" },
+  { "<leader>cn", "<cmd>colorscheme kanagawa<cr>", desc = "kanagawa" },
+  { "<leader>da", "<cmd>pu=strftime('%b%d')<cr>", desc = "Timestamp" },
+  { "<leader>dd", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
+  { "<leader>fa", "<cmd>Gwrite<cr>", desc = "Git write" },
+  { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "buffers / backlinks" },
+  { "<leader>fc", "<cmd>Git commit<cr>", desc = "Git commit m" },
+  { "<leader>fd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
+  { "<leader>fe", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1" },
+  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+  { "<leader>fg", "<cmd>G<cr>", desc = "Git" },
+  { "<leader>fh", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
+  { "<leader>fo", "<cmd>ObsidianSearch<cr>", desc = "Obsidian search" },
+  { "<leader>fp", "<cmd>Git push<cr>", desc = "Git push" },
+  { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
+  { "<leader>o", group = "spell" },
+  { "<leader>oa", "<cmd>ObsidianLinkNew<cr>", desc = "Obsidian link new" },
+  { "<leader>oe", "<cmd>ObsidianExtractNote<cr>", desc = "Obsidian extract note" },
+  { "<leader>of", "<cmd>ObsidianOpen<cr>", desc = "Obsidian Open" },
+  { "<leader>om", "<cmd>ObsidianTemplate<cr>", desc = "Obsidian template" },
+  { "<leader>on", "<cmd>ObsidianNewFromTemplate<cr>", desc = "Obsidian new from template" },
+  { "<leader>oo", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
+  { "<leader>os", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
+  { "<leader>ov", "<cmd>ObsidianPasteImg<cr>", desc = "Obsidian paste img" },
+  { "<leader>v", "<cmd>Alpha<cr>", desc = "Alpha" },
+  { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
+  { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
+  {
+    mode = { "n", "v" },
+    { "<leader>cp", "y<cmd>Pantran<cr>p", desc = "translate" },
+    { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
+    { "<leader>ct", "<cmd>ChatGPTRun translate<cr>", desc = "Chat translate" },
+  },
+}
 
 -- Mimic shell movements
 map("i", "<C-E>", "<ESC>A")

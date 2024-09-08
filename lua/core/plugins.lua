@@ -154,10 +154,10 @@ local plugins = {
       require("Comment").setup()
     end,
   },
-  {
-    "shellRaining/hlchunk.nvim",
-    event = { "UIEnter" },
-  },
+  -- {
+  --   "shellRaining/hlchunk.nvim",
+  --   event = { "UIEnter" },
+  -- },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -165,11 +165,6 @@ local plugins = {
     config = function()
       require("nvim-surround").setup {}
     end,
-  },
-  {
-    "volskaya/windovigation.nvim",
-    lazy = false,
-    opts = {},
   },
   -- "chentoast/marks.nvim",
   -- {
