@@ -94,7 +94,85 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "posp",
+    "txtleft",
+    fmt("\\ltxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+      c(1, {
+        t "bg",
+        t "gray",
+        t "navyblue",
+        t "darkorange",
+        t "lightorange",
+        t "purple",
+        t "red",
+        t "creamy",
+        t "cream",
+        t "yellow",
+        t "blue",
+      }),
+      c(2, {
+        t "fg",
+        t "black",
+        t "lightorange",
+        t "white",
+      }),
+      i(3, ""),
+    })
+  ), --end of snip
+
+  s(
+    "txtright",
+    fmt("\\rtxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+      c(1, {
+        t "bg",
+        t "gray",
+        t "navyblue",
+        t "darkorange",
+        t "lightorange",
+        t "purple",
+        t "red",
+        t "creamy",
+        t "cream",
+        t "yellow",
+        t "blue",
+      }),
+      c(2, {
+        t "fg",
+        t "black",
+        t "lightorange",
+        t "white",
+      }),
+      i(3, ""),
+    })
+  ), --end of snip
+
+  s(
+    "txtup",
+    fmt("\\utxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+      c(1, {
+        t "bg",
+        t "gray",
+        t "navyblue",
+        t "darkorange",
+        t "lightorange",
+        t "purple",
+        t "red",
+        t "creamy",
+        t "cream",
+        t "yellow",
+        t "blue",
+      }),
+      c(2, {
+        t "fg",
+        t "black",
+        t "lightorange",
+        t "white",
+      }),
+      i(3, ""),
+    })
+  ), --end of snip
+
+  s(
+    "blkp",
     fmt("\\begin{{textblock*}}{{{}mm}}({}mm,{}mm){}\\end{{textblock*}}", {
       i(1, "50"),
       i(2, "130"),
@@ -108,7 +186,7 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "pos",
+    "blk",
     fmt("\\begin{{textblock*}}{{{}mm}}({}mm,{}mm){}\\end{{textblock*}}", {
       i(1, "50"),
       i(2, "130"),
@@ -150,12 +228,12 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "fr",
+    "fm",
     fmt(
       [[
-    \begin{{frame}}[{},mybg={},{}mytitle={},{}]
     %rmve mycolor when use mybg&bgblock,
     %label at first arg.
+    \begin{{frame}}[{},mybg={},{}mytitle={},{}]
     \frametitle{{{}}}
     {}
     \end{{frame}}]],
@@ -165,8 +243,8 @@ ls.add_snippets("tex", {
         c(3, { t "mycolor=digiPH_gray,", t "mycolor=digiPH_leaf,", t "mycolor=digiPH_ocean,", t "" }),
         c(4, { t "standard", t "imageplus", t "center" }),
         c(5, { t "light", t "dark" }),
-        i(6, "notitle"),
-        i(7, "content"),
+        i(6, "untitle"),
+        i(7, "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."),
       }
     )
   ), --end of snip
