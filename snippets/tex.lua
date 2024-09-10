@@ -172,6 +172,30 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
+    "txtbot",
+    fmt("\\btxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+      c(1, {
+        t "bg",
+        t "gray",
+        t "navyblue",
+        t "darkorange",
+        t "creamy",
+        t "cream",
+        t "yellow",
+        t "blue",
+      }),
+      c(2, {
+        t "fg",
+        t "white",
+        t "black",
+        t "red",
+        t "blue",
+      }),
+      i(3, ""),
+    })
+  ), --end of snip
+
+  s(
     "blkp",
     fmt("\\begin{{textblock*}}{{{}mm}}({}mm,{}mm){}\\end{{textblock*}}", {
       i(1, "50"),
@@ -231,12 +255,9 @@ ls.add_snippets("tex", {
     "fm",
     fmt(
       [[
-    %rmve mycolor when use mybg&bgblock,
-    %label at first arg.
     \begin{{frame}}[{},mybg={},{}mytitle={},{}]
     \frametitle{{{}}}
-    {}
-    \end{{frame}}]],
+    ]],
       {
         c(1, { t "t", t "c" }),
         c(2, { t "bg", t "" }),
@@ -244,7 +265,6 @@ ls.add_snippets("tex", {
         c(4, { t "standard", t "imageplus", t "center" }),
         c(5, { t "light", t "dark" }),
         i(6, "untitled"),
-        i(7, "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."),
       }
     )
   ), --end of snip
