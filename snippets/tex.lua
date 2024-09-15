@@ -95,25 +95,15 @@ ls.add_snippets("tex", {
 
   s(
     "txtleft",
-    fmt("\\ltxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    fmt("\\ltxt{}{{{}}}", {
       c(1, {
-        t "bg",
-        t "gray",
-        t "navyblue",
-        t "darkorange",
-        t "lightorange",
-        t "purple",
-        t "red",
-        t "creamy",
-        t "cream",
-        t "yellow",
-        t "blue",
-      }),
-      c(2, {
-        t "fg",
-        t "black",
-        t "lightorange",
-        t "white",
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
       }),
       i(3, ""),
     })
@@ -121,25 +111,15 @@ ls.add_snippets("tex", {
 
   s(
     "txtright",
-    fmt("\\rtxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    fmt("\\rtxt{}{{{}}}", {
       c(1, {
-        t "bg",
-        t "gray",
-        t "navyblue",
-        t "darkorange",
-        t "lightorange",
-        t "purple",
-        t "red",
-        t "creamy",
-        t "cream",
-        t "yellow",
-        t "blue",
-      }),
-      c(2, {
-        t "fg",
-        t "black",
-        t "lightorange",
-        t "white",
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
       }),
       i(3, ""),
     })
@@ -147,49 +127,31 @@ ls.add_snippets("tex", {
 
   s(
     "txtup",
-    fmt("\\utxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    fmt("\\utxt{}{{{}}}", {
       c(1, {
-        t "bg",
-        t "gray",
-        t "navyblue",
-        t "darkorange",
-        t "lightorange",
-        t "purple",
-        t "red",
-        t "creamy",
-        t "cream",
-        t "yellow",
-        t "blue",
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
       }),
-      c(2, {
-        t "fg",
-        t "black",
-        t "lightorange",
-        t "white",
-      }),
-      i(3, ""),
+      i(2, ""),
     })
   ), --end of snip
 
   s(
     "txtbot",
-    fmt("\\btxt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    fmt("\\btxt{}{{{}}}", {
       c(1, {
-        t "bg",
-        t "gray",
-        t "navyblue",
-        t "darkorange",
-        t "creamy",
-        t "cream",
-        t "yellow",
-        t "blue",
-      }),
-      c(2, {
-        t "fg",
-        t "white",
-        t "black",
-        t "red",
-        t "blue",
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
       }),
       i(3, ""),
     })
@@ -255,15 +217,18 @@ ls.add_snippets("tex", {
     "fm",
     fmt(
       [[
-    \begin{{frame}}[{},mybg={},{}mytitle={},{}]
+    \begin{{frame}}[{}]
     \frametitle{{{}}}
     ]],
       {
-        c(1, { t "t", t "c" }),
-        c(2, { t "bg", t "" }),
-        c(3, { t "mycolor=digiPH_gray,", t "mycolor=digiPH_leaf,", t "mycolor=digiPH_ocean,", t "" }),
-        c(4, { t "standard", t "imageplus", t "center" }),
-        c(5, { t "light", t "dark" }),
+        c(1, {
+          t "t,mybg=darkbg,mytitle=standard,dark",
+          t "t,mybg=lightbg,mytitle=standard,light",
+          t "t,mycolor=digiPH_gray,mytitle=standard,light",
+          t "t,mycolor=digiPH_leaf,mytitle=standard,dark",
+          t "t,mycolor=digiPH_ocean,mytitle=center,dark",
+          t "t,mycolor=digiPH_red,mytitle=standard,dark",
+        }),
         i(6, "untitled"),
       }
     )

@@ -128,6 +128,12 @@ map("i", "<c-j>", function()
   end
 end)
 
+map("i", "<c-k>", function()
+  if ls.choice_active() then
+    ls.change_choice(-1)
+  end
+end)
+
 --nvim surround
 map("i", "<c-s>s", "<Plug>(nvim-surround-insert)")
 
