@@ -43,23 +43,15 @@ end
 ls.add_snippets("tex", {
   s(
     "txtp",
-    fmt("\\txt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    fmt("\\txt{}{{{}}}", {
       c(1, {
-        t "gray",
-        t "navyblue",
-        t "darkorange",
-        t "lightorange",
-        t "purple",
-        t "red",
-        t "creamy",
-        t "cream",
-        t "yellow",
-        t "blue",
-      }),
-      c(2, {
-        t "black",
-        t "lightorange",
-        t "white",
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
       }),
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
@@ -71,23 +63,15 @@ ls.add_snippets("tex", {
 
   s(
     "txt",
-    fmt("\\txt{{digiPH_{}}}{{digiPH_{}}}{{{}}}", {
+    fmt("\\txt{}{{{}}}", {
       c(1, {
-        t "gray",
-        t "navyblue",
-        t "darkorange",
-        t "lightorange",
-        t "purple",
-        t "red",
-        t "creamy",
-        t "cream",
-        t "yellow",
-        t "blue",
-      }),
-      c(2, {
-        t "black",
-        t "lightorange",
-        t "white",
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
       }),
       i(3, ""),
     })
@@ -233,6 +217,29 @@ ls.add_snippets("tex", {
       }
     )
   ), --end of snip
+
+  s("ft", {
+    t { "\\frametitle{" },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
+    t { "} " },
+    i(0),
+  }), --end of snip
+
+  s("fs", {
+    t { "\\framesubtitle{" },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
+    t { "} " },
+    i(0),
+  }), --end of snip
+
   s(
     "img",
     fmt("\\includegraphics[{}width={}]{{{}}}", {

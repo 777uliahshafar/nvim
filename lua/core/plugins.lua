@@ -174,6 +174,7 @@ local plugins = {
   --   end,
   -- },
   "777uliahshafar/vim-myhelp",
+  "ton/vim-bufsurf",
 }
 
 local opts = {}

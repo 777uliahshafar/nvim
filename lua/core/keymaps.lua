@@ -155,8 +155,9 @@ command! ZoomToggle call s:ZoomToggle()
 
 map("n", "gz", "<CMD>ZoomToggle<cr>")
 
--- windovigation
-map("n", "<bs>", "<c-^><cr>")
+-- vim-bufsurf
+map("n", "<bs>", "<Plug>(buf-surf-back)")
+map("n", "<c-h>", "<Plug>(buf-surf-forward)")
 
 -- map("v", "<leader>tr", "y<cmd>Pantran<cr>p")
 

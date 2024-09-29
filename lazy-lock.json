@@ -38,6 +38,7 @@
   "telescope.nvim": { "branch": "master", "commit": "5972437de807c3bc101565175da66a1aa4f8707a" },
   "thesaurus_query.vim": { "branch": "master", "commit": "92be7e003236f4d43b86ad1b84d092fceb982ed4" },
   "twilight.nvim": { "branch": "main", "commit": "1584c0b0a979b71fd86b18d302ba84e9aba85b1b" },
+  "vim-bufsurf": { "branch": "master", "commit": "e6dbc7ad66c7e436e5eb20d304464e378bd7f28c" },
   "vim-fugitive": { "branch": "master", "commit": "d4877e54cef67f5af4f950935b1ade19ed6b7370" },
   "vim-markdown": { "branch": "master", "commit": "a657e697376909c41475a686eeef7fc7a4972d94" },
   "vim-matchup": { "branch": "master", "commit": "f89858a5ab87feb752c860d396022ae7b13070c2" },
