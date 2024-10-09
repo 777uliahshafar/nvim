@@ -30,6 +30,7 @@ snippet tmplt "Template"
 snippet tmpltsub "Sub Template"
 	%! TEX root = ${1:part1}.tex
 	% the main TeX file which is intended to compile, :VimtexReload after adjustment
+    % this file should be included in the main file
 	% :h vimtex-tex-root
 	\\documentclass[../main.tex]{subfiles}
 	%ensure the class of docs
@@ -204,6 +205,9 @@ snippet imgleft "left Image"
 snippet imgright "right Image"
 	\\rimg{${1:placeholder}} ${0}
 
+snippet imgbg "background Image"
+	\\bgimg{${1:placeholder}} ${0}
+
 #newcommand
 snippet nc \newcommand
 	\\newcommand{\\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
@@ -304,7 +308,7 @@ snippet enumi enumerate environment
 	\\begin{enumerate}[(i)]
 		\\item ${0}
 	\\end{enumerate}
-snippet itz itemize environment
+snippet iz itemize environment
 	\\begin{itemize}
 		 ${0}
 	\\end{itemize}
@@ -472,11 +476,6 @@ snippet ons \onslide
 	\\onslide<${1:1}->{${2}}${0}
 snippet onl \only
 	\\only<${1:1}->{${2}}${0}
-
-snippet imgbg background block
-	\\begin{bgblock}{${1:0}mm}{${2:0}mm}%130x95
-		\\includegraphics[width=\\paperwidth]{${3}}
-	\\end{bgblock}
 
 snippet fig figure environment (includegraphics)
 	\\begin{figure}
@@ -674,6 +673,9 @@ snippet clr xcolor
 	\\color{${1:olivegreen}} ${0}
 snippet co text xcolor
 	\\textcolor{${1:blue}}{$2} ${0}
+
+snippet ft frametitle
+	\\frametitle{$1} ${0}
 
 snippet set setbeamercolor
 	\\setbeamercolor{${1:frametitle}}{bg=${2:yellow!20}}

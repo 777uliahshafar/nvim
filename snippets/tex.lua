@@ -202,23 +202,22 @@ ls.add_snippets("tex", {
     fmt(
       [[
     \begin{{frame}}[{}]
-    \frametitle{{{}}}
     ]],
       {
         c(1, {
-          t "t,mybg=darkbg,mytitle=standard,dark",
-          t "t,mybg=lightbg,mytitle=standard,light",
+          t "t,mycolor=digiPH_white,mytitle=standard,light",
           t "t,mycolor=digiPH_gray,mytitle=standard,light",
           t "t,mycolor=digiPH_leaf,mytitle=standard,dark",
           t "t,mycolor=digiPH_ocean,mytitle=center,dark",
           t "t,mycolor=digiPH_red,mytitle=standard,dark",
+          t "t,mybg=darkbg,mytitle=standard,dark",
+          t "t,mybg=lightbg,mytitle=standard,light",
         }),
-        i(6, "untitled"),
       }
     )
   ), --end of snip
 
-  s("ft", {
+  s("ftp", {
     t { "\\frametitle{" },
     f(function(_, snip)
       -- TM_SELECTED_TEXT is a table to account for multiline-selections.
@@ -253,6 +252,17 @@ ls.add_snippets("tex", {
     "subfile",
     fmt("\\subfile{{subfiles/{}.tex}}", {
       i(1, "filename"),
+    })
+  ), --end of snip
+
+  s(
+    "izp",
+    fmt("\\begin{{itemize}}{}\\end{{itemize}}", {
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
     })
   ), --end of snip
 

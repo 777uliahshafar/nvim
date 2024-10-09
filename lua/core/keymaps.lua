@@ -37,7 +37,7 @@ wk.add {
   { "<leader>oo", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   { "<leader>os", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
   { "<leader>ov", "<cmd>ObsidianPasteImg<cr>", desc = "Obsidian paste img" },
-  { "<leader>v", "<cmd>Alpha<cr>", desc = "Alpha" },
+  { "<leader>g", "<cmd>Alpha<cr>", desc = "Goto buffer" },
   { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
   {
