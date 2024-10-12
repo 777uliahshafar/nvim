@@ -57,7 +57,7 @@ map("n", "j", "gj", { noremap = true })
 map("n", "k", "gk", { noremap = true })
 
 -- maps split navigation
--- map("n", "<c-h>", "<c-w>h") <c-h> was taken by <c-bs>
+map("n", "<c-h>", "<c-w>h") -- vim interpret <c-h> as <c-bs>
 map("n", "<c-j>", "<c-w>j")
 map("n", "<c-k>", "<c-w>k")
 map("n", "<c-l>", "<c-w>w")
@@ -157,7 +157,6 @@ map("n", "gz", "<CMD>ZoomToggle<cr>")
 
 -- vim-bufsurf
 map("n", "<bs>", "<Plug>(buf-surf-back)")
-map("n", "<c-h>", "<Plug>(buf-surf-forward)")
 
 -- map("v", "<leader>tr", "y<cmd>Pantran<cr>p")
 
