@@ -29,11 +29,10 @@ wk.add {
   { "<leader>fp", "<cmd>Git push<cr>", desc = "Git push" },
   { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>o", group = "spell" },
-  { "<leader>oa", "<cmd>ObsidianLinkNew<cr>", desc = "Obsidian link new" },
   { "<leader>oe", "<cmd>ObsidianExtractNote<cr>", desc = "Obsidian extract note" },
   { "<leader>of", "<cmd>ObsidianOpen<cr>", desc = "Obsidian Open" },
-  { "<leader>om", "<cmd>ObsidianTemplate<cr>", desc = "Obsidian template" },
-  { "<leader>on", "<cmd>ObsidianNewFromTemplate<cr>", desc = "Obsidian new from template" },
+  { "<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian  quickswitch" },
+  { "<leader>oa", "<cmd>ObsidianNewFromTemplate<cr>", desc = "Obsidian new from template" },
   { "<leader>oo", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   { "<leader>os", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
   { "<leader>ov", "<cmd>ObsidianPasteImg<cr>", desc = "Obsidian paste img" },
@@ -44,7 +43,7 @@ wk.add {
     mode = { "n", "v" },
     { "<leader>cp", "y<cmd>Pantran<cr>p", desc = "translate" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
-    { "<leader>ct", "<cmd>ChatGPTRun translate<cr>", desc = "Chat translate" },
+    { "<leader>cc", "<cmd>ChatGPTRun translate<cr>", desc = "Chat translate" },
   },
 }
 
