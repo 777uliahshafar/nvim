@@ -15,7 +15,6 @@ wk.add {
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>cm", "<cmd>colorscheme melange<cr>", desc = "melange" },
   { "<leader>cn", "<cmd>colorscheme kanagawa<cr>", desc = "kanagawa" },
-  { "<leader>da", "<cmd>pu=strftime('%b%d')<cr>", desc = "Timestamp" },
   { "<leader>dd", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
   { "<leader>fa", "<cmd>Gwrite<cr>", desc = "Git write" },
   { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "buffers / backlinks" },
@@ -45,6 +44,15 @@ wk.add {
     { "<leader>cp", "y<cmd>Pantran<cr>p", desc = "translate" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
     { "<leader>cc", "<cmd>ChatGPTRun translate<cr>", desc = "Chat translate" },
+  },
+
+  {
+    mode = { "i" },
+    { "<F3>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
+  },
+  {
+    mode = { "v" },
+    { "<leader>oa", "<cmd>ObsidianLinkNew<cr>", desc = "Obsidian link new" },
   },
 }
 
