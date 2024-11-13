@@ -24,18 +24,11 @@ wk.add {
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   { "<leader>fg", "<cmd>G<cr>", desc = "Git" },
   { "<leader>fh", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
-  { "<leader>fo", "<cmd>ObsidianSearch<cr>", desc = "Obsidian search" },
   { "<leader>fp", "<cmd>Git push<cr>", desc = "Git push" },
   { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>o", group = "spell" },
-  { "<leader>oe", "<cmd>ObsidianExtractNote<cr>", desc = "Obsidian extract note" },
-  { "<leader>of", "<cmd>ObsidianOpen<cr>", desc = "Obsidian Open" },
-  { "<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian  quickswitch" },
-  { "<leader>ox", "<cmd>ObsidianNewFromTemplate<cr>", desc = "Obsidian new from template" },
-  { "<leader>oa", "<cmd>ObsidianTemplate<cr>", desc = "Obsidian template" },
   { "<leader>oo", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   { "<leader>os", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
-  { "<leader>ov", "<cmd>ObsidianPasteImg<cr>", desc = "Obsidian paste img" },
   { "<leader>g", "<cmd>Alpha<cr>", desc = "Goto buffer" },
   { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
@@ -49,10 +42,6 @@ wk.add {
   {
     mode = { "i" },
     { "<F3>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
-  },
-  {
-    mode = { "v" },
-    { "<leader>oa", "<cmd>ObsidianLinkNew<cr>", desc = "Obsidian link new" },
   },
 }
 
