@@ -112,13 +112,7 @@ local plugins = {
       }
     end,
   },
-  {
-    "echasnovski/mini.align",
-    version = "*",
-    config = function()
-      require("mini.align").setup()
-    end,
-  },
+  "dhruvasagar/vim-table-mode",
   -- "junegunn/vim-easy-align",
   "ron89/thesaurus_query.vim",
   "potamides/pantran.nvim",
