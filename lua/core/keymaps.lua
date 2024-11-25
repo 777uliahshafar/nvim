@@ -10,6 +10,7 @@ local builtin = require "telescope.builtin"
 
 -- which-key
 wk.add {
+  { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
   { "<leader>cg", "<cmd>colorscheme gruvbox<cr>", desc = "gruvbox" },
   { "<leader>ch", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
@@ -17,7 +18,6 @@ wk.add {
   { "<leader>cn", "<cmd>colorscheme kanagawa<cr>", desc = "kanagawa" },
   { "<leader>dd", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
   { "<leader>fa", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
-  { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
   { "<leader>fc", "<cmd>Git commit<cr>", desc = "Git commit m" },
   { "<leader>fd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
   { "<leader>fe", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1|template" },
@@ -90,7 +90,6 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 -- map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
 
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
-map("n", "<f4>", "<CMD>Alpha<CR>")
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
