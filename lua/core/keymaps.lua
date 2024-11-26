@@ -29,7 +29,7 @@ wk.add {
   { "<leader>o", group = "spell" },
   { "<leader>oo", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   { "<leader>os", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
-  { "<leader>g", "<cmd>Alpha<cr>", desc = "Alphaindex" },
+  { "<leader>a", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
   {
