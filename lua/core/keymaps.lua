@@ -11,11 +11,8 @@ local builtin = require "telescope.builtin"
 -- which-key
 wk.add {
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
-  { "<leader>cg", "<cmd>colorscheme gruvbox<cr>", desc = "gruvbox" },
   { "<leader>ch", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
-  { "<leader>cm", "<cmd>colorscheme melange<cr>", desc = "melange" },
-  { "<leader>cn", "<cmd>colorscheme kanagawa<cr>", desc = "kanagawa" },
   { "<leader>dd", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
   { "<leader>fa", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
   { "<leader>fc", "<cmd>Git commit<cr>", desc = "Git commit m" },
@@ -90,6 +87,9 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 -- map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
 
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
+map("n", "<f8>", "<CMD>colorscheme melange<CR>")
+map("n", "<f7>", "<CMD>colorscheme kanagawa<CR>")
+map("n", "<f6>", "<CMD>colorscheme gruvbox<CR>")
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
