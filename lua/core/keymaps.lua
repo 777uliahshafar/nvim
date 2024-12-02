@@ -11,7 +11,6 @@ local builtin = require "telescope.builtin"
 -- which-key
 wk.add {
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
-  { "<leader>ch", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>dd", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
   { "<leader>fa", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
@@ -23,6 +22,7 @@ wk.add {
   { "<leader>fh", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<leader>fp", "<cmd>Git push<cr>", desc = "Git push" },
   { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
+  { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   { "<leader>o", group = "spell" },
   { "<leader>oo", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   { "<leader>os", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
