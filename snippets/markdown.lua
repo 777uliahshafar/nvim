@@ -36,7 +36,7 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
-    "bb",
+    "bp",
     fmt("**{}**{}", {
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
@@ -50,7 +50,7 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
-    "ii",
+    "ip",
     fmt("*{}*{}", {
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
