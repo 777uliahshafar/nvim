@@ -86,6 +86,7 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 -- Load recent sessions
 -- map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
 
+map("n", "<f2>", "<CMD>h mycheat<CR>")
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
 map("n", "<f8>", "<CMD>colorscheme melange<CR>")
 map("n", "<f7>", "<CMD>colorscheme kanagawa<CR>")
