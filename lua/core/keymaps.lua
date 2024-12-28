@@ -6,24 +6,7 @@ end
 
 local ls = require "luasnip"
 local wk = require "which-key"
-local mark = require "harpoon.mark"
-local ui = require "harpoon.ui"
-
-vim.keymap.set("n", "<leader>hx", mark.add_file)
-vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
-
-vim.keymap.set("n", "<leader>ha", function()
-  ui.nav_file(1)
-end)
-vim.keymap.set("n", "<leader>hs", function()
-  ui.nav_file(2)
-end)
-vim.keymap.set("n", "<leader>hd", function()
-  ui.nav_file(3)
-end)
-vim.keymap.set("n", "<leader>hf", function()
-  ui.nav_file(4)
-end)
+local utils = require "core.utils"
 
 -- which-key
 wk.add {
@@ -83,8 +66,8 @@ map("n", "<localleader>cd", "<CMD>cd %:h<CR>")
 
 -- map buffer
 map("n", "<c-b>", "<CMD>ls<CR>:b<Space>", opts)
-map("n", "<leader>h", "<CMD>bprevious<CR>", opts)
-map("n", "<leader>l", "<CMD>bnext<CR>", opts)
+-- map("n", "<leader>h", "<CMD>bprevious<CR>", opts)
+-- map("n", "<leader>l", "<CMD>bnext<CR>", opts)
 map("n", "<leader><esc>", "<CMD>nohlsearch<CR>", opts)
 
 --  navigate through popup pum menu
@@ -148,8 +131,12 @@ map("i", "<c-k>", function()
   end
 end)
 
---nvim surround
-map("i", "<c-s>s", "<Plug>(nvim-surround-insert)")
+-- harpoon
+map("n", "<leader>hn", require("harpoon.ui").nav_next)
+map("n", "<leader>hp", require("harpoon.ui").nav_prev)
+utils.map("n", [[<leader>hm]], ":Telescope harpoon marks<CR>")
+
+map("n", "<leader>hx", require("harpoon.mark").add_file)
 
 -- quickfix built-in
 vim.cmd [[
