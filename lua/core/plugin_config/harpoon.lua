@@ -17,7 +17,7 @@ require("harpoon").setup {
 
     -- set marks specific to each git branch inside git repository
     -- Each branch will have it's own set of marked files
-    mark_branch = true,
+    mark_branch = false,
 
     -- enable tabline with harpoon marks
     tabline = false,

@@ -21,6 +21,7 @@ wk.add {
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   { "<leader>fg", "<cmd>G<cr>", desc = "Git" },
   { "<leader>fh", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
+  { "<leader>fo", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>fp", "<cmd>Git push<cr>", desc = "Git push" },
   { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
@@ -133,10 +134,10 @@ map("i", "<c-k>", function()
 end)
 
 -- harpoon
-map("n", "<leader>hp", function()
+map("n", "<c-p>", function()
   harpoon:list():prev()
 end)
-map("n", "<leader>hn", function()
+map("n", "<c-n>", function()
   harpoon:list():next()
 end)
 map("n", "<leader>ha", function()
