@@ -161,7 +161,11 @@ local plugins = {
   --   end,
   -- },
   -- "chentoast/marks.nvim",
-  "ThePrimeagen/harpoon",
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   -- {
   --   "folke/trouble.nvim",
   --   config = function()

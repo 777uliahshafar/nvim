@@ -6,7 +6,8 @@ end
 
 local ls = require "luasnip"
 local wk = require "which-key"
-local utils = require "core.utils"
+local harpoon = require "harpoon"
+-- local utils = require "core.utils"
 
 -- which-key
 wk.add {
@@ -132,11 +133,23 @@ map("i", "<c-k>", function()
 end)
 
 -- harpoon
-map("n", "<leader>hn", require("harpoon.ui").nav_next)
-map("n", "<leader>hp", require("harpoon.ui").nav_prev)
-utils.map("n", [[<leader>hm]], ":Telescope harpoon marks<CR>")
+map("n", "<leader>hp", function()
+  harpoon:list():prev()
+end)
+map("n", "<leader>hn", function()
+  harpoon:list():next()
+end)
+map("n", "<leader>ha", function()
+  harpoon:list():add()
+end)
+map("n", "<leader>hm", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+-- map("n", "<leader>hn", require("harpoon.ui").nav_next)
+-- map("n", "<leader>hp", require("harpoon.ui").nav_prev)
+-- utils.map("n", [[<leader>hm]], ":Telescope harpoon marks<CR>")
 
-map("n", "<leader>hx", require("harpoon.mark").add_file)
+-- map("n", "<leader>hx", require("harpoon.mark").add_file)
 
 -- quickfix built-in
 vim.cmd [[
