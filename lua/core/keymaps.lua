@@ -134,10 +134,10 @@ map("i", "<c-k>", function()
 end)
 
 -- harpoon
-vim.keymap.set("n", "<leader>hh", function()
+vim.keymap.set("n", "<c-p>", function()
   harpoon:list():prev()
 end, { desc = "jump prev" })
-vim.keymap.set("n", "<leader>hj", function()
+vim.keymap.set("n", "<c-n>", function()
   harpoon:list():next()
 end, { desc = "jump next" })
 vim.keymap.set("n", "<leader>ha", function()
