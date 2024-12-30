@@ -19,7 +19,9 @@ local plugins = {
   },
   { "zootedb0t/citruszest.nvim", priority = 1000 },
   { "rebelot/kanagawa.nvim", priority = 1000 },
-  { "savq/melange-nvim" },
+  {
+    "NLKNguyen/papercolor-theme",
+  },
 
   -- Greeter --
   {

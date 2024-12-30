@@ -68,8 +68,8 @@ map("n", "<localleader>cd", "<CMD>cd %:h<CR>")
 
 -- map buffer
 map("n", "<c-b>", "<CMD>ls<CR>:b<Space>", opts)
--- map("n", "<leader>h", "<CMD>bprevious<CR>", opts)
--- map("n", "<leader>l", "<CMD>bnext<CR>", opts)
+map("n", "<leader>h", "<CMD>bprevious<CR>", opts)
+map("n", "<leader>l", "<CMD>bnext<CR>", opts)
 map("n", "<leader><esc>", "<CMD>nohlsearch<CR>", opts)
 
 --  navigate through popup pum menu
@@ -90,8 +90,8 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 
 map("n", "<f2>", "<CMD>h mycheat<CR>")
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
-map("n", "<f8>", "<CMD>colorscheme melange<CR>")
-map("n", "<f7>", "<CMD>colorscheme kanagawa<CR>")
+map("n", "<f8>", "<CMD>colorscheme kanagawa<CR>")
+map("n", "<f7>", "<CMD>colorscheme PaperColor<CR>")
 map("n", "<f6>", "<CMD>colorscheme gruvbox<CR>")
 
 ---------------------------------------------
