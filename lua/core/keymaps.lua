@@ -91,8 +91,8 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 map("n", "<f2>", "<CMD>h mycheat<CR>")
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
 map("n", "<f8>", "<CMD>colorscheme kanagawa<CR>")
-map("n", "<f7>", "<CMD>colorscheme PaperColor<CR>")
-map("n", "<f6>", "<CMD>colorscheme gruvbox<CR>")
+map("n", "<f7>", "<CMD>colorscheme gruvbox<CR>")
+map("n", "<f6>", "<CMD>colorscheme PaperColor<CR>")
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
