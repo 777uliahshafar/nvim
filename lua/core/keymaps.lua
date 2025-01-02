@@ -68,7 +68,7 @@ map("n", "<localleader>cd", "<CMD>cd %:h<CR>")
 
 -- map buffer
 map("n", "<c-b>", "<CMD>ls<CR>:b<Space>", opts)
-map("n", "<leader>h", "<CMD>bprevious<CR>", opts)
+-- map("n", "<leader>h", "<CMD>bprevious<CR>", opts)
 map("n", "<leader>l", "<CMD>bnext<CR>", opts)
 map("n", "<leader><esc>", "<CMD>nohlsearch<CR>", opts)
 
