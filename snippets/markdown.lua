@@ -36,7 +36,7 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
-    "link",
+    "linkp",
     fmt("[{}]({})", {
       i(1, "text"),
       i(2, " "),
