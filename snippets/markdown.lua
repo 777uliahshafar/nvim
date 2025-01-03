@@ -36,16 +36,6 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
-    "linkp",
-    fmt("[{}]({})", {
-      i(1, "text"),
-      i(2, " "),
-    })
-  ), --end of snip
-}) -- end all
-
-ls.add_snippets("markdown", {
-  s(
     "bp",
     fmt("**{}**{}", {
       f(function(_, snip)
