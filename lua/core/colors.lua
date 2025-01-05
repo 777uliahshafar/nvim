@@ -25,13 +25,19 @@ require("kanagawa").setup {
   dimInactive = true,
   colors = {
     palette = {
-      dragonWhite = "#F8F8F2",
+      dragonWhite = "#E0E0E0",
       dragonBlack5 = "#282727",
       fujiWhite = "#F8F8F2",
       lotusInk1 = "#282727",
       lotusWhite3 = "#fbf1c7",
     },
   },
+  overrides = function(colors)
+    return {
+      -- Assign a static color to strings
+      markdownUrl = { fg = colors.palette.carpYellow },
+    }
+  end,
   background = { -- map the value of 'background' option to a theme
     dark = "dragon", -- try "dragon" !
     light = "lotus",
