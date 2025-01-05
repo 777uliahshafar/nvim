@@ -40,7 +40,8 @@ wk.add {
 
   {
     mode = { "i" },
-    { "<F3>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
+    { "<c-d>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
+    { "<c-v>", "<C-r>t<C-r>*", desc = "Paste Clipboard" },
   },
 }
 
