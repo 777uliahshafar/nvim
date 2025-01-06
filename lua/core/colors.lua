@@ -35,7 +35,8 @@ require("kanagawa").setup {
   overrides = function(colors)
     return {
       -- Assign a static color to strings
-      markdownUrl = { fg = colors.palette.autumnYellow },
+      markdownUrl = { link = "Function" },
+      ["@markup.heading"] = { link = "Operator" },
     }
   end,
   background = { -- map the value of 'background' option to a theme
