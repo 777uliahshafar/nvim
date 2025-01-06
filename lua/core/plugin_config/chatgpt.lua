@@ -5,6 +5,8 @@ require("chatgpt").setup {
     border_left_sign = "",
     border_right_sign = "",
     keymaps = {
+      close = "<C-c>",
+      close_n = "q",
       yank_last = "<C-y>",
       scroll_up = "<C-u>",
       scroll_down = "<C-d>",
@@ -17,8 +19,5 @@ require("chatgpt").setup {
     buf_options = {
       filetype = "tex",
     },
-  },
-  popup_input = {
-    submit = "<C-s>",
   },
 }
