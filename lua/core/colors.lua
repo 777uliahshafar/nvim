@@ -31,11 +31,20 @@ require("kanagawa").setup {
       lotusInk1 = "#282727",
       lotusWhite3 = "#fbf1c7",
     },
+    theme = {
+      all = {
+        ui = {
+          bg_gutter = "none",
+        },
+      },
+    },
   },
   overrides = function(colors)
     return {
       -- Assign a static color to strings
       markdownUrl = { link = "Function" },
+      TelescopeResultsBorder = { link = "TelescopePromptBorder" },
+      TelescopePreviewBorder = { link = "TelescopePromptBorder" },
       ["@markup.heading"] = { link = "Operator" },
     }
   end,
@@ -46,4 +55,4 @@ require("kanagawa").setup {
   ...,
 }
 
-vim.cmd.colorscheme "PaperColor"
+vim.cmd.colorscheme "gruvbox"
