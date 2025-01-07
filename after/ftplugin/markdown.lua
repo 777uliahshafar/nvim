@@ -17,6 +17,7 @@ o.signcolumn = "no"
 -- *markdown surround maps - with nvim-surround and without*
 -- wrap selection in markdown link
 vim.api.nvim_buf_set_keymap(0, "v", "<leader>mf", [[c[<c-r>"]()<esc>]], { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mp", [["*P]], { noremap = false })
 
 -- italicize Word - in visual: S{arg}
 -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>_", "ysiW_", { noremap = false })
