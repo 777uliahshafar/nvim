@@ -34,12 +34,11 @@ require("obsidian").setup {
 
   ui = {
     checkboxes = {
-      [" "] = { char = "󰂎", hl_group = "GruvboxForest" },
-      ["x"] = { char = "󰁺", hl_group = "GruvboxOrange" },
-      [">"] = { char = "󰁼", hl_group = "GruvboxOrange" },
-      ["="] = { char = "󰁿", hl_group = "GruvboxOrange" },
-      ["/"] = { char = "󰂁", hl_group = "GruvboxOrange" },
-      ["~"] = { char = "󰁹", hl_group = "GruvboxForest" },
+      [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+      ["x"] = { char = "", hl_group = "ObsidianDone" },
+      [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+      ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+      ["!"] = { char = "", hl_group = "ObsidianImportant" },
     },
 
     bullets = { hl_group = "GruvboxOrange" },
