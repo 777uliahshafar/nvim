@@ -137,7 +137,7 @@ local plugins = {
     },
   },
   "preservim/vim-markdown",
-  -- "jalvesaq/Nvim-R",
+  "jalvesaq/Nvim-R",
 
   -- utility --
   {
