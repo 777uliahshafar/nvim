@@ -147,7 +147,7 @@ end, { desc = "add file" })
 map("n", "<leader>hm", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
-vim.keymap.set("n", "<c-d>", function()
+vim.keymap.set("n", "<leader>hd", function()
   harpoon:list():remove()
 end, { desc = "delete mark" })
 
