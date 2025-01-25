@@ -1,4 +1,10 @@
 require("chatgpt").setup {
+  WELCOME_MESSAGE = [[
+
+     <c-n> new session, <c-p> sessions, r rename session, <space> select
+       <c-o> settings <c-h> help .
+                                      ~ Robert Half
+]],
   openai_params = {
     -- NOTE: model can be a function returning the model name
     -- this is useful if you want to change the model on the fly
@@ -54,7 +60,7 @@ require("chatgpt").setup {
       scroll_down = "<C-d>",
       toggle_settings = "<C-o>",
       new_session = "<C-n>",
-      cycle_windows = "<Tab>",
+      cycle_windows = "<C-l>",
       select_session = "<cr>",
       edit_message = "<C-e>",
     },
