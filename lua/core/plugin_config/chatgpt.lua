@@ -48,6 +48,7 @@ require("chatgpt").setup {
     answer_sign = "ﮧ", -- 🤖
     -- border_left_sign = "",
     -- border_right_sign = "",
+    welcome_message = WELCOME_MESSAGE,
     loading_text = "Loading, please wait ...",
     default_system_message = "",
     border_left_sign = "",
@@ -76,5 +77,8 @@ require("chatgpt").setup {
     submit = "<C-Enter>",
     submit_n = "<Enter>",
     max_visible_lines = 10,
+  },
+  highlights = {
+    active_session = "@symbol",
   },
 }
