@@ -1,10 +1,4 @@
 require("chatgpt").setup {
-  WELCOME_MESSAGE = [[
-
-     <c-n> new session, <c-p> sessions, r rename session, <space> select
-       <c-o> settings <c-h> help .
-                                      ~ Robert Half
-]],
   openai_params = {
     -- NOTE: model can be a function returning the model name
     -- this is useful if you want to change the model on the fly
@@ -48,7 +42,7 @@ require("chatgpt").setup {
     answer_sign = "ﮧ", -- 🤖
     -- border_left_sign = "",
     -- border_right_sign = "",
-    welcome_message = WELCOME_MESSAGE,
+    welcome_message = "<c-n> new session, <c-p> sessions, r rename session, <space> select <c-o> settings <c-h> help. ~ Robert Half",
     loading_text = "Loading, please wait ...",
     default_system_message = "",
     border_left_sign = "",
@@ -61,7 +55,7 @@ require("chatgpt").setup {
       scroll_down = "<C-d>",
       toggle_settings = "<C-o>",
       new_session = "<C-n>",
-      cycle_windows = "<C-l>",
+      cycle_windows = "<leader>l",
       select_session = "<cr>",
       edit_message = "<C-e>",
     },
