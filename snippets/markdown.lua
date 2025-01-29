@@ -22,6 +22,19 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
+    "lip",
+    fmt("[{}]({}){}", {
+      f(function(_, snip)
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+      i(1, ""),
+      i(0, " "),
+    })
+  ), --end of snip
+}) -- end all
+
+ls.add_snippets("markdown", {
+  s(
     "sum",
     fmt("<details><summary>...</summary>{}</details>{}", {
       f(function(_, snip)
