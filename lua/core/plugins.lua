@@ -162,7 +162,7 @@ local plugins = {
   --     require("nvim-surround").setup {}
   --   end,
   -- },
-  -- "chentoast/marks.nvim",
+  "chentoast/marks.nvim",
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
