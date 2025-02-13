@@ -3,7 +3,7 @@ require("zen-mode").setup {
     backdrop = 1,
     width = 62,
     options = {
-      signcolumn = "no",
+      signcolumn = "yes",
       number = false,
       foldcolumn = "0",
       scrolloff = 999,
