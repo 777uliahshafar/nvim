@@ -12,7 +12,7 @@ vim.opt_local.shiftwidth = 0
 vim.opt_local.spell = false
 o.spelllang = { "en_us", "id" }
 o.updatetime = 1000
-o.signcolumn = "no"
+o.signcolumn = "yes"
 
 -- *markdown surround maps - with nvim-surround and without*
 -- wrap selection in markdown link
