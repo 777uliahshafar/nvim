@@ -11,6 +11,7 @@ local harpoon = require "harpoon"
 
 -- which-key
 wk.add {
+  { "<leader>ai", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
   { "<leader>cb", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
   { "<leader>ci", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
@@ -27,7 +28,6 @@ wk.add {
   { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
-  { "<leader>a", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
   {
@@ -134,19 +134,19 @@ map("i", "<c-k>", function()
 end)
 
 -- harpoon
--- vim.keymap.set("n", "<leader>h", function()
---   harpoon:list():prev { ui_nav_wrap = true }
--- end, { desc = "jump prev" })
+vim.keymap.set("n", "<leader>h", function()
+  harpoon:list():prev { ui_nav_wrap = true }
+end, { desc = "jump prev" })
 vim.keymap.set("n", "<leader>l", function()
   harpoon:list():next { ui_nav_wrap = true }
 end, { desc = "jump next" })
-vim.keymap.set("n", "<leader>ha", function()
+vim.keymap.set("n", "<leader>aa", function()
   harpoon:list():add()
 end, { desc = "add file" })
-map("n", "<leader>hm", function()
+map("n", "<leader>am", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
-vim.keymap.set("n", "<leader>hd", function()
+vim.keymap.set("n", "<leader>ad", function()
   harpoon:list():remove()
 end, { desc = "delete mark" })
 
