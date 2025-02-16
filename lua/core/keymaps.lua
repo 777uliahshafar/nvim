@@ -136,10 +136,10 @@ end)
 
 -- harpoon
 vim.keymap.set("n", "<c-p>", function()
-  harpoon:list():prev()
+  harpoon:list():prev { ui_nav_wrap = true }
 end, { desc = "jump prev" })
 vim.keymap.set("n", "<c-n>", function()
-  harpoon:list():next()
+  harpoon:list():next { ui_nav_wrap = true }
 end, { desc = "jump next" })
 vim.keymap.set("n", "<leader>ha", function()
   harpoon:list():add()
