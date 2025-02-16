@@ -12,6 +12,8 @@ local harpoon = require "harpoon"
 -- which-key
 wk.add {
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
+  { "<leader>cb", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
+  { "<leader>ci", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>dd", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
   { "<leader>fa", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
@@ -21,13 +23,10 @@ wk.add {
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   { "<leader>fg", "<cmd>G<cr>", desc = "Git" },
   { "<leader>fh", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
-  { "<leader>fo", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>fp", "<cmd>Git push<cr>", desc = "Git push" },
   { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
-  { "<leader>o", group = "spell" },
-  { "<leader>oo", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
-  { "<leader>os", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
+  { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>a", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
