@@ -69,8 +69,8 @@ map("n", "<localleader>cd", "<CMD>cd %:h<CR>")
 
 -- map buffer
 map("n", "<c-b>", "<CMD>ls<CR>:b<Space>", opts)
--- map("n", "<leader>h", "<CMD>bprevious<CR>", opts)
-map("n", "<leader>l", "<CMD>bnext<CR>", opts)
+map("n", "<c-p>", "<CMD>bprevious<CR>", opts)
+map("n", "<c-n>", "<CMD>bnext<CR>", opts)
 map("n", "<leader><esc>", "<CMD>nohlsearch<CR>", opts)
 
 --  navigate through popup pum menu
@@ -135,10 +135,10 @@ map("i", "<c-k>", function()
 end)
 
 -- harpoon
-vim.keymap.set("n", "<c-p>", function()
-  harpoon:list():prev { ui_nav_wrap = true }
-end, { desc = "jump prev" })
-vim.keymap.set("n", "<c-n>", function()
+-- vim.keymap.set("n", "<leader>h", function()
+--   harpoon:list():prev { ui_nav_wrap = true }
+-- end, { desc = "jump prev" })
+vim.keymap.set("n", "<leader>l", function()
   harpoon:list():next { ui_nav_wrap = true }
 end, { desc = "jump next" })
 vim.keymap.set("n", "<leader>ha", function()
