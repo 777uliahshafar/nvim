@@ -38,7 +38,14 @@ wk.add {
     mode = { "n", "v" },
     { "<leader>cp", "y<cmd>Pantran<cr>p", desc = "translate" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
-    { "<leader>cc", "<cmd>ChatGPTRun translate<cr>", desc = "Chat translate" },
+    { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
+    { "<leader>dg", "<cmd>ChatGPTRun grammar<cr>", desc = "Chat grammar" },
+    { "<leader>dk", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
+    { "<leader>dl", "<cmd>ChatGPTRun paraphrase<cr>", desc = "Chat paraphrase" },
+    { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
+    { "<leader>cg", "<cmd>ChatGPTRun tata_bahasa<cr>", desc = "Chat tata bahasa" },
+    { "<leader>ck", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
+    { "<leader>cl", "<cmd>ChatGPTRun parafrase<cr>", desc = "Chat parafrase" },
   },
 
   {

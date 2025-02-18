@@ -1,4 +1,5 @@
 require("chatgpt").setup {
+  actions_paths = { "~/AppData/Local/nvim/actions.json" },
   openai_params = {
     -- NOTE: model can be a function returning the model name
     -- this is useful if you want to change the model on the fly
