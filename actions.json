@@ -2,8 +2,8 @@
   "grammar_correction": {
     "type": "chat",
     "opts": {
-      "template": "Correct this to standard {{lang}}:\n\n{{input}}",
-      "strategy": "replace",
+      "template": "Refine the writing of the given text style to convey ideas with precision and impact. Pay attention to the appropriate tone for the intended audience, whether it be formal, informal, persuasive, or informative. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas. Strive for conciseness by eliminating unnecessary wordiness and refining sentences for brevity without sacrificing clarity. If the input text has another language than english, identify the language and output the new text in the language of the input text: \n\n{{input}}",
+      "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo"
       }
@@ -19,7 +19,7 @@
   "tata_bahasa": {
     "type": "chat",
     "opts": {
-      "template": "Perbaiki penulisan gaya teks berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antaride. Pastikan teks ringkas dengan menghilangkan kata-kata tidak perlu, sempurnakan kalimat agar padat tanpa mengurangi kejelasan, dan gunakan tata bahasa {{lang}} yang baik dan benar.",
+      "template": "Perbaiki penulisan gaya teks berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antaride. Pastikan teks ringkas dengan menghilangkan kata-kata tidak perlu, sempurnakan kalimat agar padat tanpa mengurangi kejelasan, dan gunakan tata bahasa {{lang}} yang baik dan benar:\n\n{{input}}",
       "strategy": "append",
       "params": {
         "model": "gpt-3.5-turbo"

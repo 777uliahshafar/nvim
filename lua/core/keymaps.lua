@@ -11,7 +11,7 @@ local harpoon = require "harpoon"
 
 -- which-key
 wk.add {
-  { "<leader>a", group = "Harpoon & Index" },
+  { "<leader>a", group = "AlphaIndex" },
   { "<leader>ai", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
   { "<leader>c", group = "Editing" },
@@ -39,12 +39,12 @@ wk.add {
     { "<leader>cp", "y<cmd>Pantran<cr>p", desc = "translate" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
-    { "<leader>dg", "<cmd>ChatGPTRun grammar<cr>", desc = "Chat grammar" },
-    { "<leader>dk", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
+    { "<leader>dg", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat grammar" },
+    { "<leader>dm", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
     { "<leader>dl", "<cmd>ChatGPTRun paraphrase<cr>", desc = "Chat paraphrase" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     { "<leader>cg", "<cmd>ChatGPTRun tata_bahasa<cr>", desc = "Chat tata bahasa" },
-    { "<leader>ck", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
+    { "<leader>cm", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
     { "<leader>cl", "<cmd>ChatGPTRun parafrase<cr>", desc = "Chat parafrase" },
   },
 
