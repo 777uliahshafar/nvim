@@ -29,7 +29,7 @@ wk.add {
   { "<leader>gg", "<cmd>G<cr>", desc = "Git" },
   { "<leader>gp", "<cmd>Git push<cr>", desc = "Git push" },
 
-  { "<leader>n", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
+  { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>w", group = "Switch Orientation" },
   { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
