@@ -19,18 +19,17 @@ wk.add {
   { "<leader>ci", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>dd", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
-  { "<leader>f", group = "Files" },
-  { "<leader>fa", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
-  { "<leader>fc", "<cmd>Git commit<cr>", desc = "Git commit m" },
-  { "<leader>fd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
-  { "<leader>fe", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1|template" },
-  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-  { "<leader>fg", "<cmd>G<cr>", desc = "Git" },
-  { "<leader>fh", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
-  { "<leader>fp", "<cmd>Git push<cr>", desc = "Git push" },
-  { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
-  { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
-  { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
+  -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
+  { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
+  { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+  { "<leader>ga", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
+  { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit m" },
+  { "<leader>gd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
+  { "<leader>ge", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1|template" },
+  { "<leader>gg", "<cmd>G<cr>", desc = "Git" },
+  { "<leader>gp", "<cmd>Git push<cr>", desc = "Git push" },
+
+  { "<leader>n", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>w", group = "Switch Orientation" },
   { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
@@ -42,6 +41,7 @@ wk.add {
     { "<leader>dg", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat grammar" },
     { "<leader>dm", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
     { "<leader>dl", "<cmd>ChatGPTRun paraphrase<cr>", desc = "Chat paraphrase" },
+    { "<leader>cc", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     { "<leader>cg", "<cmd>ChatGPTRun tata_bahasa<cr>", desc = "Chat tata bahasa" },
     { "<leader>cm", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
@@ -151,13 +151,13 @@ end, { desc = "jump prev" })
 vim.keymap.set("n", "<leader>l", function()
   harpoon:list():next { ui_nav_wrap = true }
 end, { desc = "jump next" })
-vim.keymap.set("n", "<leader>ha", function()
+vim.keymap.set("n", "<leader>sa", function()
   harpoon:list():add()
 end, { desc = "add file" })
-map("n", "<leader>hm", function()
+map("n", "<leader>sm", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
-vim.keymap.set("n", "<leader>hd", function()
+vim.keymap.set("n", "<leader>sd", function()
   harpoon:list():remove()
 end, { desc = "delete mark" })
 
