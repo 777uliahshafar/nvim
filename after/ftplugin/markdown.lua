@@ -35,14 +35,14 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>ml", "<CMD>call Landsmd()<CR>", { n
 
 -- obsidian
 
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>ff", "<CMD>ObsidianSearch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>fk", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>fa", "<CMD>ObsidianNewFromTemplate<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>fb", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>ft", "<CMD>ObsidianTags<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>fe", "<CMD>ObsidianTemplate<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>fv", "<CMD>ObsidianPasteImg<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "v", "<leader>fl", "<CMD>ObsidianLinkNew<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mf", "<CMD>ObsidianSearch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mk", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mn", "<CMD>ObsidianNewFromTemplate<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mb", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mk", "<CMD>ObsidianTags<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>me", "<CMD>ObsidianTemplate<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mv", "<CMD>ObsidianPasteImg<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", "<leader>ma", "<CMD>ObsidianLinkNew<CR>", { noremap = false })
 
 -- vim markdown
 vim.api.nvim_buf_set_keymap(0, "n", "t", "<CMD>ObsidianTOC<CR>", { noremap = false })
