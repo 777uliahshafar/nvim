@@ -93,8 +93,9 @@ local plugins = {
         lazy = true,
         opts = {
           dimming = { alpha = 0.15 },
-          context = 7,
+          context = 3,
           treesitter = true,
+          term_bg = "#232326",
           exclude = { "bib", "md" },
         },
       },
