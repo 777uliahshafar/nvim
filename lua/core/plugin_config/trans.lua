@@ -2,10 +2,10 @@ require("pantran").setup {
   default_engine = "google",
   engines = {
     google = {
-      -- Default languages can be defined on a per engine basis. In this case
-      -- `:lua require("pantran.async").run(function()
-      -- vim.pretty_print(require("pantran.engines").yandex:languages()) end)`
-      -- can be used to list available language identifiers.
+      default_source = "en",
+      default_target = "id",
+    },
+    deepl = {
       default_source = "id",
       default_target = "en",
     },
