@@ -2,15 +2,18 @@ require("pantran").setup {
   default_engine = "google",
   engines = {
     google = {
-      default_source = "en",
-      default_target = "id",
+      fallback = {
+        default_source = "en",
+        default_target = "id",
+      },
     },
-    deepl = {
-      default_source = "id",
-      default_target = "en",
+    yandex = {
+      fallback = {
+        default_source = "id",
+        default_target = "en",
+      },
     },
   },
-  default_source = {},
   controls = {
     mappings = {
       edit = {
