@@ -9,7 +9,7 @@ vim.opt.diffopt:append { "followwrap" } -- prevent unwrap gdiffsplit
 -- maps
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>kc", "<plug>(vimtex-compile)", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ke", "<plug>(vimtex-errors)", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>kv", "<plug>(vimtex-view)", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>kp", "<plug>(vimtex-view)", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ks", "<plug>(vimtex-toggle-main)", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", "<plug>(vimtex-toc-open)", { noremap = false })
 
