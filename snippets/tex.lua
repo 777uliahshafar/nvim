@@ -42,6 +42,39 @@ end
 
 ls.add_snippets("tex", {
   s(
+    "multicol",
+    fmt("\\multicolumn{{{}}}{{{}}}{{{}}}", {
+      i(1, "numcol"),
+      i(2, "c"),
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+    })
+  ), --end of snip
+  s(
+    "multirow",
+    fmt("\\multirow{{{}}}{{{}}}{{{}}}", {
+      i(1, "numrow"),
+      i(2, "*"),
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+    })
+  ), --end of snip
+  s(
+    "inc",
+    fmt("\\includepdf[pages={{{}}},pagecommand={{\\thispagestyle{{{}}}\\fakesection{{{}}}}}]{{{}}}", {
+      i(1, "pagenum"),
+      c(2, { t "plain", t "empty," }),
+      i(3, "titlesec"),
+      i(4, "file.pdf"),
+    })
+  ), --end of snip
+  s(
     "txtp",
     fmt("\\txt{}{{{}}}", {
       c(1, {
