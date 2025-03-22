@@ -69,9 +69,9 @@ require("chatgpt").setup {
     win_options = {
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
     },
-    submit = "<C-Enter>",
+    submit = "<c-s>",
     submit_n = "<Enter>",
-    max_visible_lines = 10,
+    max_visible_lines = 20,
   },
   highlights = {
     active_session = "@symbol",

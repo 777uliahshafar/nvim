@@ -3,8 +3,8 @@ require("pantran").setup {
   engines = {
     google = {
       fallback = {
-        default_source = "en",
-        default_target = "id",
+        default_source = "id",
+        default_target = "en",
       },
     },
     yandex = {
