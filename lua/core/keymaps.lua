@@ -40,6 +40,16 @@ wk.add {
     expr = true,
     desc = "translate sente",
   },
+  {
+    "<leader>cpw",
+    function()
+      return pantran.motion_translate() .. "iw"
+    end,
+    noremap = true,
+    silent = true,
+    expr = true,
+    desc = "translate word",
+  },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>d", group = "ChatGPT" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
