@@ -1,5 +1,6 @@
 require("pantran").setup {
   default_engine = "google",
+  command = { default_mode = "replace" },
   engines = {
     google = {
       fallback = {
