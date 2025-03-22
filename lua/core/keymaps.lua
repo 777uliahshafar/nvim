@@ -19,6 +19,27 @@ wk.add {
   { "<leader>c", group = "Editing" },
   { "<leader>cb", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
   { "<leader>ci", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
+  { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
+  {
+    "<leader>cpp",
+    function()
+      return pantran.motion_translate() .. "_"
+    end,
+    noremap = true,
+    silent = true,
+    expr = true,
+    desc = "translate para",
+  },
+  {
+    "<leader>cps",
+    function()
+      return pantran.motion_translate() .. "is"
+    end,
+    noremap = true,
+    silent = true,
+    expr = true,
+    desc = "translate sente",
+  },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>d", group = "ChatGPT" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
@@ -55,6 +76,10 @@ wk.add {
     mode = { "i" },
     { "<F2>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
     { "<F3>", "<C-r>*", desc = "Paste Clipboard" },
+  },
+  {
+    mode = { "x" },
+    { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
   },
 }
 
@@ -190,16 +215,6 @@ map("n", "gz", "<CMD>ZoomToggle<cr>")
 
 -- vim-bufsurf
 map("n", "<bs>", "<Plug>(buf-surf-back)")
-
--- map("v", "<leader>tr", "y<cmd>Pantran<cr>p")
-vim.keymap.set("n", "<leader>cp", pantran.motion_translate, optx)
-vim.keymap.set("n", "<leader>cpp", function()
-  return pantran.motion_translate() .. "_"
-end, optx)
-vim.keymap.set("n", "<leader>cps", function()
-  return pantran.motion_translate() .. "is"
-end, optx)
-vim.keymap.set("x", "<leader>cp", pantran.motion_translate, optx)
 
 -- obsidian
 -- map("n", "<leader>lw", "<CMD>ObsidianSearch<CR>")
