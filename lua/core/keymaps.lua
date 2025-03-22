@@ -19,7 +19,6 @@ wk.add {
   { "<leader>c", group = "Editing" },
   { "<leader>cb", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
   { "<leader>ci", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
-  { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
   {
     "<leader>cpp",
     function()
@@ -71,6 +70,7 @@ wk.add {
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
   {
     mode = { "n", "v" },
+    { "<leader>cp", "y<cmd>Pantran mode=interactive<cr>p", desc = "translate int" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
     { "<leader>dg", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat grammar" },
@@ -87,10 +87,10 @@ wk.add {
     { "<F2>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
     { "<F3>", "<C-r>*", desc = "Paste Clipboard" },
   },
-  {
-    mode = { "x" },
-    { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
-  },
+  -- {
+  --   mode = { "x" },
+  --   { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
+  -- },
 }
 
 -- Mimic shell movements
