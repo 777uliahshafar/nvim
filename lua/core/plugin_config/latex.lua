@@ -45,3 +45,13 @@ g.vimtex_log_ignore = {
   "specifier changed to",
   "Token not allowed in a PDF string",
 }
+
+-- toc
+vim.g.vimtex_toc_config = {
+  split_width = 30,
+  show_help = 0,
+  name = "TOC",
+  layer_status = {
+    label = 0,
+  },
+}
