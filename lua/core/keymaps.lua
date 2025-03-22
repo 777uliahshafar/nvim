@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local optx = { noremap = true, silent = true, expr = true }
 
 local function map(m, k, v)
   vim.keymap.set(m, k, v, { silent = true })
@@ -7,6 +8,7 @@ end
 local ls = require "luasnip"
 local wk = require "which-key"
 local harpoon = require "harpoon"
+local pantran = require "pantran"
 -- local utils = require "core.utils"
 
 -- which-key
@@ -38,7 +40,6 @@ wk.add {
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
   {
     mode = { "n", "v" },
-    { "<leader>cp", "y<cmd>Pantran<cr>p", desc = "translate" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
     { "<leader>dg", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat grammar" },
@@ -50,7 +51,6 @@ wk.add {
     { "<leader>cm", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
     { "<leader>cl", "<cmd>ChatGPTRun parafrase<cr>", desc = "Chat parafrase" },
   },
-
   {
     mode = { "i" },
     { "<F2>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
@@ -192,6 +192,14 @@ map("n", "gz", "<CMD>ZoomToggle<cr>")
 map("n", "<bs>", "<Plug>(buf-surf-back)")
 
 -- map("v", "<leader>tr", "y<cmd>Pantran<cr>p")
+vim.keymap.set("n", "<leader>cp", pantran.motion_translate, optx)
+vim.keymap.set("n", "<leader>cpp", function()
+  return pantran.motion_translate() .. "_"
+end, optx)
+vim.keymap.set("n", "<leader>cps", function()
+  return pantran.motion_translate() .. "is"
+end, optx)
+vim.keymap.set("x", "<leader>cp", pantran.motion_translate, optx)
 
 -- obsidian
 -- map("n", "<leader>lw", "<CMD>ObsidianSearch<CR>")
