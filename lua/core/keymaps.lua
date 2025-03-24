@@ -112,8 +112,8 @@ map("n", "+", "<cmd>res +5<CR>", opts)
 map("n", "_", "<cmd>res -5<CR>", opts)
 
 -- working dir
-map("n", "<localleader>lcd", "<CMD>lcd %:h<CR>")
-map("n", "<localleader>cd", "<CMD>cd %:h<CR>")
+map("n", "<localleader>dd", "<CMD>lcd %:h<CR>")
+map("n", "<localleader>dc", "<CMD>cd %:h<CR>")
 
 -- map buffer
 map("n", "<c-b>", "<CMD>ls<CR>:b<Space>", opts)
