@@ -173,6 +173,6 @@ cmp.setup.filetype("tex", {
     { name = "omni" },
   }, {
     -- { name = "buffer", keyword_length = 3 },
-    { name = "dictionary", keyword_length = 2 },
+    { name = "dictionary", keyword_length = 2, max_item_count = 7 },
   }),
 })
