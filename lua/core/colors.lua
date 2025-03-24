@@ -25,11 +25,11 @@ require("kanagawa").setup {
   dimInactive = true,
   colors = {
     palette = {
-      dragonWhite = "#E0E0E0",
+      -- dragonWhite = "#E0E0E0",
       dragonBlack5 = "#282727",
-      fujiWhite = "#F8F8F2",
+      -- fujiWhite = "#F8F8F2",
       lotusInk1 = "#282727",
-      lotusWhite3 = "#fbf1c7",
+      -- lotusWhite3 = "#fbf1c7",
     },
     theme = {
       all = {
