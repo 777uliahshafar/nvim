@@ -105,7 +105,7 @@ map("n", "k", "gk", { noremap = true })
 map("n", "<c-h>", "<c-w>h") -- vim interpret <c-h> as <c-bs>
 map("n", "<c-j>", "<c-w>j")
 map("n", "<c-k>", "<c-w>k")
-map("n", "<c-l>", "<c-w>w")
+map("n", "<c-l>", "<c-w>l") -- "<c-w>w" cycle nav
 
 -- split resize
 map("n", "+", "<cmd>res +5<CR>", opts)

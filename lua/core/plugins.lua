@@ -68,7 +68,7 @@ local plugins = {
   "hrsh7th/cmp-omni",
   "hrsh7th/cmp-nvim-lsp",
   "saadparwaiz1/cmp_luasnip",
-  -- "uga-rosa/cmp-dictionary",
+  "uga-rosa/cmp-dictionary",
 
   -- Snippet --
   {

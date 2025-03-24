@@ -104,6 +104,7 @@ cmp.setup {
         buffer = "[Buffer]",
         path = "[Path]",
         omni = (vim.inspect(vim_item.menu):gsub('%"', "")),
+        dictionary = "[Dict]",
       })[entry.source.name]
       return vim_item
     end,
@@ -171,6 +172,7 @@ cmp.setup.filetype("tex", {
     { name = "path" },
     { name = "omni" },
   }, {
-    { name = "buffer", keyword_length = 3 },
+    -- { name = "buffer", keyword_length = 3 },
+    { name = "dictionary", keyword_length = 2 },
   }),
 })
