@@ -3,5 +3,6 @@ require("which-key").setup {
   suggestions = 15,
   triggers = {
     { "<leader>", mode = { "n", "v" } },
+    { "<localleader>", mode = { "n" } },
   },
 }
