@@ -31,7 +31,7 @@ paths:
 
 15. Luasnip use snipmate sourcecode for snippet.
 
-16. Place additional files on lexicon folder for dictionary and thesaurus under the home directory. You've stored it in GDrive (textediting folder).
+16. Copy lexicon folder from GDrive (textediting folder) to homedirectory. This include file for nvim plugin thesaurus and cmp-dict.
 
 PS. Check your nvim config `:checkhealth`
 
