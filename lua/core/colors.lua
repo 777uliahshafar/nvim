@@ -22,7 +22,7 @@ require("citruszest").setup {
   },
 }
 require("kanagawa").setup {
-  dimInactive = false,
+  dimInactive = true,
   colors = {
     palette = {
       -- dragonWhite = "#E0E0E0",
