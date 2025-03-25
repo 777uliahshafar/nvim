@@ -17,14 +17,14 @@ local position = require("hop.hint").HintPosition
 -- which-key
 wk.add {
   {
-    "z",
+    "f",
     function()
       hop.hint_words { hint_position = position.END }
     end,
     remap = true,
   },
   {
-    "Z",
+    "F",
     function()
       hop.hint_char2 {} --{ direction = directions.BEFORE_CURSOR, current_line_only = false }
     end,
@@ -168,7 +168,7 @@ map("n", "<leader>e", require("nvim-tree.api").tree.toggle)
 
 -- zen mode
 map("n", "<leader>z", require("zen-mode").toggle)
--- map("n", "zz", require("twilight").toggle, opts)
+map("n", "zz", require("twilight").toggle, opts)
 
 -- luasnip
 -- <c-j> is my expansion key
