@@ -176,14 +176,15 @@ local plugins = {
   --   end,
   -- },
   "777uliahshafar/vim-myhelp",
-  "ton/vim-bufsurf",
-  {
-    "smoka7/hop.nvim",
-    version = "*",
-    opts = {
-      keys = "etovxqpdygfblzhckisuran",
-    },
-  },
+  -- "ton/vim-bufsurf",
+  -- {
+  --   "smoka7/hop.nvim",
+  --   version = "*",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     keys = "etovxqpdygfblzhckisuran",
+  --   },
+  -- },
 }
 
 local opts = {}

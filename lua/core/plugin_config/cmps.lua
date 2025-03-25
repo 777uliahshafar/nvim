@@ -169,7 +169,7 @@ cmp.setup.filetype("markdown", {
 cmp.setup.filetype("tex", {
   sources = cmp.config.sources({
     { name = "luasnip", keyword_length = 2 },
-    { name = "path" },
+    -- { name = "path" },
     { name = "omni" },
   }, {
     -- { name = "buffer", keyword_length = 3 },
