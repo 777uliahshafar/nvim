@@ -9,10 +9,27 @@ local ls = require "luasnip"
 local wk = require "which-key"
 local harpoon = require "harpoon"
 local pantran = require "pantran"
+local hop = require "hop"
+local position = require("hop.hint").HintPosition
+-- local directions = require("hop.hint").HintDirection
 -- local utils = require "core.utils"
 
 -- which-key
 wk.add {
+  {
+    "f",
+    function()
+      hop.hint_words { hint_position = position.END }
+    end,
+    remap = true,
+  },
+  {
+    "F",
+    function()
+      hop.hint_char2 {} --{ direction = directions.BEFORE_CURSOR, current_line_only = false }
+    end,
+    remap = true,
+  },
   { "<leader>a", group = "AlphaIndex" },
   { "<leader>ai", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },

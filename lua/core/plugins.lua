@@ -177,6 +177,13 @@ local plugins = {
   -- },
   "777uliahshafar/vim-myhelp",
   "ton/vim-bufsurf",
+  {
+    "smoka7/hop.nvim",
+    version = "*",
+    opts = {
+      keys = "etovxqpdygfblzhckisuran",
+    },
+  },
 }
 
 local opts = {}
