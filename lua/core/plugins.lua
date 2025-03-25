@@ -24,10 +24,10 @@ local plugins = {
   },
 
   -- Greeter --
-  {
-    "goolord/alpha-nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
+  -- {
+  --   "goolord/alpha-nvim",
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  -- },
   -- Telescope --
   {
     "nvim-telescope/telescope.nvim",
@@ -180,10 +180,7 @@ local plugins = {
   -- {
   --   "smoka7/hop.nvim",
   --   version = "*",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     keys = "etovxqpdygfblzhckisuran",
-  --   },
+  --   lazy = true,
   -- },
 }
 

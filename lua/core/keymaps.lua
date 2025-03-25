@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-local optx = { noremap = true, silent = true, expr = true }
 
 local function map(m, k, v)
   vim.keymap.set(m, k, v, { silent = true })
@@ -9,8 +8,8 @@ local ls = require "luasnip"
 local wk = require "which-key"
 local harpoon = require "harpoon"
 local pantran = require "pantran"
--- local hop = require "hop"
--- local position = require("hop.hint").HintPosition
+local hop = require "hop"
+local position = require("hop.hint").HintPosition
 -- local directions = require("hop.hint").HintDirection
 -- local utils = require "core.utils"
 
@@ -26,12 +25,12 @@ wk.add {
   -- {
   --   "F",
   --   function()
-  --     hop.hint_char2 {} --{ direction = directions.BEFORE_CURSOR, current_line_only = false }
+  --     hop.hint_char2 { current_line_only = false } --{ direction = directions.BEFORE_CURSOR,  }
   --   end,
   --   remap = true,
   -- },
-  { "<leader>a", group = "AlphaIndex" },
-  { "<leader>ai", "<cmd>Alpha<cr>", desc = "Alphaindex" },
+  -- { "<leader>a", group = "AlphaIndex" },
+  -- { "<leader>ai", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
   { "<leader>c", group = "Editing" },
   { "<leader>cb", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
