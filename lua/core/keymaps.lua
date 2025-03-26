@@ -150,7 +150,7 @@ map("n", "<leader>e", require("nvim-tree.api").tree.toggle)
 
 -- zen mode
 map("n", "<leader>z", require("zen-mode").toggle)
-map("n", "zz", require("twilight").toggle, opts)
+-- map("n", "<localleader>z", require("twilight").toggle, opts)
 
 -- luasnip
 -- <c-j> is my expansion key

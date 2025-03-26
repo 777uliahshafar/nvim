@@ -88,17 +88,17 @@ local plugins = {
   {
     "folke/zen-mode.nvim",
     dependencies = {
-      {
-        "folke/twilight.nvim",
-        lazy = true,
-        opts = {
-          dimming = { alpha = 0.15 },
-          context = 3,
-          treesitter = true,
-          term_bg = "#232326",
-          exclude = { "bib", "md" },
-        },
-      },
+      -- {
+      --   "folke/twilight.nvim",
+      --   lazy = true,
+      --   opts = {
+      --     dimming = { alpha = 0.15 },
+      --     context = 3,
+      --     treesitter = true,
+      --     term_bg = "#232326",
+      --     exclude = { "bib", "md" },
+      --   },
+      -- },
     },
   },
   -- Tim Pope Plugins --
