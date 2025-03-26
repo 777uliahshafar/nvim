@@ -12,6 +12,10 @@ end, {})
 
 require("gruvbox").setup {
   contrast = "hard", -- can be "hard", "soft" or empty string
+  overrides = {
+    FlashMatch = { fg = "#00dfff", bold = true },
+    FlashLabel = { fg = "#2b8db3", bold = true },
+  },
 }
 
 require("citruszest").setup {
@@ -30,7 +34,6 @@ require("kanagawa").setup {
       -- fujiWhite = "#F8F8F2",
       lotusInk1 = "#32302f",
       -- lotusWhite3 = "#fbf1c7",
-      FlashMatch = { bg = "#eeeeee" },
     },
     theme = {
       all = {
@@ -47,6 +50,8 @@ require("kanagawa").setup {
       TelescopeResultsBorder = { link = "TelescopePromptBorder" },
       TelescopePreviewBorder = { link = "TelescopePromptBorder" },
       ["@markup.heading"] = { link = "Operator" },
+      FlashMatch = { fg = "#00dfff", bold = true },
+      FlashLabel = { fg = "#2b8db3", bold = true },
     }
   end,
   background = { -- map the value of 'background' option to a theme
@@ -55,9 +60,5 @@ require("kanagawa").setup {
   },
   ...,
 }
-
--- remapping highligh flash.nvim
-vim.api.nvim_command "highlight default FlashMatch guifg=#00dfff gui=bold ctermfg=45 cterm=bold"
-vim.api.nvim_command "highlight default FlashLabel guifg=#2b8db3 ctermfg=33"
 
 vim.cmd.colorscheme "gruvbox"
