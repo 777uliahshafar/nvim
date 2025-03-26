@@ -30,6 +30,7 @@ require("kanagawa").setup {
       -- fujiWhite = "#F8F8F2",
       lotusInk1 = "#32302f",
       -- lotusWhite3 = "#fbf1c7",
+      FlashMatch = { bg = "#eeeeee" },
     },
     theme = {
       all = {
@@ -54,5 +55,9 @@ require("kanagawa").setup {
   },
   ...,
 }
+
+-- remapping highligh flash.nvim
+vim.api.nvim_command "highlight default FlashMatch guifg=#00dfff gui=bold ctermfg=45 cterm=bold"
+vim.api.nvim_command "highlight default FlashLabel guifg=#2b8db3 ctermfg=33"
 
 vim.cmd.colorscheme "gruvbox"
