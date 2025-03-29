@@ -86,5 +86,12 @@ require("obsidian").setup {
     -- Open the URL in the default web browser.
     vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
     -- vim.ui.open(url) -- need Neovim 0.10.0+
-  end,
+  end, -- end follow url
+
+  ---@param img string
+  follow_img_func = function(img)
+    -- vim.fn.jobstart { "qlmanage", "-p", img } -- Mac OS quick look preview
+    -- vim.fn.jobstart({"xdg-open", url})  -- linux
+    vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+  end, -- end follow img
 } -- end setup

@@ -22,6 +22,16 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
+    "prettier",
+    fmt("{}{}", {
+      i(1, "<!--prettier-ignore-start-->"),
+      i(2, "<!--prettier-ignore-end-->"),
+    })
+  ), --end of snip
+}) -- end all
+
+ls.add_snippets("markdown", {
+  s(
     "lip",
     fmt("[{}]({}){}", {
       f(function(_, snip)
