@@ -324,7 +324,7 @@ ls.add_snippets("tex", {
       -- In this case only the first line is inserted.
       return snip.env.TM_SELECTED_TEXT or {}
     end, {}),
-    t { "} " },
+    t { "}" },
     i(0),
   }),
 
@@ -335,7 +335,7 @@ ls.add_snippets("tex", {
       -- In this case only the first line is inserted.
       return snip.env.TM_SELECTED_TEXT or {}
     end, {}),
-    t { "} " },
+    t { "}" },
     i(0),
   }),
 

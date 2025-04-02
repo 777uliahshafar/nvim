@@ -3,10 +3,10 @@ local create_cmd = vim.api.nvim_create_user_command
 create_cmd("ToggleBackground", function()
   if vim.o.background == "light" then
     vim.o.background = "dark"
-    vim.o.cursorline = false
+    -- vim.o.cursorline = false
   else
     vim.o.background = "light"
-    vim.o.cursorline = true
+    -- vim.o.cursorline = true
   end
 end, {})
 
