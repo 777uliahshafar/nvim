@@ -65,6 +65,7 @@ require("chatgpt").setup {
     },
   },
   popup_input = {
+    wrap = true,
     prompt = "  ",
     win_options = {
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
