@@ -2,7 +2,7 @@ require("zen-mode").setup {
   window = {
     backdrop = 1,
     -- width = 0.95, -- 95\% dari lebar editor
-    width = 59,
+    width = 0.94,
     options = {
       signcolumn = "yes",
       number = false,

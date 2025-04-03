@@ -101,6 +101,7 @@ local plugins = {
       -- },
     },
   },
+  "junegunn/limelight.vim", -- twilight alternative
   -- Tim Pope Plugins --
   "tpope/vim-fugitive",
   -- "tpope/vim-surround",
@@ -274,13 +275,6 @@ local plugins = {
     },
   },
   -- end flash
-  {
-    "adelarsq/image_preview.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("image_preview").setup()
-    end,
-  },
 }
 
 local opts = {}
