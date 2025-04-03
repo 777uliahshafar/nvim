@@ -17,3 +17,6 @@ require("zen-mode").setup {
     twilight = { enabled = false },
   },
 }
+
+local g = vim.g
+g.limelight_default_coefficient = 0.65

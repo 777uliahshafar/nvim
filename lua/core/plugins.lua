@@ -87,21 +87,8 @@ local plugins = {
   -- zen mode--
   {
     "folke/zen-mode.nvim",
-    dependencies = {
-      -- {
-      --   "folke/twilight.nvim",
-      --   lazy = true,
-      --   opts = {
-      --     dimming = { alpha = 0.15 },
-      --     context = 3,
-      --     treesitter = true,
-      --     term_bg = "#232326",
-      --     exclude = { "bib", "md" },
-      --   },
-      -- },
-    },
   },
-  "junegunn/limelight.vim", -- twilight alternative
+  "junegunn/limelight.vim", -- dim twilight alternative
   -- Tim Pope Plugins --
   "tpope/vim-fugitive",
   -- "tpope/vim-surround",
