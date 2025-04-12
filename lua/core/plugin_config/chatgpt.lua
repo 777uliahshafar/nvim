@@ -56,7 +56,7 @@ require("chatgpt").setup {
       scroll_down = "<C-d>",
       toggle_settings = "<C-o>",
       new_session = "<C-n>",
-      cycle_windows = "<C-l>",
+      cycle_windows = "<Tab>",
       select_session = "<cr>",
       edit_message = "<C-e>",
     },
