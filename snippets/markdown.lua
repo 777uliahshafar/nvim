@@ -45,14 +45,15 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
-    "sum",
-    fmt("<details><summary>...</summary>{}</details>{}", {
+    "drop",
+    fmt("<details><summary>{}</summary><br><!-- br for linebreak -->{}</details>{}", {
+      i(1, "summary"),
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
         return snip.env.TM_SELECTED_TEXT or {}
       end, {}),
-      i(2, " "),
+      i(0, " "),
     })
   ), --end of snip
 }) -- end all
