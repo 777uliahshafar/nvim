@@ -61,4 +61,4 @@ require("kanagawa").setup {
   ...,
 }
 
-vim.cmd.colorscheme "kanagawa-lotus"
+vim.cmd.colorscheme "gruvbox"
