@@ -23,8 +23,7 @@ wk.add {
     function()
       return pantran.motion_translate() .. "_"
     end,
-    noremap = true,
-    silent = true,
+    opts,
     expr = true,
     desc = "translate para",
   },
