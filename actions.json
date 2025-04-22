@@ -1,9 +1,26 @@
 {
+  "grammaronly": {
+    "type": "chat",
+    "opts": {
+      "template": "Please correct the spelling and grammar of the following text. Show the corrections in bold so I can see what has been corrected. \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "english"
+      }
+    }
+  },
   "grammar_correction": {
     "type": "chat",
     "opts": {
-      "template": "Refine the writing of the given text style to convey ideas with precision and impact. Pay attention to the appropriate tone for the intended audience, whether it be formal, informal, persuasive, or informative. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas. Strive for conciseness by eliminating unnecessary wordiness and refining sentences for brevity without sacrificing clarity. If the input text has another language than english, identify the language and output the new text in the language of the input text: \n\n{{input}}",
-      "strategy": "edit",
+      "template": "Act as a proofreader and review the following text. Feel free to rephrase sentences or make changes to enhance clarity but maintain the overall tone and style of the original. Show all changes in bold so I can see what has been updated. \n\n{{input}}",
+      "strategy": "append",
       "params": {
         "model": "gpt-3.5-turbo"
       }
