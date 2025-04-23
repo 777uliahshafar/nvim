@@ -72,6 +72,7 @@ wk.add {
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
     { "<leader>dg", "<cmd>ChatGPTRun grammaronly<cr>", desc = "Chat grammar" },
+    { "<leader>dp", "<cmd>ChatGPTRun stuck<cr>", desc = "Chat Stuck" },
     { "<leader>dc", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat Coherence" },
     { "<leader>dm", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
     { "<leader>dl", "<cmd>ChatGPTRun paraphrase<cr>", desc = "Chat paraphrase" },

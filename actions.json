@@ -1,4 +1,21 @@
 {
+  "stuck": {
+    "type": "chat",
+    "opts": {
+      "template": "I am stuck in this following text, I need your help to describe this thing : \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "english"
+      }
+    }
+  },
   "grammaronly": {
     "type": "chat",
     "opts": {
