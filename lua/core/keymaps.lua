@@ -49,6 +49,7 @@ wk.add {
   },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>d", group = "ChatGPT" },
+  { "<localleader>d", group = "PWD" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
@@ -59,6 +60,8 @@ wk.add {
   { "<leader>ge", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1|template" },
   { "<leader>gg", "<cmd>G<cr>", desc = "Git" },
   { "<leader>gp", "<cmd>Git push<cr>", desc = "Git push" },
+  { "<leader>k", group = "Latex" },
+  { "<localleader>l", group = "Latex+" },
   { "<leader>m", group = "MarkdownObs" },
   { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>s", group = "Harpoon" },
@@ -142,6 +145,7 @@ map("n", "<f5>", "<CMD>ToggleBackground<CR>")
 map("n", "<f9>", "<CMD>colorscheme gruvbox<CR>")
 map("n", "<f8>", "<CMD>colorscheme PaperColor<CR>")
 map("n", "<f7>", "<CMD>colorscheme kanagawa<CR>")
+map("n", "<localleader>w", "<CMD>colorscheme kanagawa-wave<CR>", opts, { desc = "co kanagawa-wave" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
