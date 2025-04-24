@@ -71,6 +71,8 @@ wk.add {
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
   {
     mode = { "n", "v" },
+    { "<leader>c", group = "bahasa" },
+    { "<leader>d", group = "english" },
     { "<leader>cp", "y<cmd>Pantran mode=interactive<cr>p", desc = "translate int" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
