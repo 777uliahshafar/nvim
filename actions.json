@@ -1,4 +1,21 @@
 {
+  "connect": {
+    "type": "chat",
+    "opts": {
+      "template": "Connect these two sentence for cohesive paragraph: \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "english"
+      }
+    }
+  },
   "stuck": {
     "type": "chat",
     "opts": {

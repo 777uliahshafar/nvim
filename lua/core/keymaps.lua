@@ -76,6 +76,7 @@ wk.add {
     { "<leader>cp", "y<cmd>Pantran mode=interactive<cr>p", desc = "translate int" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
+    { "<leader>df", "<cmd>ChatGPTRun connect<cr>", desc = "Chat connect" },
     { "<leader>dg", "<cmd>ChatGPTRun grammaronly<cr>", desc = "Chat grammar" },
     { "<leader>dp", "<cmd>ChatGPTRun stuck<cr>", desc = "Chat Stuck" },
     { "<leader>dc", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat Coherence" },
