@@ -67,8 +67,10 @@ wk.add {
   { "<leader>s", group = "Harpoon" },
   { "<leader>w", group = "Windows" },
   { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
-  { "<leader>wh", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
+  { "<leader>wj", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
+  { "<leader>wv", "<cmd>vs<cr>", desc = "vertikal pane" },
+  { "<leader>wh", "<cmd>sp<cr>", desc = "horizontal pane" },
   {
     mode = { "n", "v" },
     { "<leader>c", group = "bahasa" },
