@@ -8,7 +8,7 @@ require("marks").setup {
   },
   bookmark_0 = {
     sign = "⚑",
-    virt_text = "last edit",
+    virt_text = "now",
     -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
     -- defaults to false.
     annotate = true,
