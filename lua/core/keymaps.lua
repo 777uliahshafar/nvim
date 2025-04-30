@@ -50,6 +50,7 @@ wk.add {
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>d", group = "ChatGPT" },
   { "<localleader>d", group = "PWD" },
+  { "<localleader>c", group = "Colorscheme" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
