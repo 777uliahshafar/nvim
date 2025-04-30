@@ -148,10 +148,10 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 
 map("n", "<f2>", "<CMD>h mycheat<CR>")
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
-map("n", "<f9>", "<CMD>colorscheme gruvbox<CR>")
-map("n", "<f8>", "<CMD>colorscheme PaperColor<CR>")
-map("n", "<f7>", "<CMD>colorscheme kanagawa<CR>")
-map("n", "<localleader>w", "<CMD>colorscheme kanagawa-wave<CR>", opts, { desc = "co kanagawa-wave" })
+map("n", "<localleader>cg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox" })
+map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co papercolor" })
+map("n", "<localleader>ck", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
+map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
