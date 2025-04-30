@@ -83,6 +83,7 @@ wk.add {
     { "<leader>dp", "<cmd>ChatGPTRun stuck<cr>", desc = "Chat Stuck" },
     { "<leader>dc", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat Coherence" },
     { "<leader>dm", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
+    { "<leader>dr", "<cmd>ChatGPTRun refine<cr>", desc = "Chat refine" },
     { "<leader>dl", "<cmd>ChatGPTRun paraphrase<cr>", desc = "Chat paraphrase" },
     { "<leader>cc", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },

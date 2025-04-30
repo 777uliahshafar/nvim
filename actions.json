@@ -1,4 +1,14 @@
 {
+  "refine": {
+    "type": "chat",
+    "opts": {
+      "template": "Refine the writing of the given text style to convey ideas with precision and impact. Pay attention to the appropriate tone for the intended audience, whether it be formal, informal, persuasive, or informative. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas. Strive for conciseness by eliminating unnecessary wordiness and refining sentences for brevity without sacrificing clarity. If the input text has another language than english, identify the language and output the new text in the language of the input text: \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    }
+  },
   "connect": {
     "type": "chat",
     "opts": {
