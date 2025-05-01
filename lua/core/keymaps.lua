@@ -72,6 +72,10 @@ wk.add {
   { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
   { "<leader>wv", "<cmd>vs<cr>", desc = "vertikal pane" },
   { "<leader>wh", "<cmd>sp<cr>", desc = "horizontal pane" },
+  { "<leader>wu", "<cmd>res +5<cr>", desc = "horizontal up" },
+  { "<leader>wd", "<cmd>res -5<cr>", desc = "horizontal down " },
+  { "<leader>wr", "<cmd>vertical res +5<cr>", desc = "vertical right" },
+  { "<leader>wl", "<cmd>vertical res -5<cr>", desc = "vertical left" },
   {
     mode = { "n", "v" },
     { "<leader>c", group = "bahasa" },
@@ -120,6 +124,8 @@ map("n", "<c-l>", "<c-w>l") -- "<c-w>w" cycle nav
 -- split resize
 map("n", "+", "<cmd>res +5<CR>", opts)
 map("n", "_", "<cmd>res -5<CR>", opts)
+map("n", "+", "<cmd>vertical res +5<CR>", opts)
+map("n", "_", "<cmd>vertical res -5<CR>", opts)
 
 -- working dir
 map("n", "<localleader>dd", "<CMD>lcd %:h<CR>")
