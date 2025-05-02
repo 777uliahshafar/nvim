@@ -90,6 +90,7 @@ wk.add {
     { "<leader>dp", "<cmd>ChatGPTRun stuck<cr>", desc = "Chat Stuck" },
     { "<leader>dr", "<cmd>ChatGPTRun refine<cr>", desc = "Chat refine" },
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
+    { "<leader>dq", "<cmd>ChatGPTRun quest<cr>", desc = "Chat quest" },
     { "<leader>cc", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
     { "<leader>cf", "<cmd>ChatGPTRun hubung<cr>", desc = "Chat hubung" },
     { "<leader>cg", "<cmd>ChatGPTRun eyd<cr>", desc = "Chat eyd" },
@@ -98,6 +99,7 @@ wk.add {
     { "<leader>cp", "<cmd>ChatGPTRun buntu<cr>", desc = "Chat Buntu" },
     { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
+    { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
   },
   {
     mode = { "i" },

@@ -1,4 +1,21 @@
 {
+  "quest": {
+    "type": "chat",
+    "opts": {
+      "template": "Generate three possible research questions for an academic article on the following topic: \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
+      }
+    }
+  },
   "refine": {
     "type": "chat",
     "opts": {
@@ -95,6 +112,23 @@
       "strategy": "append",
       "params": {
         "model": "gpt-3.5-turbo"
+      }
+    }
+  },
+  "tanya": {
+    "type": "chat",
+    "opts": {
+      "template": "Buat tiga pertanyaan penelitian potensial untuk artikel akademik tentang topik berikut: \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
       }
     }
   },
