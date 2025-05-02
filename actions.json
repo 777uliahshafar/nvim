@@ -1,4 +1,21 @@
 {
+  "outline": {
+    "type": "chat",
+    "opts": {
+      "template": "Develop an outline for an academic article with the following research question: \n\n{{input}}",
+      "strategy": "edit",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "english"
+      }
+    }
+  },
   "quest": {
     "type": "chat",
     "opts": {
@@ -12,7 +29,7 @@
       "lang": {
         "type": "string",
         "optional": "true",
-        "default": "bahasa"
+        "default": "english"
       }
     }
   },
@@ -112,6 +129,23 @@
       "strategy": "append",
       "params": {
         "model": "gpt-3.5-turbo"
+      }
+    }
+  },
+  "kerangka": {
+    "type": "chat",
+    "opts": {
+      "template": "Kembangkan kerangka (outline) untuk artikel akademik dengan pertanyaan penelitian berikut: \n\n{{input}}",
+      "strategy": "edit",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
       }
     }
   },
