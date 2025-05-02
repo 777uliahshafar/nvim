@@ -60,40 +60,6 @@
       }
     }
   },
-  "grammar_correction": {
-    "type": "chat",
-    "opts": {
-      "template": "Act as a proofreader and review the following text. Feel free to rephrase sentences or make changes to enhance clarity but maintain the overall tone and style of the original. Show all changes in bold so I can see what has been updated. \n\n{{input}}",
-      "strategy": "append",
-      "params": {
-        "model": "gpt-3.5-turbo"
-      }
-    },
-    "args": {
-      "lang": {
-        "type": "string",
-        "optional": "true",
-        "default": "english"
-      }
-    }
-  },
-  "tata_bahasa": {
-    "type": "chat",
-    "opts": {
-      "template": "Perbaiki penulisan gaya teks berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antaride. Pastikan teks ringkas dengan menghilangkan kata-kata tidak perlu, sempurnakan kalimat agar padat tanpa mengurangi kejelasan, dan gunakan tata bahasa {{lang}} yang baik dan benar:\n\n{{input}}",
-      "strategy": "append",
-      "params": {
-        "model": "gpt-3.5-turbo"
-      }
-    },
-    "args": {
-      "lang": {
-        "type": "string",
-        "optional": "true",
-        "default": "indonesia"
-      }
-    }
-  },
   "inggris": {
     "type": "chat",
     "opts": {
@@ -109,6 +75,94 @@
         "type": "string",
         "optional": "true",
         "default": "english"
+      }
+    }
+  },
+  "summarize": {
+    "type": "chat",
+    "opts": {
+      "template": "Summarize the following text.\n\nText:\n\"\"\"\n{{input}}\n\"\"\"\n\nSummary:",
+      "strategy": "edit",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    }
+  },
+  "paraphrase": {
+    "type": "chat",
+    "opts": {
+      "template": "Paraphrase the following sentence for use in an academic paper:\n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    }
+  },
+  "perbaiki": {
+    "type": "chat",
+    "opts": {
+      "template": "Perbaiki penulisan gaya teks berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antar ide. Pastikan teks ringkas dengan menghilangkan kata-kata tidak perlu, sempurnakan kalimat agar padat tanpa mengurangi kejelasan, dan gunakan tata bahasa {{lang}} yang baik dan benar:\n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
+      }
+    }
+  },
+  "hubung": {
+    "type": "chat",
+    "opts": {
+      "template": "Hubungkan dua kalimat ini untuk paragraf yang kohesif: \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "english"
+      }
+    }
+  },
+  "buntu": {
+    "type": "chat",
+    "opts": {
+      "template": "Saya buntu pada teks berikut ini, bantu saya untuk menjelaskannya: \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
+      }
+    }
+  },
+  "eyd": {
+    "type": "chat",
+    "opts": {
+      "template": "Please correct the spelling and grammar of the following text. Show the corrections in bold so I can see what has been corrected. \n\n{{input}}",
+      "strategy": "append",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
       }
     }
   },
@@ -130,31 +184,11 @@
       }
     }
   },
-  "summarize": {
-    "type": "chat",
-    "opts": {
-      "template": "Summarize the following text.\n\nText:\n\"\"\"\n{{input}}\n\"\"\"\n\nSummary:",
-      "strategy": "edit",
-      "params": {
-        "model": "gpt-3.5-turbo"
-      }
-    }
-  },
   "rangkum": {
     "type": "chat",
     "opts": {
       "template": "Rangkum tulisan berikut.\n\nTulisan:\n\"\"\"\n{{input}}\n\"\"\"\n\nRangkuman:",
       "strategy": "edit",
-      "params": {
-        "model": "gpt-3.5-turbo"
-      }
-    }
-  },
-  "paraphrase": {
-    "type": "chat",
-    "opts": {
-      "template": "Paraphrase the following sentence for use in an academic paper:\n\n{{input}}",
-      "strategy": "append",
       "params": {
         "model": "gpt-3.5-turbo"
       }
@@ -170,7 +204,6 @@
       }
     }
   },
-
   "complete_code": {
     "type": "chat",
     "opts": {
