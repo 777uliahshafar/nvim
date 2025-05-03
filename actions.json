@@ -2,7 +2,7 @@
   "develop": {
     "type": "chat",
     "opts": {
-      "template": "Develop the the following ideas to convey ideas with precision and impact. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas: \n\n{{input}}",
+      "template": "Develop the the following ideas according to the spelling and grammar rules. Also, providing clear transitions between ideas: \n\n{{input}}",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo"
@@ -152,7 +152,7 @@
   "susun": {
     "type": "chat",
     "opts": {
-      "template": "Susun ide-ide berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antar ide: \n\n{{input}}",
+      "template": "Susun ide-ide berikut sesuai dengan pedoman bahasa indonesia yang baik dan benar, serta gunakan transisi yang jelas antar ide: \n\n{{input}}",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo"
