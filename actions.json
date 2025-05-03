@@ -1,4 +1,21 @@
 {
+  "develop": {
+    "type": "chat",
+    "opts": {
+      "template": "Develop the the following ideas to convey ideas with precision and impact. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas: \n\n{{input}}",
+      "strategy": "edit",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
+      }
+    }
+  },
   "outline": {
     "type": "chat",
     "opts": {
@@ -129,6 +146,23 @@
       "strategy": "append",
       "params": {
         "model": "gpt-3.5-turbo"
+      }
+    }
+  },
+  "susun": {
+    "type": "chat",
+    "opts": {
+      "template": "Susun ide-ide berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antar ide: \n\n{{input}}",
+      "strategy": "edit",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "bahasa"
       }
     }
   },
