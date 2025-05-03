@@ -100,7 +100,7 @@ wk.add {
     { "<leader>cg", "<cmd>ChatGPTRun eyd<cr>", desc = "Chat eyd" },
     { "<leader>cm", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
     { "<leader>cl", "<cmd>ChatGPTRun parafrase<cr>", desc = "Chat parafrase" },
-    { "<leader>do", "<cmd>ChatGPTRun kerangka<cr>", desc = "Chat outline" },
+    { "<leader>co", "<cmd>ChatGPTRun kerangka<cr>", desc = "Chat outline" },
     { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
