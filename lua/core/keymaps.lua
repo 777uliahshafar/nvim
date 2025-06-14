@@ -16,8 +16,8 @@ wk.add {
   -- { "<leader>ai", "<cmd>Alpha<cr>", desc = "Alphaindex" },
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
   { "<leader>c", group = "Editing" },
-  { "<leader>cb", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
-  { "<leader>ci", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
+  { "<leader>ci", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
+  { "<leader>ce", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
   {
     "<leader>cpp",
     function()
