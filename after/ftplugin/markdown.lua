@@ -46,8 +46,8 @@ vim.api.nvim_buf_set_keymap(0, "v", "<leader>ma", "<CMD>ObsidianLinkNew<CR>", { 
 vim.keymap.set("x", "<leader>me", ":ObsidianExtractNote<cr>")
 
 -- vim markdown
-vim.api.nvim_buf_set_keymap(0, "n", "<localleader>,", "<CMD>ObsidianTOC<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<localleader>t", "<CMD>InsertToc 3<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>g", "<CMD>ObsidianTOC<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mt", "<CMD>InsertToc 3<CR>", { noremap = false })
 
 vim.api.nvim_exec(
   [[
