@@ -38,7 +38,8 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>ml", "<CMD>call Landsmd()<CR>", { n
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mf", "<CMD>ObsidianSearch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mk", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mn", "<CMD>ObsidianNewFromTemplate<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mb", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<localleader>b", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<localleader>l", "<CMD>ObsidianLinks<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mk", "<CMD>ObsidianTags<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>me", "<CMD>ObsidianTemplate<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mv", "<CMD>ObsidianPasteImg<CR>", { noremap = false })
@@ -46,7 +47,7 @@ vim.api.nvim_buf_set_keymap(0, "v", "<leader>ma", "<CMD>ObsidianLinkNew<CR>", { 
 vim.keymap.set("x", "<leader>me", ":ObsidianExtractNote<cr>")
 
 -- vim markdown
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>g", "<CMD>ObsidianTOC<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<localleader>k", "<CMD>ObsidianTOC<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mt", "<CMD>InsertToc 3<CR>", { noremap = false })
 
 vim.api.nvim_exec(

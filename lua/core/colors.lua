@@ -61,5 +61,5 @@ require("kanagawa").setup {
   ...,
 }
 
-vim.cmd.colorscheme "gruvbox"
-vim.o.background = "light"
+vim.cmd.colorscheme "kanagawa-wave"
+-- vim.o.background = "dark"
