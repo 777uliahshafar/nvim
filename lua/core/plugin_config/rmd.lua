@@ -18,7 +18,15 @@ g.vim_markdown_new_list_item_indent = 2
 g.vim_markdown_borderless_table = 1
 -- g.vim_markdown_follow_anchor = 1 -- Allow to follow link of header within file [first header](#first-header) with ge
 
+-- pandoc -t latex source.md | pandoc -f latex --data-dir=docs/rendering/ -o target.docx
 vim.cmd [[
+function! Mdocx()
+        let extension = expand('%:e')
+        if extension == "md"
+                execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=11pt --pdf-engine=xelatex % -s -o C:/Users/user/Documents/%:t:r.docx"
+        endif
+endfunction
+
 function! Potraitmd()
         let extension = expand('%:e')
         if extension == "md"

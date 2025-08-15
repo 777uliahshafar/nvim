@@ -30,13 +30,14 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>mp", [["*P]], { noremap = false })
 -- vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { noremap = false })
 
 -- pandoc converter
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mc", "<CMD>call Potraitmd()<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>ml", "<CMD>call Landsmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mcp", "<CMD>call Potraitmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mcl", "<CMD>call Landsmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mcd", "<CMD>call Mdocx()<CR>", { noremap = false })
 
 -- obsidian
 
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mf", "<CMD>ObsidianSearch<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mk", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mk", "<CMD>ObsidianSearch<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>mf", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mn", "<CMD>ObsidianNewFromTemplate<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<localleader>b", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<localleader>l", "<CMD>ObsidianLinks<CR>", { noremap = false })
