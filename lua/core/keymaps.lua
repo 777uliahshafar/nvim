@@ -131,10 +131,10 @@ map("n", "<c-k>", "<c-w>k")
 map("n", "<c-l>", "<c-w>l") -- "<c-w>w" cycle nav
 
 -- split resize
-map("n", "+", "<cmd>res +5<CR>", opts)
-map("n", "_", "<cmd>res -5<CR>", opts)
-map("n", "+", "<cmd>vertical res +5<CR>", opts)
-map("n", "_", "<cmd>vertical res -5<CR>", opts)
+map("n", "<leader>wu", "<cmd>res +5<CR>", opts)
+map("n", "<leader>wd", "<cmd>res -5<CR>", opts)
+map("n", "<leader>wu", "<cmd>vertical res +5<CR>", opts)
+map("n", "<leader>wd", "<cmd>vertical res -5<CR>", opts)
 
 -- working dir
 map("n", "<localleader>dd", "<CMD>lcd %:h<CR>")
