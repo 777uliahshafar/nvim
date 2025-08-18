@@ -19,18 +19,20 @@ g.vim_markdown_borderless_table = 1
 -- g.vim_markdown_follow_anchor = 1 -- Allow to follow link of header within file [first header](#first-header) with ge
 
 -- pandoc -t latex source.md | pandoc -f latex --data-dir=docs/rendering/ -o target.docx
+-- execute "! pandoc -t latex -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=11pt % | --data-dir=~/.pandoc/templates/module-templ.dotm -s -o C:/Users/user/Documents/%:t:r.docx
+
 vim.cmd [[
 function! Mdocx()
         let extension = expand('%:e')
         if extension == "md"
-                execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=11pt --pdf-engine=xelatex % -s -o C:/Users/user/Documents/%:t:r.docx"
+ execute "!pandoc % -o C:/Users/user/Documents/%:t:r.docx --reference-doc=./templates/module-reference.docx"
         endif
 endfunction
 
 function! Potraitmd()
         let extension = expand('%:e')
         if extension == "md"
-                execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --template=eisvogel -s -o pdf/%:t:r.pdf"
+                execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --data-dir=~/.pandoc/templates/eisvogel.latex -s -o pdf/%:t:r.pdf"
         endif
 endfunction
 
