@@ -243,8 +243,8 @@ ls.add_snippets("tex", {
           t "t,mycolor=digiPH_leaf,mytitle=standard,dark",
           t "t,mycolor=digiPH_ocean,mytitle=center,dark",
           t "t,mycolor=digiPH_red,mytitle=standard,dark",
-          t "t,mybg=darkbg,mytitle=standard,dark",
-          t "t,mybg=lightbg,mytitle=standard,light",
+          t "t,mybg=adddarkbg,mytitle=standard,dark",
+          t "t,mybg=addlightbg,mytitle=standard,light",
         }),
       }
     )
