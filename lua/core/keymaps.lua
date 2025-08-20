@@ -137,8 +137,8 @@ map("n", "<leader>wu", "<cmd>vertical res +5<CR>", opts)
 map("n", "<leader>wd", "<cmd>vertical res -5<CR>", opts)
 
 -- working dir
-map("n", "<localleader>dd", "<CMD>lcd %:h<CR>")
-map("n", "<localleader>dc", "<CMD>cd %:h<CR>")
+map("n", "<localleader>rd", "<CMD>lcd %:h<CR>")
+map("n", "<localleader>rc", "<CMD>cd %:h<CR>")
 
 -- map buffer
 map("n", "<c-b>", "<CMD>ls<CR>:b<Space>", opts)
@@ -255,6 +255,8 @@ map("n", "gz", "<CMD>ZoomToggle<cr>")
 
 -- vim-bufsurf
 map("n", "<bs>", "<Plug>(buf-surf-back)")
+
+vim.api.nvim_buf_set_keymap(0, "", "<localleader>d", "<cmd>BookmarksQFListAll<cr>", { noremap = false })
 
 -- obsidian
 -- map("n", "<leader>lw", "<CMD>ObsidianSearch<CR>")

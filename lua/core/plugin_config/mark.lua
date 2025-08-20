@@ -9,14 +9,28 @@ require("marks").setup {
   },
   bookmark_0 = {
     sign = "⚑",
-    virt_text = "here",
+    virt_text = "todo",
     -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
     -- defaults to false.
     annotate = true,
   },
   bookmark_9 = {
-    sign = "",
-    virt_text = "ref",
+    sign = "",
+    virt_text = "Very important",
+    -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
+    -- defaults to false.
+    annotate = true,
+  },
+  bookmark_8 = {
+    sign = "",
+    virt_text = "Important",
+    -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
+    -- defaults to false.
+    annotate = true,
+  },
+  bookmark_7 = {
+    sign = "",
+    virt_text = "Petty",
     -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
     -- defaults to false.
     annotate = true,
