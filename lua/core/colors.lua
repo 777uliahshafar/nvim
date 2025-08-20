@@ -60,6 +60,13 @@ require("kanagawa").setup {
   },
   ...,
 }
+-- require("catppuccin").setup {
+--   flavour = "auto", -- latte, frappe, macchiato, mocha
+--   background = { -- :h background
+--     light = "latte",
+--     dark = "macchiato",
+--   },
+-- }
 
 vim.cmd.colorscheme "kanagawa-wave"
 -- vim.o.background = "dark"
