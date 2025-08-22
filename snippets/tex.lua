@@ -222,14 +222,19 @@ ls.add_snippets("tex", {
   ), --end of snip
   s(
     "nop",
-    fmt("\\notes{{{}}}", {
+    fmt("\\notes{}{{{}}}", {
+      c(1, { -- Choice node
+        t "", -- First option: empty string
+        t "[itemize]", -- Second option: [itemize]
+      }),
       f(function(_, snip)
-        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- TM_SELECTED_TEXT is a table to account for multiline selections.
         -- In this case only the first line is inserted.
-        return snip.env.TM_SELECTED_TEXT or {}
+        local selected_text = snip.env.TM_SELECTED_TEXT
+        return type(selected_text) == "table" and selected_text[1] or selected_text or ""
       end, {}),
     })
-  ), --end of snip
+  ), -- end of snip
   s(
     "fm",
     fmt(

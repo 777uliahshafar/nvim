@@ -11,6 +11,7 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>kc", "<plug>(vimtex-compile)", { no
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ke", "<plug>(vimtex-errors)", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>kv", "<plug>(vimtex-view)", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ks", "<plug>(vimtex-toggle-main)", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>kb", "<cmd>h csb<cr>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<localleader>k", "<plug>(vimtex-toc-open)", { noremap = false, desc = "TOC" })
 
 -- local kind_icons = {
