@@ -169,7 +169,7 @@ map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co pape
 map("n", "<localleader>ck", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
 map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
 map("n", "<localleader>cc", "<CMD>colorscheme catppuccin<CR>", { desc = "co catppuccin" })
-map("n", "<localleader>cn", "<CMD>colorscheme nightfox<CR>", { desc = "co nightfox" })
+map("n", "<localleader>cf", "<CMD>colorscheme carbonfox<CR>", { desc = "co nightfox" })
 map("n", "<localleader>cd", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
 
 ---------------------------------------------
