@@ -111,7 +111,7 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "txtleft",
+    "txtl",
     fmt("\\ltxt{}{{{}}}", {
       c(1, {
         t "{digiPH_gray}{digiPH_black}",
@@ -127,7 +127,7 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "txtright",
+    "txtr",
     fmt("\\rtxt{}{{{}}}", {
       c(1, {
         t "{digiPH_gray}{digiPH_black}",
@@ -143,7 +143,47 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "txtup",
+    "txtlp",
+    fmt("\\ltxt{}{{{}}}", {
+      c(1, {
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
+      }),
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+    })
+  ), --end of snip
+
+  s(
+    "txtrp",
+    fmt("\\rtxt{}{{{}}}", {
+      c(1, {
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
+      }),
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+    })
+  ), --end of snip
+
+  s(
+    "txtu",
     fmt("\\utxt{}{{{}}}", {
       c(1, {
         t "{digiPH_gray}{digiPH_black}",
@@ -159,7 +199,27 @@ ls.add_snippets("tex", {
   ), --end of snip
 
   s(
-    "txtbot",
+    "txtup",
+    fmt("\\utxt{}{{{}}}", {
+      c(1, {
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
+      }),
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
+    })
+  ), --end of snip
+
+  s(
+    "txtb",
     fmt("\\btxt{}{{{}}}", {
       c(1, {
         t "{digiPH_gray}{digiPH_black}",
@@ -171,6 +231,25 @@ ls.add_snippets("tex", {
         t "{digiPH_gray}{digiPH_darkblue}",
       }),
       i(3, ""),
+    })
+  ), --end of snip
+  s(
+    "txtbp",
+    fmt("\\btxt{}{{{}}}", {
+      c(1, {
+        t "{digiPH_gray}{digiPH_black}",
+        t "{digiPH_white}{digiPH_black}",
+        t "{digiPH_leaf}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_white}",
+        t "{digiPH_ocean}{digiPH_blue}",
+        t "{digiPH_red}{digiPH_white}",
+        t "{digiPH_gray}{digiPH_darkblue}",
+      }),
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+        -- In this case only the first line is inserted.
+        return snip.env.TM_SELECTED_TEXT or {}
+      end, {}),
     })
   ), --end of snip
 
@@ -314,11 +393,19 @@ ls.add_snippets("tex", {
 
   s("ito", {
     t { "\t\\item<" },
-    i(1, ""),
-    t { "-> " },
+    t { "+-> " },
     i(2),
-    d(3, rec_itemly, {}),
     t { "" },
+    i(0),
+  }),
+
+  s("itp", {
+    t { "\t\\item<+-> " },
+    f(function(_, snip)
+      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+      -- In this case only the first line is inserted.
+      return snip.env.TM_SELECTED_TEXT or {}
+    end, {}),
     i(0),
   }),
 
