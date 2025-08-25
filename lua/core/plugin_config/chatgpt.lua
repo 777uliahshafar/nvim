@@ -70,7 +70,7 @@ require("chatgpt").setup {
     win_options = {
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
     },
-    submit = "<c-l>",
+    submit = "<c-s>",
     submit_n = "<Enter>",
     max_visible_lines = 20,
   },
