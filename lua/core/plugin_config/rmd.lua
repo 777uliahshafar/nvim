@@ -32,14 +32,14 @@ endfunction
 function! Potraitmd()
         let extension = expand('%:e')
         if extension == "md"
-                execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --data-dir=~/.pandoc/templates/eisvogel.latex -s -o pdf/%:t:r.pdf"
+                execute "! pandoc -V geometry:a4paper -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --data-dir=~/.pandoc/templates/eisvogel.latex -s -o C:/Users/user/Documents/%:t:r.pdf"
         endif
 endfunction
 
 function! Landsmd()
         let extension = expand('%:e')
         if extension == "md"
-                execute "! pandoc -V geometry:a4paper,landscape -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --template=eisvogel -s -o pdf/%:t:r.pdf"
+                execute "! pandoc -V geometry:a4paper,landscape -V 'mainfont:Arial' -V linkcolor:blue -V fontsize=12pt --pdf-engine=xelatex % --template=eisvogel -s -o C:/Users/user/Documents/%:t:r.pdf"
         endif
 endfunction
 ]]
