@@ -300,6 +300,17 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
+    "nip",
+    fmt("\\note[item]{{{}}}", {
+      f(function(_, snip)
+        -- TM_SELECTED_TEXT is a table to account for multiline selections.
+        -- In this case only the first line is inserted.
+        local selected_text = snip.env.TM_SELECTED_TEXT
+        return type(selected_text) == "table" and selected_text[1] or selected_text or ""
+      end, {}),
+    })
+  ), -- end of snip
+  s(
     "nop",
     fmt("\\notes{}{{{}}}", {
       c(1, { -- Choice node
@@ -307,10 +318,9 @@ ls.add_snippets("tex", {
         t "[itemize]", -- Second option: [itemize]
       }),
       f(function(_, snip)
-        -- TM_SELECTED_TEXT is a table to account for multiline selections.
+        -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
-        local selected_text = snip.env.TM_SELECTED_TEXT
-        return type(selected_text) == "table" and selected_text[1] or selected_text or ""
+        return snip.env.TM_SELECTED_TEXT or {}
       end, {}),
     })
   ), -- end of snip
@@ -358,9 +368,10 @@ ls.add_snippets("tex", {
 
   s(
     "img",
-    fmt("\\includegraphics[{}{}]{{{}}}", {
+    fmt("\\includegraphics[{}{}]{{{}{}}}", {
       c(1, { t "", t "draft," }),
       c(2, { t "width=40mm", t "width=.9\\textwidth", t "height=.95\\textheight" }),
+      t { "../figures/" },
       i(3, "placeholder"),
     })
   ), --end of snip
