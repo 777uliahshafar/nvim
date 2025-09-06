@@ -1,19 +1,18 @@
+removeTrailingWhitespace: 1
 lookForAlignDelims:
-   tabularx:
-      delims: 1
-      alignDoubleBackSlash: 0
-      spacesBeforeAmpersand: 2
-      spacesAfterAmpersand: 2
-      spacesBeforeDoubleBackSlash: 2
-      multicolumnGrouping: 1
-      alignRowsWithoutMaxDelims: 1
-   tabular:
-      delims: 1
-      alignDoubleBackSlash: 0
-      spacesBeforeAmpersand: 2
-      spacesAfterAmpersand: 2
-      spacesBeforeDoubleBackSlash: 2
-      multicolumnGrouping: 1
-      alignRowsWithoutMaxDelims: 1
-
-
+  tabularx:
+    delims: 1
+    alignDoubleBackSlash: 0
+    spacesBeforeAmpersand: 2
+    spacesAfterAmpersand: 2
+    spacesBeforeDoubleBackSlash: 2
+    multicolumnGrouping: 1
+    alignRowsWithoutMaxDelims: 1
+  tabular:
+    delims: 1
+    alignDoubleBackSlash: 0
+    spacesBeforeAmpersand: 2
+    spacesAfterAmpersand: 2
+    spacesBeforeDoubleBackSlash: 2
+    multicolumnGrouping: 1
+    alignRowsWithoutMaxDelims: 1
