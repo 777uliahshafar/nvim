@@ -312,7 +312,7 @@ ls.add_snippets("tex", {
   ), -- end of snip
   s(
     "noc",
-    fmt("\\noc{{{}}}", {
+    fmt("\\noc{{1-}}{{{}}}", {
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
@@ -322,7 +322,7 @@ ls.add_snippets("tex", {
   ), -- end of snip
   s(
     "nit",
-    fmt("\\nit{{{}}}", {
+    fmt("\\nit{{1-}}{{{}}}", {
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
         -- In this case only the first line is inserted.
