@@ -45,7 +45,7 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
-    "drop",
+    "sum",
     fmt("<details><summary>{}</summary><br><!-- br for linebreak -->{}</details>{}", {
       i(1, "summary"),
       f(function(_, snip)
