@@ -300,18 +300,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "nip",
-    fmt("\\note[item]{{{}}}", {
-      f(function(_, snip)
-        -- TM_SELECTED_TEXT is a table to account for multiline selections.
-        -- In this case only the first line is inserted.
-        local selected_text = snip.env.TM_SELECTED_TEXT
-        return type(selected_text) == "table" and selected_text[1] or selected_text or ""
-      end, {}),
-    })
-  ), -- end of snip
-  s(
-    "noc",
+    "nop",
     fmt("\\noc{{1-}}{{{}}}", {
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
@@ -321,7 +310,7 @@ ls.add_snippets("tex", {
     })
   ), -- end of snip
   s(
-    "nit",
+    "nip",
     fmt("\\nit{{1-}}{{{}}}", {
       f(function(_, snip)
         -- TM_SELECTED_TEXT is a table to account for multiline-selections.
@@ -383,7 +372,7 @@ ls.add_snippets("tex", {
       c(1, { t "", t "draft," }),
       c(2, { t "width=40mm", t "width=.9\\textwidth", t "height=.95\\textheight" }),
       t { "../figures/" },
-      i(3, "placeholder"),
+      i(3, "placeholder.ext"),
     })
   ), --end of snip
 
