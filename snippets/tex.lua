@@ -334,7 +334,7 @@ ls.add_snippets("tex", {
     "fm",
     fmt(
       [[
-    \begin{{frame}}[{}]
+    \begin{{frame}}[{}]{}{}
     ]],
       {
         c(1, {
@@ -349,6 +349,8 @@ ls.add_snippets("tex", {
           t "c,mycolor=digiPH_gray,mytitle=standard,light",
           t "c,mycolor=digiPH_red,mytitle=standard,dark",
         }),
+        i(2, "konten"),
+        t { "\\end{frame}" },
       }
     )
   ), --end of snip
