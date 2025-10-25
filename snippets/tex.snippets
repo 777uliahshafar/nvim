@@ -174,6 +174,11 @@ snippet tmpltbsub "Sub Beamer Template"
 	$2
 	\\begin{document}
 
+    \\begin{frame}[t,mycolor=digiPH_white,mytitle=standard,light]
+    Konten
+	\\note{dummy text untuk menghindari note pertama tertimpa isi slide}
+    \\end{frame}
+
 	$0
 	\\end{document}
 
@@ -194,7 +199,13 @@ snippet imghtwo "Horizontal two Image"
 	\\htwoimg{${1:placeholder}}{${2:placeholder.ext}} ${0}
 
 snippet imghthree "Horizontal three Image"
-	\\hthreeimg{${1:placeholder.ext}}{${2:placeholder.ext}}{${3:placeholder.ext}} ${0}
+	\\hthreeimg{${1:placeholder.ext}}{${2:placeholder.ext}}{${3:placeholder.ext}} ${0}Align
+
+snippet imglcorner "corner left Image"
+	\\cornerlimg{${1:placeholder.ext}}${0}
+
+snippet imgrcorner "corner right Image"
+	\\cornerrimg{${1:placeholder.ext}}${0}
 
 snippet imgbot "bottom Image"
 	\\bimg{${1:.9\textwidth}}{${2:placeholder.ext}} ${0}
