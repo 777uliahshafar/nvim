@@ -18,13 +18,13 @@ require("gruvbox").setup {
   },
 }
 
-require("citruszest").setup {
-  style = {
-    -- This will change Constant foreground color and make it bold.
-    Normal = { fg = "#f8f8f2" },
-    CursorLine = { bg = "#121212" },
-  },
-}
+-- require("citruszest").setup {
+--   style = {
+--     -- This will change Constant foreground color and make it bold.
+--     Normal = { fg = "#f8f8f2" },
+--     CursorLine = { bg = "#121212" },
+--   },
+-- }
 require("kanagawa").setup {
   dimInactive = true,
   colors = {
@@ -68,5 +68,5 @@ require("kanagawa").setup {
 --   },
 -- }
 
-vim.cmd.colorscheme "gruvbox"
-vim.o.background = "dark"
+vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.o.background = "light"

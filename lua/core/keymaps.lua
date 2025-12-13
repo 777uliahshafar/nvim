@@ -94,7 +94,6 @@ wk.add {
     { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
     { "<leader>dq", "<cmd>ChatGPTRun quest<cr>", desc = "Chat quest" },
     { "<leader>cb", "<cmd>ChatGPTRun buntu<cr>", desc = "Chat Buntu" },
-    { "<leader>cc", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
     { "<leader>cd", "<cmd>ChatGPTRun susun<cr>", desc = "Chat Develop 2 ideas" },
     { "<leader>cf", "<cmd>ChatGPTRun hubung<cr>", desc = "Chat hubung" },
     { "<leader>cg", "<cmd>ChatGPTRun eyd<cr>", desc = "Chat eyd" },
@@ -104,6 +103,7 @@ wk.add {
     { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
+    { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   },
   {
     mode = { "i" },
@@ -165,11 +165,11 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 map("n", "<f2>", "<CMD>h mycheat<CR>")
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
 map("n", "<localleader>cg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox" })
-map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co papercolor" })
-map("n", "<localleader>ck", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
-map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
+-- map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co papercolor" })
+-- map("n", "<localleader>ck", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
+-- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
 map("n", "<localleader>cc", "<CMD>colorscheme catppuccin<CR>", { desc = "co catppuccin" })
-map("n", "<localleader>cf", "<CMD>colorscheme carbonfox<CR>", { desc = "co nightfox" })
+-- map("n", "<localleader>cf", "<CMD>colorscheme carbonfox<CR>", { desc = "co nightfox" })
 map("n", "<localleader>cd", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
 
 ---------------------------------------------

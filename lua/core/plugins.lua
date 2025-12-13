@@ -17,12 +17,12 @@ local plugins = {
     "777uliahshafar/mygruvbox.nvim",
     priority = 1000,
   },
-  { "zootedb0t/citruszest.nvim", priority = 1000 },
+  -- { "zootedb0t/citruszest.nvim", priority = 1000 },
   { "rebelot/kanagawa.nvim", priority = 1000 },
-  {
-    "NLKNguyen/papercolor-theme",
-  },
-  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- {
+  --   "NLKNguyen/papercolor-theme",
+  -- },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "EdenEast/nightfox.nvim" },
 
   -- Greeter --
