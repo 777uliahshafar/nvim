@@ -60,13 +60,25 @@ require("kanagawa").setup {
   },
   ...,
 }
--- require("catppuccin").setup {
---   flavour = "auto", -- latte, frappe, macchiato, mocha
---   background = { -- :h background
---     light = "latte",
---     dark = "macchiato",
---   },
--- }
+require("catppuccin").setup {
+  flavour = "auto", -- latte, frappe, macchiato, mocha
+  background = { -- :h background
+    light = "latte",
+    dark = "frappe",
+  },
+  float = {
+    transparent = false, -- enable transparent floating windows
+    solid = false, -- use solid styling for floating windows, see |winborder|
+  },
+  no_italic = false, -- Force no italic
+  no_bold = false, -- Force no bold
+  no_underline = false, -- Force no underline
+  dim_inactive = {
+    enabled = true, -- dims the background color of inactive window
+    shade = "dark",
+    percentage = 0.6, -- percentage of the shade to apply to the inactive window
+  },
+}
 
-vim.cmd.colorscheme "catppuccin-mocha"
--- vim.o.background = "light"
+vim.cmd.colorscheme "catppuccin-frappe"
+vim.o.background = "light"

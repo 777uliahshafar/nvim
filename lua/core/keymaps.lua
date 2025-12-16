@@ -49,8 +49,7 @@ wk.add {
   },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   { "<leader>d", group = "ChatGPT" },
-  { "<localleader>d", group = "PWD" },
-  { "<localleader>c", group = "Colorscheme" },
+  { "<localleader>d", group = "Colorscheme" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
@@ -103,7 +102,7 @@ wk.add {
     { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
-    { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
+    { "<leader>y", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   },
   {
     mode = { "i" },
@@ -164,13 +163,11 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 
 map("n", "<f2>", "<CMD>h mycheat<CR>")
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
-map("n", "<localleader>cg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox" })
+map("n", "<localleader>dg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox" })
 -- map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co papercolor" })
--- map("n", "<localleader>ck", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
+map("n", "<localleader>dk", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
 -- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
-map("n", "<localleader>cc", "<CMD>colorscheme catppuccin<CR>", { desc = "co catppuccin" })
--- map("n", "<localleader>cf", "<CMD>colorscheme carbonfox<CR>", { desc = "co nightfox" })
-map("n", "<localleader>cd", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
+map("n", "<localleader>dc", "<CMD>colorscheme carbonbox<CR>", { desc = "co catppuccin" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
