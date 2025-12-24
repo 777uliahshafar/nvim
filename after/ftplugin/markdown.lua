@@ -39,7 +39,7 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>mcd", "<CMD>call Mdocx()<CR>", { no
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mk", "<CMD>ObsidianSearch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mf", "<CMD>ObsidianQuickSwitch<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mn", "<CMD>ObsidianNewFromTemplate<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<localleader>b", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ml", "<CMD>ObsidianBacklinks<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<localleader>l", "<CMD>ObsidianLinks<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<localleader>m", "<CMD>ObsidianTags<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>me", "<CMD>ObsidianTemplate<CR>", { noremap = false })
