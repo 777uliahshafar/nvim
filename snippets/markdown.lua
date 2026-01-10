@@ -60,6 +60,17 @@ ls.add_snippets("markdown", {
 
 ls.add_snippets("markdown", {
   s(
+    "imgs",
+    fmt("[{}](assets/imgs/{}){}", {
+      i(1, "alt text"),
+      i(2, ""),
+      i(3, " "),
+    })
+  ), --end of snip
+}) -- end all
+
+ls.add_snippets("markdown", {
+  s(
     "bp",
     fmt("**{}**{}", {
       f(function(_, snip)

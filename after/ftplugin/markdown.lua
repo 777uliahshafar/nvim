@@ -30,9 +30,10 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>mp", [["*P]], { noremap = false })
 -- vim.api.nvim_buf_set_keymap(0, "n", ",th", "<CMD>TSBufToggle highlight<CR>", { noremap = false })
 
 -- pandoc converter
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mcp", "<CMD>call Potraitmd()<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mcl", "<CMD>call Landsmd()<CR>", { noremap = false })
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>mcd", "<CMD>call Mdocx()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>kp", "<CMD>call Potraitmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>kl", "<CMD>call Landsmd()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>km", "<CMD>call Mdocx()<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>kc", "<plug>MarkdownPreview<CR>", { noremap = false })
 
 -- obsidian
 
@@ -48,7 +49,7 @@ vim.api.nvim_buf_set_keymap(0, "v", "<leader>ma", "<CMD>ObsidianLinkNew<CR>", { 
 vim.keymap.set("x", "<leader>me", ":ObsidianExtractNote<cr>")
 
 -- vim markdown
-vim.api.nvim_buf_set_keymap(0, "n", "<localleader>k", "<CMD>ObsidianTOC<CR>", { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>q", "<CMD>ObsidianTOC<CR>", { noremap = false })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>mt", "<CMD>InsertToc 3<CR>", { noremap = false })
 
 vim.api.nvim_exec(
