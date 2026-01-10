@@ -11,7 +11,11 @@ telescope.setup {
     wrap_results = true,
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "shorten" },
+    -- path_display = { "shorten" },
+    path_display = function(opts, path)
+      local tail = require("telescope.utils").path_tail(path)
+      return string.format("%s (%s)", tail, path), { { { 1, #tail }, "Constant" } }
+    end,
     layout_config = {
       prompt_position = "bottom",
       horizontal = {
