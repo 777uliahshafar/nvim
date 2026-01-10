@@ -64,7 +64,7 @@ require("catppuccin").setup {
   flavour = "auto", -- latte, frappe, macchiato, mocha
   background = { -- :h background
     light = "latte",
-    dark = "frappe",
+    dark = "mocha",
   },
   float = {
     transparent = false, -- enable transparent floating windows
@@ -77,6 +77,11 @@ require("catppuccin").setup {
     enabled = true, -- dims the background color of inactive window
     shade = "dark",
     percentage = 0.6, -- percentage of the shade to apply to the inactive window
+  },
+  color_overrides = {
+    mocha = {
+      text = "#f8f8f2",
+    },
   },
 }
 
