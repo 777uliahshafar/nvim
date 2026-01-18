@@ -63,7 +63,7 @@ ls.add_snippets("markdown", {
     "imgs",
     fmt("[{}](assets/imgs/{}){}", {
       i(1, "alt text"),
-      i(2, ""),
+      i(2, "no-space-path"),
       i(3, " "),
     })
   ), --end of snip
