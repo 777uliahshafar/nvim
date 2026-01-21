@@ -167,6 +167,14 @@ ins_right {
 }
 
 ins_right {
+  "location",
+  fmt = function()
+    return vim.fn.line "." .. " / " .. vim.fn.line "$"
+  end,
+  color = { fg = colors.choco, gui = "italic" },
+}
+
+ins_right {
   function()
     return "▊"
   end,

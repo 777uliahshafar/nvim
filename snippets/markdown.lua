@@ -116,4 +116,37 @@ ls.add_snippets("markdown", {
     t { "*" },
     i(0),
   }),
+
+  ls.add_snippets("markdown", {
+
+    s(
+      "tab",
+      fmt(
+        [[
+<table>
+  <caption>{}</caption>
+  <thead>
+    <tr>
+      <th>{}</th>
+      <th>{}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{}</td>
+      <td>{}</td>
+    </tr>
+  </tbody>
+</table>
+]],
+        {
+          i(1, "Tabel 1: "),
+          i(2, "Produk"),
+          i(3, "Harga"),
+          i(4, "Layanan A"),
+          i(5, "Rp 500.000"),
+        }
+      )
+    ),
+  }),
 }) -- end all
