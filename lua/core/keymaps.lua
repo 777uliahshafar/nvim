@@ -102,7 +102,7 @@ wk.add {
     { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
-    { "<leader>y", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
+    { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   },
   {
     mode = { "i" },
