@@ -125,7 +125,26 @@ ls.add_snippets("tex", {
       i(3, ""),
     })
   ), --end of snip
-
+  s(
+    "reffig",
+    fmt("{}~\\ref{{fig:{}}}", {
+      c(1, {
+        t "gambar",
+        t "figure",
+      }),
+      i(2), -- Placeholder for the figure reference
+    })
+  ), --end of snip
+  s(
+    "reftab",
+    fmt("{}~\\ref{{fig:{}}}", {
+      c(1, {
+        t "tabel",
+        t "table",
+      }),
+      i(2), -- Placeholder for the figure reference
+    })
+  ), --end of snip
   s(
     "txtr",
     fmt("\\rtxt{}{{{}}}", {
