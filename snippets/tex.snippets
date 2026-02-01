@@ -32,15 +32,15 @@ snippet tmpltsub "Sub Template"
 	% the main TeX file which is intended to compile, :VimtexReload after adjustment
     % this file should be included in the main file
 	% :h vimtex-tex-root
-	\\documentclass[../main.tex]{subfiles}
+	\\documentclass[../${2:main}.tex]{subfiles}
 	%ensure the class of docs
-	$2
+	$3
 	\\begin{document}
 
 	$0
 
 	\\bibliographystyle{apalike}
-	\\bibliography{../${3:filename}.bib} % required for citecompletion, not work in mainfile
+	\\bibliography{../${4:filename}.bib} % required for citecompletion, not work in mainfile
 	\\end{document}
 
 
@@ -498,6 +498,7 @@ snippet fig figure environment (includegraphics)
 	\\begin{figure}
 	\\begin{center}
 		\\includegraphics[width=${1:.82\\textwidth}]{${2}}
+        % filename may not contain space but _
 	\\end{center}
 	\\caption{${3}}
 	\\label{fig:${4}}
