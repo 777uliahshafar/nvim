@@ -15,10 +15,12 @@ local rec_itemly
 rec_item = function()
   return sn(nil, {
     c(1, {
-      -- important!! Having the sn(...) as the first choice will cause infinite recursion.
-      t { "" },
-      -- The same dynamicNode as in the snippet (also note: self reference).
-      sn(nil, { t { "", "\t\\item " }, i(1), d(2, rec_item, {}) }),
+      t "", -- berhenti
+      sn(nil, {
+        t { "", "\\item " },
+        i(1),
+        d(2, rec_item, {}),
+      }),
     }),
   })
 end
@@ -342,27 +344,79 @@ ls.add_snippets("tex", {
     "fm",
     fmt(
       [[
-    \begin{{frame}}[{}]{}{}
+    \begin{{frame}}[{}{}{}]{}{}
     ]],
       {
         c(1, {
-          t "t,mycolor=digiPH_white,mytitle=standard,light",
-          t "t,mycolor=digiPH_gray,mytitle=standard,light",
-          t "t,mycolor=digiPH_leaf,mytitle=standard,dark",
-          t "t,mycolor=digiPH_ocean,mytitle=center,dark",
-          t "t,mycolor=digiPH_red,mytitle=standard,dark",
-          t "t,mybg=adddarkbg,mytitle=standard,dark",
-          t "t,mybg=addlightbg,mytitle=standard,light",
-          t "c,mycolor=digiPH_white,mytitle=standard,light",
-          t "c,mycolor=digiPH_gray,mytitle=standard,light",
-          t "c,mycolor=digiPH_red,mytitle=standard,dark",
+          t "mytitle=standard,",
+          t "mytitle=center,",
+          t "mytitle=imageplus,",
         }),
-        i(2, "konten"),
+        c(2, {
+          t "t,",
+          t "c,",
+        }),
+        c(3, {
+          t "mybg=adddarkbg,dark",
+          t "mybg=addlightbg,light",
+          t "mycolor=digiPH_white,light",
+          t "mycolor=digiPH_uniblue,light",
+          t "mycolor=digiPH_gray,light",
+          t "mycolor=digiPH_leaf,dark",
+          t "mycolor=digiPH_ocean,dark",
+          t "mycolor=digiPH_ubcblue,dark",
+          t "mycolor=digiPH_red,dark",
+          t "mycolor=digiPH_gray,light",
+          t "mycolor=digiPH_cream,light",
+          t "mycolor=digiPH_creamy,dark",
+          t "mycolor=digiPH_purple,dark",
+        }),
+        i(4, "konten"),
         t { "\\end{frame}" },
       }
     )
   ), --end of snip
 
+  s(
+    "fmp",
+    fmt(
+      [[
+    \begin{{frame}}[{}{}{}]{}{}
+    ]],
+      {
+        c(1, {
+          t "mytitle=standard,",
+          t "mytitle=center,",
+          t "mytitle=imageplus,",
+        }),
+        c(2, {
+          t "t,",
+          t "c,",
+        }),
+        c(3, {
+          t "mybg=adddarkbg,dark",
+          t "mybg=addlightbg,light",
+          t "mycolor=digiPH_white,light",
+          t "mycolor=digiPH_uniblue,light",
+          t "mycolor=digiPH_gray,light",
+          t "mycolor=digiPH_leaf,dark",
+          t "mycolor=digiPH_ocean,dark",
+          t "mycolor=digiPH_ubcblue,dark",
+          t "mycolor=digiPH_red,dark",
+          t "mycolor=digiPH_gray,light",
+          t "mycolor=digiPH_cream,light",
+          t "mycolor=digiPH_creamy,dark",
+          t "mycolor=digiPH_purple,dark",
+        }),
+        f(function(_, snip)
+          -- TM_SELECTED_TEXT is a table to account for multiline-selections.
+          -- In this case only the first line is inserted.
+          return snip.env.TM_SELECTED_TEXT or {}
+        end, {}),
+        t { "\\end{frame}" },
+      }
+    )
+  ), --end of snip
   s("ftp", {
     t { "\\frametitle{" },
     f(function(_, snip)
@@ -373,8 +427,7 @@ ls.add_snippets("tex", {
     t { "} " },
     i(0),
   }), --end of snip
-
-  s("fs", {
+  s("fsp", {
     t { "\\framesubtitle{" },
     f(function(_, snip)
       -- TM_SELECTED_TEXT is a table to account for multiline-selections.
@@ -412,32 +465,36 @@ ls.add_snippets("tex", {
       end, {}),
     })
   ), --end of snip
+  s(
+    "itmp",
+    f(function(_, snip)
+      local selected = snip.env.TM_SELECTED_TEXT
 
-  s("item", {
-    t { "\t\\item " },
+      -- kalau tidak ada visual selection
+      if type(selected) ~= "table" then
+        return {
+          "\\begin{itemize}",
+          "\\item ",
+          "\\end{itemize}",
+        }
+      end
+
+      local result = { "\\begin{itemize}" }
+
+      for _, line in ipairs(selected) do
+        table.insert(result, "\\item " .. line)
+      end
+
+      table.insert(result, "\\end{itemize}")
+
+      return result
+    end, {})
+  ), --end of snip
+  s("itm", {
+    t "\\item ",
     i(1),
     d(2, rec_item, {}),
-    t { "" },
-    i(0),
-  }),
-
-  s("ito", {
-    t { "\t\\item<" },
-    t { "+-> " },
-    i(2),
-    t { "" },
-    i(0),
-  }),
-
-  s("itp", {
-    t { "\t\\item<+-> " },
-    f(function(_, snip)
-      -- TM_SELECTED_TEXT is a table to account for multiline-selections.
-      -- In this case only the first line is inserted.
-      return snip.env.TM_SELECTED_TEXT or {}
-    end, {}),
-    i(0),
-  }),
+  }), --end of snip
 
   s("bf", {
     t { "\\textbf{" },
