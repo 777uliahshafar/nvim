@@ -442,7 +442,7 @@ ls.add_snippets("tex", {
     "img",
     fmt("\\includegraphics[{}{}]{{{}{}}}", {
       c(1, { t "", t "draft," }),
-      c(2, { t "width=40mm", t "width=.9\\textwidth", t "height=.95\\textheight" }),
+      c(2, { t "width=40mm", t "width=.86\\textwidth", t "height=.95\\textheight" }),
       t { "../figures/" },
       i(3, "placeholder.ext"),
     })

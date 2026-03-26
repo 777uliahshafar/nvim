@@ -85,5 +85,5 @@ require("catppuccin").setup {
   },
 }
 
-vim.cmd.colorscheme "catppuccin-frappe"
-vim.o.background = "light"
+vim.cmd.colorscheme "gruvbox"
+vim.o.background = "dark"
