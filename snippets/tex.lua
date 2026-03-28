@@ -76,6 +76,54 @@ ls.add_snippets("tex", {
       i(4, "file.pdf"),
     })
   ), --end of snip
+  s("secp", {
+    t { "\\section{" },
+    f(function(_, snip)
+      return snip.env.TM_SELECTED_TEXT or { "Section Title" }
+    end, {}),
+    t { "}%", "" },
+    t { "\\label{sec:" },
+    f(function(_, snip)
+      local text = snip.env.TM_SELECTED_TEXT and snip.env.TM_SELECTED_TEXT[1] or "section_title"
+      text = string.lower(text)
+      text = text:gsub("%s+", "_")
+      return text
+    end, {}),
+    t { "}", "" },
+    i(0),
+  }), --end of snip
+  s("subp", {
+    t { "\\subsection{" },
+    f(function(_, snip)
+      return snip.env.TM_SELECTED_TEXT or { "Subsection Title" }
+    end, {}),
+    t { "}%", "" },
+    t { "\\label{sub:" },
+    f(function(_, snip)
+      local text = snip.env.TM_SELECTED_TEXT and snip.env.TM_SELECTED_TEXT[1] or "subsection_title"
+      text = string.lower(text)
+      text = text:gsub("%s+", "_")
+      return text
+    end, {}),
+    t { "}", "" },
+    i(0),
+  }), --end of snip
+  s("ssubp", {
+    t { "\\subsubsection{" },
+    f(function(_, snip)
+      return snip.env.TM_SELECTED_TEXT or { "Subsubsection Title" }
+    end, {}),
+    t { "}%", "" },
+    t { "\\label{ssub:" },
+    f(function(_, snip)
+      local text = snip.env.TM_SELECTED_TEXT and snip.env.TM_SELECTED_TEXT[1] or "subsubsection_title"
+      text = string.lower(text)
+      text = text:gsub("%s+", "_")
+      return text
+    end, {}),
+    t { "}", "" },
+    i(0),
+  }), --end of snip
   s(
     "txtp",
     fmt("\\txt{}{{{}}}", {
@@ -139,7 +187,7 @@ ls.add_snippets("tex", {
   ), --end of snip
   s(
     "reftab",
-    fmt("{}~\\ref{{fig:{}}}", {
+    fmt("{}~\\ref{{tab:{}}}", {
       c(1, {
         t "tabel",
         t "table",
