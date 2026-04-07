@@ -216,14 +216,12 @@ snippet imgleft "left Image"
 snippet imgright "right Image"
 	\\rimg{${1:placeholder.ext}} ${0}
 
-snippet imgbg "background Image"
-	\\bgimg{${2:1-}}{${1:placeholder.ext}} ${0}
+snippet imgbglight "light background Image"
+	\\bglightimg{${1:imagepath}} ${0}
 
-snippet imgbgh "respect to height background Image"
-	\\hbgimg{${2:1-}}{${1:placeholder.ext}} ${0}
+snippet imgbgdark "dark background Image"
+	\\bgdarkimg{${1:imagepath}} ${0}
 
-snippet imgbgc "background Image"
-	\\compactbgimg{${2:1-}}{${1:placeholder.ext}} ${0}
 
 #newcommand
 snippet nc \newcommand

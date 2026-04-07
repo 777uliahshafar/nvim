@@ -176,7 +176,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "reffig",
+    "figref",
     fmt("{}~\\ref{{fig:{}}}", {
       c(1, {
         t "gambar",
@@ -186,7 +186,7 @@ ls.add_snippets("tex", {
     })
   ), --end of snip
   s(
-    "reftab",
+    "tabref",
     fmt("{}~\\ref{{tab:{}}}", {
       c(1, {
         t "tabel",
