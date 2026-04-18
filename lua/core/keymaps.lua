@@ -173,7 +173,7 @@ map("n", "<localleader>dc", "<CMD>colorscheme carbonbox<CR>", { desc = "co catpp
 -- PLUGIN KEYBINDING
 ---------------------------------------------
 -- nvim-tree
-map("n", "<leader>e", require("nvim-tree.api").tree.toggle)
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 -- zen mode
 map("n", "<leader>z", require("zen-mode").toggle)

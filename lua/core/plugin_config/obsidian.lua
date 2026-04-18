@@ -3,7 +3,7 @@ require("obsidian").setup {
   workspaces = {
     {
       name = "personal",
-      path = "C:\\Users\\user\\obs",
+      path = "C:\\Users\\snk24\\obs",
     },
   },
 
