@@ -167,7 +167,9 @@ map("n", "<localleader>dg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox
 -- map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co papercolor" })
 map("n", "<localleader>dk", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
 -- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
-map("n", "<localleader>dc", "<CMD>colorscheme carbonbox<CR>", { desc = "co catppuccin" })
+map("n", "<localleader>dc", "<CMD>colorscheme catppuccin<CR>", { desc = "co catppuccin" })
+map("n", "<localleader>dn", "<CMD>colorscheme nordfox<CR>", { desc = "co nighfox" })
+map("n", "<localleader>dd", "<CMD>colorscheme dayfox<CR>", { desc = "co nighfox" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
@@ -176,8 +178,8 @@ map("n", "<localleader>dc", "<CMD>colorscheme carbonbox<CR>", { desc = "co catpp
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 -- zen mode
-map("n", "<leader>z", require("zen-mode").toggle)
-map("n", "<localleader>z", "<CMD>Limelight!!<CR>", opts)
+map("n", "zz", require("zen-mode").toggle)
+map("n", "<leader>z", "<CMD>Limelight!!<CR>", opts)
 -- map("n", "<localleader>z", require("twilight").toggle, opts)
 
 -- luasnip
