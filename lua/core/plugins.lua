@@ -47,12 +47,15 @@ local plugins = {
     dependencies = { { "nvim-treesitter/nvim-treesitter-textobjects" } },
   },
   -- LSP --
+  -- :Mason
   {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
   },
-  "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
   -- lsp,linter,formating --
   "jay-babu/mason-null-ls.nvim",
   {
