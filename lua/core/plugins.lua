@@ -148,9 +148,10 @@ local plugins = {
     event = "VeryLazy",
   },
   {
-    "numToStr/Comment.nvim",
+    "nvim-mini/mini.comment",
+    version = "*",
     config = function()
-      require("Comment").setup()
+      require("mini.comment").setup()
     end,
   },
   -- {

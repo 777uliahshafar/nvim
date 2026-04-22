@@ -16,6 +16,8 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>kb", "<cmd>h ctb<cr>", { noremap = 
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>kt", "<cmd>h ct<cr>", { noremap = false, desc = "latex help" })
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>j", "<plug>(vimtex-toc-open)", { noremap = false, desc = "TOC" })
 
+vim.bo.commentstring = "% %s"
+
 -- local kind_icons = {
 --   Text = "",
 --   Snippet = "",
