@@ -255,7 +255,7 @@ map("n", "gz", "<CMD>ZoomToggle<cr>")
 -- vim-bufsurf
 map("n", "<bs>", "<Plug>(buf-surf-back)")
 
-vim.api.nvim_buf_set_keymap(0, "", "<localleader>d", "<cmd>BookmarksQFListAll<cr>", { noremap = false })
+-- vim.api.nvim_buf_set_keymap(0, "", "<localleader>d", "<cmd>BookmarksQFListAll<cr>", { noremap = false })
 
 -- obsidian
 -- map("n", "<leader>lw", "<CMD>ObsidianSearch<CR>")
