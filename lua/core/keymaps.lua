@@ -54,6 +54,7 @@ wk.add {
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   { "<leader>g", group = "Git" },
+  { "<leader>gg", "<cmd>G<cr>", desc = "Gwrite| from template" },
   { "<leader>ga", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
   { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit m" },
   { "<leader>gd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
