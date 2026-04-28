@@ -53,13 +53,13 @@ wk.add {
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-  { "<localleader>g", group = "Git" },
-  { "<localleader>ga", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
-  { "<localleader>gc", "<cmd>Git commit<cr>", desc = "Git commit m" },
-  { "<localleader>gd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
-  { "<localleader>ge", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1|template" },
-  { "<localleader>gg", "<cmd>G<cr>", desc = "Git" },
-  { "<localleader>gp", "<cmd>Git push<cr>", desc = "Git push" },
+  { "<leader>g", group = "Git" },
+  { "<leader>ga", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
+  { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit m" },
+  { "<leader>gd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
+  { "<leader>ge", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1|template" },
+  -- { "<localleader>gg", "<cmd>G<cr>", desc = "Git" },
+  { "<leader>gp", "<cmd>Git push<cr>", desc = "Git push" },
   { "<leader>k", group = "Latex" },
   { "<localleader>l", group = "Latex+" },
   { "<leader>m", group = "MarkdownObs" },
@@ -102,7 +102,7 @@ wk.add {
     { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
     { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
-    { "<leader>g", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
+    -- { "<leader>", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   },
   {
     mode = { "i" },
@@ -170,6 +170,7 @@ map("n", "<localleader>dk", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanaga
 map("n", "<localleader>dc", "<CMD>colorscheme catppuccin<CR>", { desc = "co catppuccin" })
 map("n", "<localleader>dn", "<CMD>colorscheme nordfox<CR>", { desc = "co nighfox" })
 map("n", "<localleader>dd", "<CMD>colorscheme dayfox<CR>", { desc = "co nighfox" })
+map("n", "<localleader>dm", "<CMD>colorscheme catppuccin-mocha<CR>", { desc = "co mocha" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
