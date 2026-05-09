@@ -175,6 +175,7 @@ map("n", "<localleader>dm", "<CMD>colorscheme catppuccin-mocha<CR>", { desc = "c
 map("n", "<localleader>dw", "<CMD>colorscheme dawnfox<CR>", { desc = "co mocha" })
 map("n", "<localleader>dr", "<CMD>colorscheme carbonfox<CR>", { desc = "co mocha" })
 map("n", "<localleader>dr", "<CMD>colorscheme catppuccin-macchiato<CR>", { desc = "co mocha" })
+map("n", "<localleader>dp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
