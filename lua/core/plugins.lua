@@ -30,7 +30,9 @@ local plugins = {
     config = function()
       require("onedark").setup {
         style = "darker",
-
+        colors = {
+          light_grey = "#e6eaea",
+        },
         highlights = {
           normal = { fg = "#e6eaea" },
           ObsidianTag = { fg = "#00ffaa", sp = "#00ffaa", fmt = "underline,italic" },
