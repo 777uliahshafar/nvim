@@ -35,7 +35,7 @@ require("obsidian").setup {
   ui = {
     checkboxes = {
       [" "] = { char = "", hl_group = "ObsidianDone" },
-      ["x"] = { char = "", hl_group = "ObsidianGray" },
+      ["x"] = { char = "", hl_group = "ObsidianTodo" },
       ["-"] = { char = "", hl_group = "ObsidianGray" },
       ["!"] = { char = "", hl_group = "ObsidianImportant" },
     },
