@@ -168,13 +168,8 @@ map("n", "<localleader>dg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox
 -- map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co papercolor" })
 map("n", "<localleader>dk", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
 -- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
-map("n", "<localleader>dc", "<CMD>colorscheme catppuccin<CR>", { desc = "co catppuccin" })
 map("n", "<localleader>dn", "<CMD>colorscheme nordfox<CR>", { desc = "co nighfox" })
 map("n", "<localleader>dd", "<CMD>colorscheme dayfox<CR>", { desc = "co nighfox" })
-map("n", "<localleader>dm", "<CMD>colorscheme catppuccin-mocha<CR>", { desc = "co mocha" })
-map("n", "<localleader>dw", "<CMD>colorscheme dawnfox<CR>", { desc = "co mocha" })
-map("n", "<localleader>dr", "<CMD>colorscheme carbonfox<CR>", { desc = "co mocha" })
-map("n", "<localleader>dr", "<CMD>colorscheme catppuccin-macchiato<CR>", { desc = "co mocha" })
 map("n", "<localleader>dp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
 
 ---------------------------------------------
