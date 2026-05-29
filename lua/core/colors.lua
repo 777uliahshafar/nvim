@@ -32,8 +32,8 @@ require("kanagawa").setup {
       -- dragonWhite = "#E0E0E0",
       -- dragonBlack5 = "#e4e4e4",
       -- fujiWhite = "#F8F8F2",
-      lotusInk1 = "#32302f",
-      -- lotusWhite3 = "#fbf1c7",
+      lotusInk1 = "#282828",
+      lotusWhite3 = "#fbf1c7",
     },
     theme = {
       all = {
@@ -84,5 +84,5 @@ require("catppuccin").setup {
     },
   },
 }
-vim.cmd.colorscheme "onedark"
-vim.o.background = "dark"
+vim.cmd.colorscheme "kanagawa"
+-- vim.o.background = "dark"
