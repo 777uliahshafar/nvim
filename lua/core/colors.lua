@@ -34,6 +34,7 @@ require("kanagawa").setup {
       -- fujiWhite = "#F8F8F2",
       lotusInk1 = "#282828",
       lotusWhite3 = "#fbf1c7",
+      springBlue = "#7FB4CA",
     },
     theme = {
       all = {
