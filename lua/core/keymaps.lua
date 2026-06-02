@@ -171,6 +171,7 @@ map("n", "<localleader>dw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co k
 -- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
 map("n", "<localleader>dn", "<CMD>colorscheme nordfox<CR>", { desc = "co nordfox" })
 map("n", "<localleader>dd", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
+map("n", "<localleader>dc", "<CMD>colorscheme carbonfox<CR>", { desc = "co carbonfox" })
 map("n", "<localleader>da", "<CMD>colorscheme dawnfox<CR>", { desc = "co dawnfox" })
 map("n", "<localleader>dp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
 
