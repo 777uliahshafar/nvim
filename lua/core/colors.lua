@@ -85,5 +85,16 @@ require("catppuccin").setup {
     },
   },
 }
+
+--github-colorscheme
+local groups = {
+  github_light_default = {
+    ["@nospell.markdown_inline"] = { style = "underline" },
+    ["@spell.markdown"] = { style = "underline" },
+  },
+}
+
+require("github-theme").setup { groups = groups }
+
 vim.cmd.colorscheme "kanagawa"
 -- vim.o.background = "dark"
