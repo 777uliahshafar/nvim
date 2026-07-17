@@ -90,7 +90,7 @@ require("catppuccin").setup {
 local groups = {
   github_light_default = {
     ["@nospell.markdown_inline"] = { style = "underline" },
-    ["@spell.markdown"] = { style = "underline" },
+    -- ["@spell.markdown"] = { style = "underline" },
   },
 }
 
