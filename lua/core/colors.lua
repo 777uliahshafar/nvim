@@ -96,5 +96,5 @@ local groups = {
 
 require("github-theme").setup { groups = groups }
 
-vim.cmd.colorscheme "kanagawa"
--- vim.o.background = "dark"
+vim.cmd.colorscheme "mygruvbox"
+vim.o.background = "dark"
