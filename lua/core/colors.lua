@@ -92,9 +92,13 @@ local groups = {
     ["@nospell.markdown_inline"] = { style = "underline" },
     -- ["@spell.markdown"] = { style = "underline" },
   },
+  github_dark_default = {
+    ["@nospell.markdown_inline"] = { style = "underline" },
+    -- ["@spell.markdown"] = { style = "underline" },
+  },
 }
 
 require("github-theme").setup { groups = groups }
 
-vim.cmd.colorscheme "mygruvbox"
+vim.cmd.colorscheme "gruvbox"
 vim.o.background = "dark"
