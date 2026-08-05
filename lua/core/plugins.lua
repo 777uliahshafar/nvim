@@ -138,6 +138,7 @@ local plugins = {
   -- "junegunn/vim-easy-align",
   "ron89/thesaurus_query.vim",
   "potamides/pantran.nvim",
+  -- AI Agent
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
@@ -148,6 +149,11 @@ local plugins = {
       -- "folke/trouble.nvim",
     },
   },
+  {
+    "kiddos/gemini.nvim",
+    opts = {},
+  },
+  -- end AI agent
   {
     "epwalsh/obsidian.nvim",
     version = "*",
