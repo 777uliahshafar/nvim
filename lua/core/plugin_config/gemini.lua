@@ -13,8 +13,21 @@ require("gemini").setup {
   },
   instruction = {
     enabled = true,
-    menu_key = "<Leader><Leader><Leader>g",
+    menu_key = "<C-g>",
     prompts = {
+      {
+        name = "Parafrase",
+        command_name = "ParafraseVisualLine",
+        menu = "Parafrase",
+        get_prompt = function(lines, bufnr)
+          local code = vim.fn.join(lines, "\n")
+          local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+          local prompt = "Context:\n\n```%s\n%s\n```\n\n"
+            .. "Objective: Paraphrase the text above into natural, standard Indonesian without changing its original meaning.\n"
+            .. "Output ONLY the paraphrased text without any explanation or extra quote marks.\n"
+          return string.format(prompt, filetype, code)
+        end,
+      },
       {
         name = "Unit Test",
         command_name = "GeminiUnitTest",
@@ -58,7 +71,7 @@ require("gemini").setup {
   task = {
     enabled = true,
     get_system_text = function()
-      return "You are an AI assistant that helps user write code."
+      return "Kamu adalah ahli tata bahasa yang membantu pengguna memparafrasekan kalimat."
         .. "\n* You should output the new content for the Current Opened File"
     end,
     get_prompt = function(bufnr, user_prompt)
