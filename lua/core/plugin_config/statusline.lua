@@ -34,6 +34,24 @@ local conditions = {
   end,
 }
 
+-- vimtex line
+local function vimtex_status()
+  if not vim.b.vimtex or not vim.b.vimtex.compiler then
+    return ""
+  end
+
+  local status = vim.b.vimtex.compiler.status
+  local icons = {
+    [-1] = "",
+    [0] = "",
+    [1] = "󰑮",
+    [2] = "",
+    [3] = "",
+  }
+
+  return icons[status] or ""
+end
+
 -- Config
 local config = {
   options = {
@@ -180,6 +198,24 @@ ins_right {
   end,
   color = { fg = colors.blue },
   padding = { left = 1 },
+}
+
+ins_right {
+  vimtex_status,
+  cond = function()
+    return vim.bo.filetype == "tex"
+  end,
+  color = function()
+    local status = vim.b.vimtex and vim.b.vimtex.compiler and vim.b.vimtex.compiler.status
+    if status == 1 then
+      return { fg = colors.yellow }
+    elseif status == 2 then
+      return { fg = colors.green }
+    elseif status == 3 then
+      return { fg = colors.red }
+    end
+    return { fg = colors.choco }
+  end,
 }
 
 -- Now don't forget to initialize lualine

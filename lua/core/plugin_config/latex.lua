@@ -46,6 +46,8 @@ g.vimtex_log_ignore = {
   "Token not allowed in a PDF string",
 }
 
+-- status compilation
+
 -- toc
 vim.g.vimtex_toc_config = {
   split_width = 30,
