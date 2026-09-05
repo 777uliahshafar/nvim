@@ -171,8 +171,7 @@ map("n", "<localleader>dr", "<CMD>colorscheme kanagawa-dragon<CR>", { desc = "co
 -- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
 map("n", "<localleader>dn", "<CMD>colorscheme nordfox<CR>", { desc = "co nordfox" })
 map("n", "<localleader>dd", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
-map("n", "<localleader>dc", "<CMD>colorscheme github_dark_default<CR>", { desc = "co gitdark" })
-map("n", "<localleader>da", "<CMD>colorscheme github_light_default<CR>", { desc = "co gitlight" })
+map("n", "<localleader>dz", "<CMD>colorscheme zenbones<CR>", { desc = "co gitlight" })
 map("n", "<localleader>dp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
 
 ---------------------------------------------
