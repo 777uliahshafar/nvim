@@ -100,5 +100,5 @@ require("catppuccin").setup {
 
 -- require("github-theme").setup { groups = groups }
 
-vim.cmd.colorscheme "gruvbox"
-vim.o.background = "dark"
+vim.cmd.colorscheme "zenbones"
+vim.o.background = "light"
