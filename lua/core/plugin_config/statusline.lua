@@ -34,6 +34,25 @@ local conditions = {
   end,
 }
 
+-- kondisi untuk menghilangkan filename dan progress pada terminal snack
+local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand "%:t") ~= 1
+  end,
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > 80
+  end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand "%:p:h"
+    local gitdir = vim.fn.finddir(".git", filepath .. ";")
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
+  end,
+  -- Kondisi baru untuk mengecek jika buffer BUKAN terminal
+  not_terminal = function()
+    return vim.bo.buftype ~= "terminal" and vim.bo.filetype ~= "snacks_terminal"
+  end,
+}
+
 -- vimtex line
 local function vimtex_status()
   if not vim.b.vimtex or not vim.b.vimtex.compiler then
@@ -106,8 +125,15 @@ ins_left {
 }
 
 ins_left {
-  -- mode component
+  -- -- mode component
+  -- function()
+  --   return ""
+  -- end,
   function()
+    -- Jika sedang di mode terminal (t), tampilkan ikon/teks terminal
+    if vim.fn.mode() == "t" then
+      return " TERMINAL"
+    end
     return ""
   end,
   color = function()
@@ -132,7 +158,7 @@ ins_left {
       rm = colors.cyan,
       ["r?"] = colors.cyan,
       ["!"] = colors.red,
-      t = colors.red,
+      t = colors.fg,
     }
     return { fg = mode_color[vim.fn.mode()] }
   end,
@@ -141,11 +167,18 @@ ins_left {
 
 ins_left {
   "filename",
-  cond = conditions.buffer_not_empty,
+  cond = function()
+    return conditions.buffer_not_empty() and conditions.not_terminal()
+  end,
   color = { fg = colors.fg },
 }
 
-ins_left { "progress", color = { fg = colors.choco } }
+-- Komponen Progress (Sembunyi jika berada di terminal)
+ins_left {
+  "progress",
+  cond = conditions.not_terminal,
+  color = { fg = colors.choco },
+}
 
 ins_left {
   "diagnostics",
