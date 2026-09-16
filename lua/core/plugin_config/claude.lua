@@ -9,6 +9,7 @@ require("claudecode").setup {
       border = "rounded",
       signcolumn = "yes",
       wo = {
+        winbar = "",
         -- Option 1: Disable the statusline completely for the terminal window
         -- statusline = "",
 
@@ -19,6 +20,18 @@ require("claudecode").setup {
         term_normal = { "<esc>", "<C-\\><C-n>", mode = "t", desc = "Ke Normal Mode" },
       }, -- tekan sekali untuk pindah mode, rentan masalah dengan cli lain pada terminal
     },
+  },
+  keys = {
+    {
+      "<leader>af",
+      function()
+        vim.cmd "'<,'>ClaudeCodeSend"
+        require("claudecode.terminal").send_to_terminal "Perbaiki kode ini"
+      end,
+      mode = "v",
+      desc = "Claude: Perbaiki kode ini",
+    },
+    -- Anda bisa menambahkan keymap visual/normal lainnya di sini
   },
 }
 

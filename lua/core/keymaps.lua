@@ -258,6 +258,13 @@ map("n", "gz", "<CMD>ZoomToggle<cr>")
 -- vim-bufsurf
 map("n", "<bs>", "<Plug>(buf-surf-back)")
 
+-- claude terminal
+map("t", "<S-CR>", "<CR>", opts)
+map("v", "<leader>af", function()
+  vim.cmd "'<,'>ClaudeCodeSend"
+  require("claudecode.terminal").send_to_terminal "Parafrase kode ini"
+end, { desc = "Claude: Perbaiki kode ini" })
+
 -- vim.api.nvim_buf_set_keymap(0, "", "<localleader>d", "<cmd>BookmarksQFListAll<cr>", { noremap = false })
 
 -- obsidian
