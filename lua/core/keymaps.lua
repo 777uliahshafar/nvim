@@ -10,6 +10,14 @@ local harpoon = require "harpoon"
 local pantran = require "pantran"
 -- local utils = require "core.utils"
 
+-- Tambahkan fungsi claude helper ini tepat SEBELUM wk.add
+local function claude_prompt(prompt)
+  return function()
+    vim.cmd "'<,'>ClaudeCodeSend"
+    require("claudecode.terminal").send_to_terminal(prompt)
+  end
+end
+
 -- which-key
 wk.add {
   -- { "<leader>a", group = "AlphaIndex" },
@@ -48,7 +56,7 @@ wk.add {
     desc = "translate word",
   },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
-  { "<leader>d", group = "ChatGPT" },
+  -- { "<leader>d", group = "ChatGPT" },
   { "<localleader>d", group = "Colorscheme" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
@@ -82,27 +90,119 @@ wk.add {
     { "<leader>d", group = "english" },
     { "<leader>cp", "y<cmd>Pantran mode=interactive<cr>p", desc = "translate int" },
     { "<leader>cs", "<cmd>ThesaurusQueryReplaceCurrentWord<cr>", desc = "Thesaurus Query" },
-    { "<leader>db", "<cmd>ChatGPTRun stuck<cr>", desc = "Chat Stuck" },
-    { "<leader>dc", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat Coherence" },
-    { "<leader>dd", "<cmd>ChatGPTRun develop<cr>", desc = "Chat Develop 2 ideas" },
-    { "<leader>df", "<cmd>ChatGPTRun connect<cr>", desc = "Chat connect" },
-    { "<leader>dg", "<cmd>ChatGPTRun grammaronly<cr>", desc = "Chat grammar" },
-    { "<leader>dm", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
-    { "<leader>dl", "<cmd>ChatGPTRun paraphrase<cr>", desc = "Chat paraphrase" },
-    { "<leader>do", "<cmd>ChatGPTRun outline<cr>", desc = "Chat outline" },
-    { "<leader>dr", "<cmd>ChatGPTRun refine<cr>", desc = "Chat refine" },
-    { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
-    { "<leader>dq", "<cmd>ChatGPTRun quest<cr>", desc = "Chat quest" },
-    { "<leader>cb", "<cmd>ChatGPTRun buntu<cr>", desc = "Chat Buntu" },
-    { "<leader>cd", "<cmd>ChatGPTRun susun<cr>", desc = "Chat Develop 2 ideas" },
-    { "<leader>cf", "<cmd>ChatGPTRun hubung<cr>", desc = "Chat hubung" },
-    { "<leader>cg", "<cmd>ChatGPTRun eyd<cr>", desc = "Chat eyd" },
-    { "<leader>cm", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
-    { "<leader>cl", "<cmd>ChatGPTRun parafrase<cr>", desc = "Chat parafrase" },
-    { "<leader>co", "<cmd>ChatGPTRun kerangka<cr>", desc = "Chat outline" },
-    { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
-    { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
-    { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
+    -- ==========================================
+    -- CLAUDE: ENGLISH PROMPTS (<leader>d*)
+    -- ==========================================
+    {
+      "<leader>db",
+      claude_prompt "I am stuck in this following text, I need your help to describe this thing:",
+      desc = "Stuck",
+    },
+    { "<leader>dc", claude_prompt "Parafrase dan perbaiki kode ini:", desc = "Claude: Code Fix" }, -- Menggantikan grammar_correction
+    {
+      "<leader>dd",
+      claude_prompt "Develop the following ideas according to the spelling and grammar rules. Also, providing clear transitions between ideas:",
+      desc = "Develop",
+    },
+    { "<leader>df", claude_prompt "Connect these two sentences for a cohesive paragraph:", desc = " Connect" },
+    {
+      "<leader>dg",
+      claude_prompt "Please correct the spelling and grammar of the following text. Show the corrections in bold so I can see what has been corrected.",
+      desc = " Grammar",
+    },
+    { "<leader>dm", claude_prompt "Summarize the following text:", desc = "Summarize" },
+    {
+      "<leader>dl",
+      claude_prompt "Paraphrase the following sentence for use in an academic paper:",
+      desc = "Paraphrase",
+    },
+    {
+      "<leader>do",
+      claude_prompt "Develop an outline for an academic article with the following research question:",
+      desc = "Outline",
+    },
+    {
+      "<leader>dr",
+      claude_prompt "Refine the writing of the given text style to convey ideas with precision and impact. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas. Strive for conciseness by eliminating unnecessary wordiness.",
+      desc = "Refine",
+    },
+    { "<leader>dt", claude_prompt "Translate this into English:", desc = "Claude: Translate (EN)" },
+    {
+      "<leader>dq",
+      claude_prompt "Generate three possible research questions for an academic article on the following topic:",
+      desc = "Quest",
+    },
+
+    -- ==========================================
+    -- CLAUDE: BAHASA PROMPTS (<leader>c*)
+    -- ==========================================
+    {
+      "<leader>cb",
+      claude_prompt "Saya buntu pada teks berikut ini, bantu saya untuk menjelaskannya:",
+      desc = "Buntu",
+    },
+    {
+      "<leader>cd",
+      claude_prompt "Susun ide-ide berikut sesuai dengan pedoman bahasa indonesia yang baik dan benar, serta gunakan transisi yang jelas antar ide:",
+      desc = "Susun Ide",
+    },
+    { "<leader>cf", claude_prompt "Hubungkan dua kalimat ini untuk paragraf yang kohesif:", desc = "Hubung" },
+    {
+      "<leader>cg",
+      claude_prompt "Perbaiki ejaan dan tata bahasa pada teks berikut sesuai EYD. Tunjukkan perbaikannya secara jelas:",
+      desc = "EYD",
+    },
+    { "<leader>cm", claude_prompt "Rangkum tulisan berikut:", desc = "Claude: Rangkum" },
+    {
+      "<leader>cl",
+      claude_prompt "Parafrasekan kalimat berikut untuk digunakan pada artikel ilmiah:",
+      desc = "Parafrase",
+    },
+    {
+      "<leader>co",
+      claude_prompt "Kembangkan kerangka (outline) untuk artikel akademik dengan pertanyaan penelitian berikut:",
+      desc = "Kerangka",
+    },
+    {
+      "<leader>cr",
+      claude_prompt "Perbaiki penulisan gaya teks berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antar ide. Pastikan teks ringkas dan gunakan tata bahasa Indonesia yang baik dan benar:",
+      desc = "Perbaiki Teks",
+    },
+    {
+      "<leader>ct",
+      claude_prompt "Terjemahkan teks berikut ke dalam Bahasa Indonesia:",
+      desc = "Translate (ID)",
+    },
+    {
+      "<leader>cq",
+      claude_prompt "Buat tiga pertanyaan penelitian potensial untuk artikel akademik tentang topik berikut:",
+      desc = "Tanya",
+    },
+
+    -- ==========================================
+    -- ChatGPT:  PROMPTS
+    -- ==========================================
+    -- { "<leader>db", "<cmd>ChatGPTRun stuck<cr>", desc = "Chat Stuck" },
+    -- { "<leader>dc", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Chat Coherence" },
+    -- { "<leader>dd", "<cmd>ChatGPTRun develop<cr>", desc = "Chat Develop 2 ideas" },
+    -- { "<leader>df", "<cmd>ChatGPTRun connect<cr>", desc = "Chat connect" },
+    -- { "<leader>dg", "<cmd>ChatGPTRun grammaronly<cr>", desc = "Chat grammar" },
+    -- { "<leader>dm", "<cmd>ChatGPTRun summarize<cr>", desc = "Chat summarize" },
+    -- { "<leader>dl", "<cmd>ChatGPTRun paraphrase<cr>", desc = "Chat paraphrase" },
+    -- { "<leader>do", "<cmd>ChatGPTRun outline<cr>", desc = "Chat outline" },
+    -- { "<leader>dr", "<cmd>ChatGPTRun refine<cr>", desc = "Chat refine" },
+    -- { "<leader>dt", "<cmd>ChatGPTRun inggris<cr>", desc = "Chat translate" },
+    -- { "<leader>dq", "<cmd>ChatGPTRun quest<cr>", desc = "Chat quest" },
+    -- { "<leader>cb", "<cmd>ChatGPTRun buntu<cr>", desc = "Chat Buntu" },
+    -- { "<leader>cd", "<cmd>ChatGPTRun susun<cr>", desc = "Chat Develop 2 ideas" },
+    -- { "<leader>cf", "<cmd>ChatGPTRun hubung<cr>", desc = "Chat hubung" },
+    -- { "<leader>cg", "<cmd>ChatGPTRun eyd<cr>", desc = "Chat eyd" },
+    -- { "<leader>cm", "<cmd>ChatGPTRun rangkum<cr>", desc = "Chat rangkum" },
+    -- { "<leader>cl", "<cmd>ChatGPTRun parafrase<cr>", desc = "Chat parafrase" },
+    -- { "<leader>co", "<cmd>ChatGPTRun kerangka<cr>", desc = "Chat outline" },
+    -- { "<leader>cr", "<cmd>ChatGPTRun perbaiki<cr>", desc = "Chat perbaiki" },
+    -- { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
+    -- { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
     -- { "<leader>", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   },
   {
@@ -253,6 +353,8 @@ endfunction
 command! ZoomToggle call s:ZoomToggle()
 ]]
 
+local map = vim.keymap.set
+
 map("n", "gz", "<CMD>ZoomToggle<cr>")
 
 -- vim-bufsurf
@@ -260,10 +362,6 @@ map("n", "<bs>", "<Plug>(buf-surf-back)")
 
 -- claude terminal
 map("t", "<S-CR>", "<CR>", opts)
-map("v", "<leader>af", function()
-  vim.cmd "'<,'>ClaudeCodeSend"
-  require("claudecode.terminal").send_to_terminal "Parafrase kode ini"
-end, { desc = "Claude: Perbaiki kode ini" })
 
 -- vim.api.nvim_buf_set_keymap(0, "", "<localleader>d", "<cmd>BookmarksQFListAll<cr>", { noremap = false })
 

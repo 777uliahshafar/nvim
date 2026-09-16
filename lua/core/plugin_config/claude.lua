@@ -10,9 +10,6 @@ require("claudecode").setup {
       signcolumn = "yes",
       wo = {
         winbar = "",
-        -- Option 1: Disable the statusline completely for the terminal window
-        -- statusline = "",
-
         -- Option 2: Use a custom local statusline string if desired
         statusline = "%{b:snacks_terminal.id}: %{b:term_title}",
       },
@@ -22,38 +19,6 @@ require("claudecode").setup {
     },
   },
   keys = {
-    {
-      "<leader>af",
-      function()
-        vim.cmd "'<,'>ClaudeCodeSend"
-        require("claudecode.terminal").send_to_terminal "Perbaiki kode ini"
-      end,
-      mode = "v",
-      desc = "Claude: Perbaiki kode ini",
-    },
-    -- Anda bisa menambahkan keymap visual/normal lainnya di sini
+    --
   },
 }
-
--- require("claudecode").setup {
---   terminal = {
---     snacks_win_opts = {
---       position = "float",
---       width = 0.6,
---       height = 0.6,
---       border = "double",
---       backdrop = 80,
---       keys = {
---         claude_hide = {
---           "<Esc>",
---           function(self)
---             self:hide()
---           end,
---           mode = "t",
---           desc = "Hide",
---         },
---         claude_close = { "q", "close", mode = "n", desc = "Close" },
---       },
---     },
---   },
--- }
