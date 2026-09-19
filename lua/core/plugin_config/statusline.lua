@@ -132,7 +132,7 @@ ins_left {
   function()
     -- Jika sedang di mode terminal (t), tampilkan ikon/teks terminal
     if vim.fn.mode() == "t" then
-      return " TERMINAL"
+      return " TERMINAL"
     end
     return ""
   end,
@@ -158,7 +158,7 @@ ins_left {
       rm = colors.cyan,
       ["r?"] = colors.cyan,
       ["!"] = colors.red,
-      t = colors.fg,
+      t = colors.green,
     }
     return { fg = mode_color[vim.fn.mode()] }
   end,
