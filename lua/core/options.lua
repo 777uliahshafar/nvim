@@ -112,4 +112,4 @@ opt.fillchars = {
   foldsep = "│",
   foldclose = "",
 }
-opt.mouse = ""
+opt.mouse = "a" --helps cluade scrolling the respon with mousewheel

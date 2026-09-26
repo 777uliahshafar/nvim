@@ -194,7 +194,7 @@ local plugins = {
       {
         "<leader>as",
         "<cmd>ClaudeCodeTreeAdd<cr>",
-        desc = "Add file",
+        desc = "Add file Claude",
         ft = {
           "NvimTree",
           "neo-tree",
