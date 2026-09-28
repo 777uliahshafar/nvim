@@ -155,7 +155,7 @@ wk.add {
     { "<leader>cm", claude_prompt "Rangkum tulisan berikut:", desc = "Claude: Rangkum" },
     {
       "<leader>cl",
-      claude_prompt "Parafrasekan kalimat berikut untuk digunakan pada artikel ilmiah:",
+      claude_prompt "Bertindaklah sebagai akademisi. Parafrasekan kalimat di bawah ini menggunakan bahasa Indonesia baku, formal, dan objektif yang cocok untuk publikasi jurnal ilmiah. Cukup berikan satu versi hasil parafrase terbaik tanpa penjelasan tambahan:",
       desc = "Parafrase",
     },
     {
