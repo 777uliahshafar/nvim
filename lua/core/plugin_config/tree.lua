@@ -15,8 +15,9 @@ local function my_on_attach(bufnr)
   vim.keymap.set("n", "<LeftRelease>", function()
     local node = api.tree.get_node_under_cursor()
 
-    if node.nodes ~= nil then
-      api.node.open.edit()
+    -- Pengecekan agar tidak error jika node nil (klik di tempat kosong)
+    if node and node.nodes then
+      api.node.open.edit(node)
     end
   end, {})
 end

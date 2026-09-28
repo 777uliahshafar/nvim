@@ -1,14 +1,7 @@
 require("pantran").setup {
-  default_engine = "deepl",
+  default_engine = "yandex",
   command = { default_mode = "yank" },
   engines = {
-    deepl = {
-      fallback = {
-        default_source = "id",
-        default_target = "en",
-        free_api = false,
-      },
-    },
     google = {
       fallback = {
         default_source = "id",
