@@ -1,11 +1,9 @@
 require("claudecode").setup {
+  focus_after_send = true,
   terminal = {
     split_side = "right",
-    terminal_cmd = "claude --theme dark",
+    split_width_percentage = 0.35,
     snacks_win_opts = {
-      position = "bottom",
-      height = 0.4,
-      width = 1.0,
       border = "rounded",
       signcolumn = "yes",
       wo = {
@@ -14,8 +12,8 @@ require("claudecode").setup {
         statusline = "%{b:snacks_terminal.id}: %{b:term_title}",
       },
       keys = {
-        term_normal = { "<esc>", "<C-\\><C-n>", mode = "t", desc = "Ke Normal Mode" },
-      }, -- tekan sekali untuk pindah mode, rentan masalah dengan cli lain pada terminal
+        term_normal = { "<esc>", "<C-\\><C-n>", mode = "t", desc = "Ke Normal Mode" }, -- tekan sekali untuk pindah mode, rentan masalah dengan cli lain pada terminalA
+      },
     },
   },
   keys = {
