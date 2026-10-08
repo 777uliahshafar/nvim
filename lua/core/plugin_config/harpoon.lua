@@ -1,54 +1,173 @@
-require("harpoon").setup {
-  global_settings = {
-    -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
-    save_on_toggle = false,
+local harpoon = require("harpoon")
 
-    -- saves the harpoon file upon every change. disabling is unrecommended.
+-- =========================================================
+-- HARPOON V2
+-- GLOBAL LIST
+-- =========================================================
+
+harpoon:setup({
+  settings = {
+    -- Semua project / folder / drive menggunakan list yang sama
+    key = function()
+      return "global"
+    end,
+
     save_on_change = true,
+    save_on_toggle = false,
+    sync_on_ui_close = false,
 
-    -- sets harpoon to run the command immediately as it's passed to the terminal when calling `sendCommand`.
     enter_on_sendcmd = false,
-
-    -- closes any tmux windows harpoon that harpoon creates when you close Neovim.
     tmux_autoclose_windows = false,
 
-    -- filetypes that you want to prevent from adding to the harpoon list menu.
-    excluded_filetypes = { "harpoon" },
+    excluded_filetypes = {
+      "harpoon",
+    },
 
-    -- set marks specific to each git branch inside git repository
-    -- Each branch will have it's own set of marked files
     mark_branch = false,
-
-    -- enable tabline with harpoon marks
     tabline = false,
     tabline_prefix = "   ",
     tabline_suffix = "   ",
   },
-}
 
-local harpoon = require "harpoon"
-harpoon:setup {}
+  default = {
 
--- basic telescope configuration
-local conf = require("telescope.config").values
-local function toggle_telescope(harpoon_files)
-  local file_paths = {}
-  for _, item in ipairs(harpoon_files.items) do
-    table.insert(file_paths, item.value)
-  end
+    -- =====================================================
+    -- CREATE LIST ITEM
+    -- =====================================================
 
-  require("telescope.pickers")
-    .new({}, {
-      prompt_title = "Harpoon",
-      finder = require("telescope.finders").new_table {
-        results = file_paths,
-      },
-      previewer = conf.file_previewer {},
-      sorter = conf.generic_sorter {},
-    })
-    :find()
-end
+    create_list_item = function(config, name)
+      name = name or vim.api.nvim_buf_get_name(
+        vim.api.nvim_get_current_buf()
+      )
 
-vim.keymap.set("n", "<leader>sm", function()
-  toggle_telescope(harpoon:list())
-end, { desc = "Open harpoon window" })
+      -- Selalu simpan absolute path
+      name = vim.fn.fnamemodify(name, ":p")
+
+      local bufnr = vim.fn.bufnr(name, false)
+      local pos = { 1, 0 }
+
+      if bufnr ~= -1 then
+        pos = vim.api.nvim_win_get_cursor(0)
+      end
+
+      return {
+        value = name,
+
+        context = {
+          row = pos[1],
+          col = pos[2],
+        },
+      }
+    end,
+
+    -- =====================================================
+    -- SELECT / OPEN FILE
+    -- =====================================================
+
+    select = function(list_item, list, options)
+      local path = list_item.value
+
+      -- Buka file secara langsung.
+      -- fnameescape aman untuk path Windows.
+      vim.cmd(
+        "silent keepjumps edit "
+          .. vim.fn.fnameescape(path)
+      )
+
+      -- Kembalikan posisi cursor
+      if list_item.context then
+        pcall(
+          vim.api.nvim_win_set_cursor,
+          0,
+          {
+            list_item.context.row or 1,
+            list_item.context.col or 0,
+          }
+        )
+      end
+    end,
+
+    -- Jangan gunakan BufLeave bawaan Harpoon
+    autocmds = {},
+  },
+})
+
+
+-- =========================================================
+-- PREVIOUS / NEXT
+-- =========================================================
+
+vim.keymap.set("n", "<leader>h", function()
+  harpoon:list():prev({
+    ui_nav_wrap = true,
+  })
+end, {
+  desc = "harpoon prev",
+})
+
+vim.keymap.set("n", "<leader>l", function()
+  harpoon:list():next({
+    ui_nav_wrap = true,
+  })
+end, {
+  desc = "harpoon next",
+})
+
+
+-- =========================================================
+-- ADD / DELETE
+-- =========================================================
+
+vim.keymap.set("n", "<leader>sa", function()
+  harpoon:list():add()
+end, {
+  desc = "harpoon add file",
+})
+
+vim.keymap.set("n", "<leader>sd", function()
+  harpoon:list():remove()
+end, {
+  desc = "harpoon delete mark",
+})
+
+
+-- =========================================================
+-- SELECT 1 - 4
+-- =========================================================
+
+vim.keymap.set("n", "<localleader>sh", function()
+  harpoon:list():select(1)
+end, {
+  desc = "harpoon 1",
+})
+
+vim.keymap.set("n", "<localleader>sj", function()
+  harpoon:list():select(2)
+end, {
+  desc = "harpoon 2",
+})
+
+vim.keymap.set("n", "<localleader>sk", function()
+  harpoon:list():select(3)
+end, {
+  desc = "harpoon 3",
+})
+
+vim.keymap.set("n", "<localleader>sl", function()
+  harpoon:list():select(4)
+end, {
+  desc = "harpoon 4",
+})
+
+
+-- =========================================================
+-- HARPOON BUILT-IN MENU
+-- =========================================================
+
+vim.keymap.set("n", "<leader>ss", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end, {
+  desc = "Harpoon menu",
+})
+
+

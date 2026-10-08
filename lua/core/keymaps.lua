@@ -61,12 +61,22 @@ wk.add {
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+  -- Git
   { "<leader>g", group = "Git" },
-  { "<leader>gg", "<cmd>G<cr>", desc = "Gwrite| from template" },
-  { "<leader>ga", "<cmd>Gwrite<cr>", desc = "Gwrite| from template" },
-  { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit m" },
-  { "<leader>gd", "<cmd>Gvdiffsplit head<cr>", desc = "Git diff head" },
-  { "<leader>ge", "<cmd>Gvdiffsplit head~1<cr>", desc = "Gvdiffsplit head~1|template" },
+
+  { "<leader>gg", "<cmd>G<cr>", desc = "Status" },
+  { "<leader>ga", "<cmd>Gwrite<cr>", desc = "Stage file" },
+  { "<leader>gc", "<cmd>Git commit<cr>", desc = "Commit" },
+
+  { "<leader>gp", "<cmd>Git push<cr>", desc = "Push" },
+  { "<leader>gP", "<cmd>Git pull<cr>", desc = "Pull" },
+
+  { "<leader>gD", "<cmd>Gdiffsplit<cr>", desc = "Diff index" },
+  { "<leader>gd", "<cmd>Gvdiffsplit HEAD<cr>", desc = "Diff HEAD" },
+  { "<leader>ge", "<cmd>Gvdiffsplit HEAD~1<cr>", desc = "Diff HEAD~1" },
+
+  { "<leader>gl", "<cmd>Gclog<cr>", desc = "Log" },
+  { "<leader>gb", "<cmd>Git branch<cr>", desc = "Branches" },
   -- { "<localleader>gg", "<cmd>G<cr>", desc = "Git" },
   { "<leader>gp", "<cmd>Git push<cr>", desc = "Git push" },
   { "<leader>k", group = "Latex" },
@@ -314,41 +324,6 @@ map("i", "<c-k>", function()
     ls.change_choice(-1)
   end
 end)
-
--- harpoon
-vim.keymap.set("n", "<leader>h", function()
-  harpoon:list():prev { ui_nav_wrap = true }
-end, { desc = "harpoon prev" })
-vim.keymap.set("n", "<leader>l", function()
-  harpoon:list():next { ui_nav_wrap = true }
-end, { desc = "harpoon next" })
-vim.keymap.set("n", "<leader>sa", function()
-  harpoon:list():add()
-end, { desc = "harpoon add file" })
--- map("n", "<leader>sm", function()
---   harpoon.ui:toggle_quick_menu(harpoon:list())
--- end) -- already has telescope
-vim.keymap.set("n", "<leader>sd", function()
-  harpoon:list():remove()
-end, { desc = "harpoon delete mark" })
-vim.keymap.set("n", "<localleader>sh", function()
-  harpoon:list():select(1)
-end, { desc = "harpoon 1" })
-vim.keymap.set("n", "<localleader>sj", function()
-  harpoon:list():select(2)
-end, { desc = "harpoon 2" })
-vim.keymap.set("n", "<localleader>sk", function()
-  harpoon:list():select(3)
-end, { desc = "harpoon 3" })
-vim.keymap.set("n", "<localleader>sl", function()
-  harpoon:list():select(4)
-end, { desc = "harpoon 4" })
-
--- map("n", "<leader>hn", require("harpoon.ui").nav_next)
--- map("n", "<leader>hp", require("harpoon.ui").nav_prev)
--- utils.map("n", [[<leader>hm]], ":Telescope harpoon marks<CR>")
-
--- map("n", "<leader>hx", require("harpoon.mark").add_file)
 
 -- quickfix built-in
 vim.cmd [[
