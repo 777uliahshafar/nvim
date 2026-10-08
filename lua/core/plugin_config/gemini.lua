@@ -1,7 +1,27 @@
 -- =========================================================
 -- Gemini.nvim Configuration
 -- =========================================================
+-- =========================================================
+-- Gemini Completion Toggle
+-- =========================================================
+local gemini_completion_enabled = false
 
+local gemini_completion_ns = vim.api.nvim_create_namespace "gemini_completion"
+
+vim.api.nvim_create_user_command("GeminiToggleCompletion", function()
+  gemini_completion_enabled = not gemini_completion_enabled
+
+  if not gemini_completion_enabled then
+    -- Hapus completion yang sedang tampil
+    vim.api.nvim_buf_clear_namespace(0, gemini_completion_ns, 0, -1)
+  end
+
+  vim.cmd "redraw"
+
+  vim.notify("Gemini Completion: " .. (gemini_completion_enabled and "ON" or "OFF"), vim.log.levels.INFO)
+end, {
+  desc = "Toggle Gemini Completion",
+})
 -- =========================================================
 -- HELPER: Ambil Visual Selection secara langsung
 -- =========================================================
@@ -66,7 +86,13 @@ local function build_selected_text_prompt(bufnr, objective, output_instruction)
 
   local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
-  return string.format("Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s", filetype, text, objective, output_instruction)
+  return string.format(
+    "Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s",
+    filetype,
+    text,
+    objective,
+    output_instruction
+  )
 end
 
 -- =========================================================
@@ -172,7 +198,13 @@ end
 -- =========================================================
 local function build_sentence_prompt(bufnr, objective, output_instruction)
   local info = get_sentence_info(bufnr)
-  return string.format("Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s", info.filetype, info.sentence, objective, output_instruction)
+  return string.format(
+    "Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s",
+    info.filetype,
+    info.sentence,
+    objective,
+    output_instruction
+  )
 end
 
 local function build_two_sentence_prompt(bufnr, objective, output_instruction)
@@ -180,11 +212,23 @@ local function build_two_sentence_prompt(bufnr, objective, output_instruction)
 
   if not first or not second then
     local info = get_sentence_info(bufnr)
-    return string.format("Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s", filetype, info.sentence, objective, output_instruction)
+    return string.format(
+      "Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s",
+      filetype,
+      info.sentence,
+      objective,
+      output_instruction
+    )
   end
 
   local context = first .. "\n\n" .. second
-  return string.format("Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s", filetype, context, objective, output_instruction)
+  return string.format(
+    "Context:\n\n```%s\n%s\n```\n\nObjective: %s\n\nOutput: %s",
+    filetype,
+    context,
+    objective,
+    output_instruction
+  )
 end
 
 local function build_code_prompt(lines, bufnr, objective, output_instruction)
@@ -215,7 +259,87 @@ require("gemini").setup {
   },
 
   completion = {
-    enabled = false,
+    enabled = true,
+
+    blacklist_filetypes = {
+      "help",
+      "qf",
+      "json",
+      "yaml",
+      "toml",
+      "xml",
+    },
+
+    blacklist_filenames = {
+      ".env",
+    },
+
+    completion_delay = 380,
+    insert_result_key = "<S-Tab>",
+    move_cursor_end = true,
+
+    can_complete = function()
+      return gemini_completion_enabled and vim.fn.pumvisible() ~= 1
+    end,
+
+    get_system_text = function()
+      return "You are an academic writing assistant."
+        .. "\n* Continue the document naturally at the cursor location marked by <cursor></cursor>."
+        .. "\n* Use the surrounding document as the primary context."
+        .. "\n* Follow the document's dominant language, tone, terminology, "
+        .. "style, and level of formality."
+        .. "\n* Do not determine the response language from the user's instruction."
+        .. "\n* Continue the existing idea instead of changing its direction."
+        .. "\n* Do not repeat words, phrases, or sentences that already exist around the cursor."
+        .. "\n* Prefer concise, natural, and academically appropriate continuations."
+        .. "\n* Do not invent facts, citations, references, statistics, quotations, "
+        .. "or unsupported claims."
+        .. "\n* When the document is written in LaTeX, preserve valid LaTeX syntax, "
+        .. "commands, environments, labels, references, and citations."
+        .. "\n* Return only the suggested continuation without explanation or commentary."
+    end,
+
+    get_prompt = function(bufnr, pos)
+      local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+
+      local abs_path = vim.api.nvim_buf_get_name(bufnr)
+
+      local filename = vim.fn.fnamemodify(abs_path, ":.")
+
+      local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+
+      local line = pos[1]
+      local col = pos[2]
+
+      local target_line = lines[line]
+
+      if not target_line then
+        return nil
+      end
+
+      lines[line] = target_line:sub(1, col) .. "<cursor></cursor>" .. target_line:sub(col + 1)
+
+      local document = vim.fn.join(lines, "\n")
+
+      local prompt = "Below is the content of the current academic document."
+        .. "\n\n"
+        .. "File: "
+        .. (filename ~= "" and filename or "[No Name]")
+        .. "\n"
+        .. "Filetype: "
+        .. filetype
+        .. "\n\n"
+        .. "```"
+        .. filetype
+        .. "\n"
+        .. document
+        .. "\n```\n\n"
+        .. "Suggest the most natural continuation at <cursor></cursor>."
+        .. "\n"
+        .. "Return ONLY the continuation text."
+
+      return prompt
+    end,
   },
 
   instruction = {
@@ -381,7 +505,12 @@ require("gemini").setup {
 
           table.insert(
             file_contents,
-            string.format("`%s`:\n\n```%s\n%s\n```\n", filename ~= "" and filename or "[No Name]", filetype, table.concat(lines, "\n"))
+            string.format(
+              "`%s`:\n\n```%s\n%s\n```\n",
+              filename ~= "" and filename or "[No Name]",
+              filetype,
+              table.concat(lines, "\n")
+            )
           )
         end
       end
