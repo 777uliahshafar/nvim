@@ -150,10 +150,10 @@ local plugins = {
       -- "folke/trouble.nvim",
     },
   },
-  -- {
-  --   "kiddos/gemini.nvim",
-  --   opts = {},
-  -- },
+  {
+    "kiddos/gemini.nvim",
+    opts = {},
+  },
   {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },

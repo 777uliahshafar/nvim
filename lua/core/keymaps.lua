@@ -11,12 +11,13 @@ local pantran = require "pantran"
 -- local utils = require "core.utils"
 
 -- Tambahkan fungsi claude helper ini tepat SEBELUM wk.add
-local function claude_prompt(prompt)
-  return function()
-    vim.cmd "'<,'>ClaudeCodeSend"
-    require("claudecode.terminal").send_to_terminal(prompt)
-  end
-end
+-- Uncomment kembali untuk menggunakan keymap CLAUDE
+-- local function claude_prompt(prompt)
+--   return function()
+--     vim.cmd "'<,'>ClaudeCodeSend"
+--     require("claudecode.terminal").send_to_terminal(prompt)
+--   end
+-- end
 
 -- which-key
 wk.add {
@@ -103,91 +104,91 @@ wk.add {
     -- ==========================================
     -- CLAUDE: ENGLISH PROMPTS (<leader>d*)
     -- ==========================================
-    {
-      "<leader>db",
-      claude_prompt "I am stuck in this following text, I need your help to describe this thing:",
-      desc = "Stuck",
-    },
-    { "<leader>dc", claude_prompt "Parafrase dan perbaiki kode ini:", desc = "Claude: Code Fix" }, -- Menggantikan grammar_correction
-    {
-      "<leader>dd",
-      claude_prompt "Develop the following ideas according to the spelling and grammar rules. Also, providing clear transitions between ideas:",
-      desc = "Develop",
-    },
-    { "<leader>df", claude_prompt "Connect these two sentences for a cohesive paragraph:", desc = " Connect" },
-    {
-      "<leader>dg",
-      claude_prompt "Please correct the spelling and grammar of the following text. Show the corrections in bold so I can see what has been corrected.",
-      desc = " Grammar",
-    },
-    { "<leader>dm", claude_prompt "Summarize the following text:", desc = "Summarize" },
-    {
-      "<leader>dl",
-      claude_prompt "Paraphrase the following sentence for use in an academic paper:",
-      desc = "Paraphrase",
-    },
-    {
-      "<leader>do",
-      claude_prompt "Develop an outline for an academic article with the following research question:",
-      desc = "Outline",
-    },
-    {
-      "<leader>dr",
-      claude_prompt "Refine the writing of the given text style to convey ideas with precision and impact. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas. Strive for conciseness by eliminating unnecessary wordiness.",
-      desc = "Refine",
-    },
-    { "<leader>dt", claude_prompt "Translate this into English:", desc = "Claude: Translate (EN)" },
-    {
-      "<leader>dq",
-      claude_prompt "Generate three possible research questions for an academic article on the following topic:",
-      desc = "Quest",
-    },
+    -- {
+    --   "<leader>db",
+    --   claude_prompt "I am stuck in this following text, I need your help to describe this thing:",
+    --   desc = "Stuck",
+    -- },
+    -- { "<leader>dc", claude_prompt "Parafrase dan perbaiki kode ini:", desc = "Claude: Code Fix" }, -- Menggantikan grammar_correction
+    -- {
+    --   "<leader>dd",
+    --   claude_prompt "Develop the following ideas according to the spelling and grammar rules. Also, providing clear transitions between ideas:",
+    --   desc = "Develop",
+    -- },
+    -- { "<leader>df", claude_prompt "Connect these two sentences for a cohesive paragraph:", desc = " Connect" },
+    -- {
+    --   "<leader>dg",
+    --   claude_prompt "Please correct the spelling and grammar of the following text. Show the corrections in bold so I can see what has been corrected.",
+    --   desc = " Grammar",
+    -- },
+    -- { "<leader>dm", claude_prompt "Summarize the following text:", desc = "Summarize" },
+    -- {
+    --   "<leader>dl",
+    --   claude_prompt "Paraphrase the following sentence for use in an academic paper:",
+    --   desc = "Paraphrase",
+    -- },
+    -- {
+    --   "<leader>do",
+    --   claude_prompt "Develop an outline for an academic article with the following research question:",
+    --   desc = "Outline",
+    -- },
+    -- {
+    --   "<leader>dr",
+    --   claude_prompt "Refine the writing of the given text style to convey ideas with precision and impact. Focus on clarity by organizing thoughts logically, avoiding ambiguity, and providing clear transitions between ideas. Strive for conciseness by eliminating unnecessary wordiness.",
+    --   desc = "Refine",
+    -- },
+    -- { "<leader>dt", claude_prompt "Translate this into English:", desc = "Claude: Translate (EN)" },
+    -- {
+    --   "<leader>dq",
+    --   claude_prompt "Generate three possible research questions for an academic article on the following topic:",
+    --   desc = "Quest",
+    -- },
 
     -- ==========================================
     -- CLAUDE: BAHASA PROMPTS (<leader>c*)
     -- ==========================================
-    {
-      "<leader>cb",
-      claude_prompt "Saya buntu pada teks berikut ini, bantu saya untuk menjelaskannya:",
-      desc = "Buntu",
-    },
-    {
-      "<leader>cd",
-      claude_prompt "Susun ide-ide berikut sesuai dengan pedoman bahasa indonesia yang baik dan benar, serta gunakan transisi yang jelas antar ide:",
-      desc = "Susun Ide",
-    },
-    { "<leader>cf", claude_prompt "Hubungkan dua kalimat ini untuk paragraf yang kohesif:", desc = "Hubung" },
-    {
-      "<leader>cg",
-      claude_prompt "Perbaiki ejaan dan tata bahasa pada teks berikut sesuai EYD. Tunjukkan perbaikannya secara jelas:",
-      desc = "EYD",
-    },
-    { "<leader>cm", claude_prompt "Rangkum tulisan berikut:", desc = "Claude: Rangkum" },
-    {
-      "<leader>cl",
-      claude_prompt "Bertindaklah sebagai akademisi. Parafrasekan kalimat di bawah ini menggunakan bahasa Indonesia baku, formal, dan objektif yang cocok untuk publikasi jurnal ilmiah. Cukup berikan satu versi hasil parafrase terbaik tanpa penjelasan tambahan:",
-      desc = "Parafrase",
-    },
-    {
-      "<leader>co",
-      claude_prompt "Kembangkan kerangka (outline) untuk artikel akademik dengan pertanyaan penelitian berikut:",
-      desc = "Kerangka",
-    },
-    {
-      "<leader>cr",
-      claude_prompt "Perbaiki penulisan gaya teks berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antar ide. Pastikan teks ringkas dan gunakan tata bahasa Indonesia yang baik dan benar:",
-      desc = "Perbaiki Teks",
-    },
-    {
-      "<leader>ct",
-      claude_prompt "Terjemahkan teks berikut ke dalam Bahasa Indonesia:",
-      desc = "Translate (ID)",
-    },
-    {
-      "<leader>cq",
-      claude_prompt "Buat tiga pertanyaan penelitian potensial untuk artikel akademik tentang topik berikut:",
-      desc = "Tanya",
-    },
+    -- {
+    --   "<leader>cb",
+    --   claude_prompt "Saya buntu pada teks berikut ini, bantu saya untuk menjelaskannya:",
+    --   desc = "Buntu",
+    -- },
+    -- {
+    --   "<leader>cd",
+    --   claude_prompt "Susun ide-ide berikut sesuai dengan pedoman bahasa indonesia yang baik dan benar, serta gunakan transisi yang jelas antar ide:",
+    --   desc = "Susun Ide",
+    -- },
+    -- { "<leader>cf", claude_prompt "Hubungkan dua kalimat ini untuk paragraf yang kohesif:", desc = "Hubung" },
+    -- {
+    --   "<leader>cg",
+    --   claude_prompt "Perbaiki ejaan dan tata bahasa pada teks berikut sesuai EYD. Tunjukkan perbaikannya secara jelas:",
+    --   desc = "EYD",
+    -- },
+    -- { "<leader>cm", claude_prompt "Rangkum tulisan berikut:", desc = "Claude: Rangkum" },
+    -- {
+    --   "<leader>cl",
+    --   claude_prompt "Bertindaklah sebagai akademisi. Parafrasekan kalimat di bawah ini menggunakan bahasa Indonesia baku, formal, dan objektif yang cocok untuk publikasi jurnal ilmiah. Cukup berikan satu versi hasil parafrase terbaik tanpa penjelasan tambahan:",
+    --   desc = "Parafrase",
+    -- },
+    -- {
+    --   "<leader>co",
+    --   claude_prompt "Kembangkan kerangka (outline) untuk artikel akademik dengan pertanyaan penelitian berikut:",
+    --   desc = "Kerangka",
+    -- },
+    -- {
+    --   "<leader>cr",
+    --   claude_prompt "Perbaiki penulisan gaya teks berikut untuk menghasilkan ide yang presisi dan berdampak. Fokus pada kejelasan dengan penyusunan ide yang logis, hindari ambiguitas, serta gunakan transisi yang jelas antar ide. Pastikan teks ringkas dan gunakan tata bahasa Indonesia yang baik dan benar:",
+    --   desc = "Perbaiki Teks",
+    -- },
+    -- {
+    --   "<leader>ct",
+    --   claude_prompt "Terjemahkan teks berikut ke dalam Bahasa Indonesia:",
+    --   desc = "Translate (ID)",
+    -- },
+    -- {
+    --   "<leader>cq",
+    --   claude_prompt "Buat tiga pertanyaan penelitian potensial untuk artikel akademik tentang topik berikut:",
+    --   desc = "Tanya",
+    -- },
 
     -- ==========================================
     -- ChatGPT:  PROMPTS
@@ -225,6 +226,18 @@ wk.add {
   --   { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
   -- },
 }
+
+-- ==========================================
+-- Gemini:  PROMPTS
+-- ==========================================
+-- Memetakan <C-g> di Visual Mode untuk memanggil menu Gemini Instruction
+vim.keymap.set("v", "<C-g>", function()
+  require("gemini").show_instruction_menu()
+end, { desc = "Gemini Instruction Menu (Visual)" })
+
+-- ==========================================
+-- General
+-- ==========================================
 
 -- Mimic shell movements
 map("i", "<C-E>", "<ESC>A")
