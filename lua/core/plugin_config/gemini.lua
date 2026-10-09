@@ -8,7 +8,7 @@ local gemini_completion_enabled = false
 
 local gemini_completion_ns = vim.api.nvim_create_namespace "gemini_completion"
 
-vim.api.nvim_create_user_command("GeminiToggleCompletion", function()
+vim.api.nvim_create_user_command("GemCompletion", function()
   gemini_completion_enabled = not gemini_completion_enabled
 
   if not gemini_completion_enabled then
@@ -349,7 +349,7 @@ require("gemini").setup {
     prompts = {
       {
         name = "Connect Sentences",
-        command_name = "GeminiConnectSentences",
+        command_name = "GemConnectSentences",
         menu = "Connect Sentences 🔗",
         get_prompt = function(_, bufnr)
           return build_two_sentence_prompt(
@@ -361,7 +361,7 @@ require("gemini").setup {
       },
       {
         name = "Paraphrase",
-        command_name = "GeminiParaphrase",
+        command_name = "GemParaphrase",
         menu = "Paraphrase ✍️",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -373,7 +373,7 @@ require("gemini").setup {
       },
       {
         name = "Refine Sentence",
-        command_name = "GeminiRefineSentence",
+        command_name = "GemRefineSentence",
         menu = "Refine Sentence ✨",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -385,7 +385,7 @@ require("gemini").setup {
       },
       {
         name = "Translate to English",
-        command_name = "GeminiTranslateEnglish",
+        command_name = "GemTranslateEnglish",
         menu = "Translate to English 🌐",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -397,8 +397,8 @@ require("gemini").setup {
       },
       {
         name = "Summarize",
-        command_name = "GeminiSummarize",
-        menu = "Summarize 📝",
+        command_name = "GemSUMMARIZE",
+        menu = "SUMMARIZE 📝",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -409,8 +409,8 @@ require("gemini").setup {
       },
       {
         name = "Grammar",
-        command_name = "GeminiGrammar",
-        menu = "Grammar & Spelling ✅",
+        command_name = "GemGRAMMAR",
+        menu = "GRAMMAR ✅",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -421,8 +421,8 @@ require("gemini").setup {
       },
       {
         name = "Refine Writing",
-        command_name = "GeminiRefine",
-        menu = "Refine Writing ✨",
+        command_name = "GemREFINE",
+        menu = "REFINE Writing ✨",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -433,8 +433,8 @@ require("gemini").setup {
       },
       {
         name = "Academic Outline",
-        command_name = "GeminiOutline",
-        menu = "Academic Outline 📚",
+        command_name = "GemOUTLINE",
+        menu = "ACADEMIC OUTLINE 📚",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -443,56 +443,21 @@ require("gemini").setup {
           )
         end,
       },
-      {
-        name = "Unit Test",
-        command_name = "GeminiUnitTest",
-        menu = "Unit Test 🚀",
-        get_prompt = function(lines, bufnr)
-          return build_code_prompt(
-            lines,
-            bufnr,
-            "Write appropriate unit tests for the code above. Cover the main behavior, important edge cases, and likely failure scenarios.",
-            "ONLY the test code unless additional context is absolutely necessary."
-          )
-        end,
-      },
-      {
-        name = "Code Review",
-        command_name = "GeminiCodeReview",
-        menu = "Code Review 📜",
-        get_prompt = function(lines, bufnr)
-          return build_code_prompt(
-            lines,
-            bufnr,
-            "Perform a thorough code review of the code above. Identify bugs, logical problems, edge cases, maintainability issues, security concerns, performance problems, and opportunities for improvement. Be precise and sincere in your comments.",
-            "Provide a structured review with actionable recommendations."
-          )
-        end,
-      },
-      {
-        name = "Code Explain",
-        command_name = "GeminiCodeExplain",
-        menu = "Code Explain 💡",
-        get_prompt = function(lines, bufnr)
-          return build_code_prompt(
-            lines,
-            bufnr,
-            "Explain the code above clearly and thoroughly. Describe what it does, how the main parts work, the flow of execution, important variables or functions, and any noteworthy behavior.",
-            "Provide a clear explanation suitable for someone learning this code."
-          )
-        end,
-      },
     },
   },
-
   task = {
     enabled = true,
+
     get_system_text = function()
       return "You are an AI assistant that helps the user write, edit, analyze, and modify text or code.\n"
         .. "Always respond in the dominant language of the Current Opened File.\n"
         .. "Do not determine the response language from the user's task instruction.\n"
-        .. "Preserve the document's language unless translation is explicitly requested."
+        .. "Preserve the document's language unless translation is explicitly requested.\n"
+        .. "Output ONLY the requested response or result.\n"
+        .. "Do not add unnecessary explanations, commentary, introductions, or quotation marks.\n"
+        .. "If multiple versions are explicitly requested, provide only those versions."
     end,
+
     get_prompt = function(bufnr, user_prompt)
       local buffers = vim.api.nvim_list_bufs()
       local file_contents = {}
@@ -521,11 +486,12 @@ require("gemini").setup {
         table.concat(file_contents, "\n"),
         "Current Opened File: " .. (current_filepath ~= "" and current_filepath or "[No Name]"),
         "Response Language: Follow the dominant language of the Current Opened File.",
+        "Output Format: Return ONLY the requested result. Do not add unnecessary explanations or quotation marks.",
         "Task: " .. user_prompt,
       }, "\n\n")
     end,
-  },
-}
+  }, -- end of tasks
+} -- end of require gemini
 
 -- =========================================================
 -- AUTO-COMMAND: Split Gemini
