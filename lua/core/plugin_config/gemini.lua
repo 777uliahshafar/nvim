@@ -274,7 +274,7 @@ require("gemini").setup {
       ".env",
     },
 
-    completion_delay = 380,
+    completion_delay = 200,
     insert_result_key = "<S-Tab>",
     move_cursor_end = true,
 
