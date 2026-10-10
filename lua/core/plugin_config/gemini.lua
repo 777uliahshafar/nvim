@@ -443,6 +443,22 @@ require("gemini").setup {
           )
         end,
       },
+      {
+        name = "Main Idea",
+        command_name = "GemMAINIDEA",
+        menu = "MAIN IDEA 🎯",
+
+        get_prompt = function(_, bufnr)
+          return build_selected_text_prompt(
+            bufnr,
+
+            "Extract and state the main idea or central message of the selected text in a single, clear, and comprehensive sentence. "
+              .. "Focus on the primary argument or purpose while ignoring minor supporting details.",
+
+            "ONLY the main idea statement. Do not provide explanations, commentary, introductions, or quotation marks."
+          )
+        end,
+      },
     },
   },
   task = {
