@@ -86,15 +86,16 @@ wk.add {
   { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>s", group = "Harpoon" },
   { "<leader>w", group = "Windows" },
-  { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Trouble diagnostic" },
-  { "<leader>wj", "<C-w>t<C-w>H", desc = "switch to vertical orientation" },
-  { "<leader>wk", "<C-w>t<C-w>K", desc = "switch to horizontal orientation" },
-  { "<leader>wv", "<cmd>vs<cr>", desc = "vertikal pane" },
-  { "<leader>wh", "<cmd>sp<cr>", desc = "horizontal pane" },
-  { "<leader>wu", "<cmd>res +5<cr>", desc = "horizontal up" },
-  { "<leader>wd", "<cmd>res -5<cr>", desc = "horizontal down " },
-  { "<leader>wr", "<cmd>vertical res +5<cr>", desc = "vertical right" },
-  { "<leader>wl", "<cmd>vertical res -5<cr>", desc = "vertical left" },
+  { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
+  { "<leader>wj", "<C-w>t<C-w>H", desc = "Splits Vertically" },
+  { "<leader>wk", "<C-w>t<C-w>K", desc = "Splits Horizontally" },
+  { "<leader>wv", "<cmd>vs<cr>", desc = "Vertical Split" },
+  { "<leader>wh", "<cmd>sp<cr>", desc = "Horizontal Split" },
+  { "<leader>wu", "<cmd>res +5<cr>", desc = "Increase Window H" },
+  { "<leader>wd", "<cmd>res -5<cr>", desc = "Decrease Window H" },
+  { "<leader>wr", "<cmd>vertical res +5<cr>", desc = "Increase Window W" },
+  { "<leader>wl", "<cmd>vertical res -5<cr>", desc = "Decrease Window W" },
+  { "<leader>wq", "<cmd>tabclose<cr>", desc = "Close Tab" },
   {
     mode = { "n", "v" },
     { "<leader>c", group = "bahasa" },
@@ -215,11 +216,67 @@ wk.add {
     -- { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     -- { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
     -- { "<leader>", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
-  },
+
+    -- ==========================================
+    -- GEMINI: PROMPTS (<leader>c*)
+    -- ==========================================A
+    {
+      "<leader>cf",
+      "<cmd>GemConnectSentences<cr>",
+      desc = "ai Connect Sentences",
+    },
+    {
+      "<leader>cl",
+      "<cmd>GemParaphrase<cr>",
+      desc = "ai Paraphrase Sentence",
+    },
+    {
+      "<leader>cR",
+      "<cmd>GemRefineSentence<cr>",
+      desc = "ai Refine Sentence",
+    },
+    {
+      "<leader>ct",
+      "<cmd>GemTranslateEnglish<cr>",
+      desc = "ai Translate to English",
+    },
+  }, -- end mode n v
   {
     mode = { "i" },
     { "<F2>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
     { "<F3>", "<C-r>*", desc = "Paste Clipboard" },
+  },
+
+  {
+    mode = { "x" },
+    -- ==========================================
+    -- GEMINI: PROMPTS (<leader>c*)
+    -- ==========================================
+    {
+      "<leader>cm",
+      "<cmd>GemSUMMARIZE<cr>",
+      desc = "ai Summarize (Visual)",
+    },
+    {
+      "<leader>cg",
+      "<cmd>GemGRAMMAR<cr>",
+      desc = "ai Grammar (Visual)",
+    },
+    {
+      "<leader>cr",
+      "<cmd>GemREFINE<cr>",
+      desc = "ai Refinewriting (Visual)",
+    },
+    {
+      "<leader>co",
+      "<cmd>GemOUTLINE<cr>",
+      desc = "ai Academicoutline (Visual)",
+    },
+    {
+      "<leader>ca",
+      "<cmd>GemMAINIDEA<cr>",
+      desc = "ai Mainidea (Visual)",
+    },
   },
   -- {
   --   mode = { "x" },
