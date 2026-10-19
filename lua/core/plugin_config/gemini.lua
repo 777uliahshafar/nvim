@@ -231,17 +231,17 @@ local function build_two_sentence_prompt(bufnr, objective, output_instruction)
   )
 end
 
-local function build_code_prompt(lines, bufnr, objective, output_instruction)
-  local code = vim.fn.join(lines or {}, "\n")
-  local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
-
-  local prompt = string.format("Context:\n\n```%s\n%s\n```\n\nObjective: %s", filetype, code, objective)
-  if output_instruction then
-    prompt = prompt .. "\n\nOutput: " .. output_instruction
-  end
-
-  return prompt
-end
+-- local function build_code_prompt(lines, bufnr, objective, output_instruction)
+--   local code = vim.fn.join(lines or {}, "\n")
+--   local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+--
+--   local prompt = string.format("Context:\n\n```%s\n%s\n```\n\nObjective: %s", filetype, code, objective)
+--   if output_instruction then
+--     prompt = prompt .. "\n\nOutput: " .. output_instruction
+--   end
+--
+--   return prompt
+-- end
 
 -- =========================================================
 -- GEMINI SETUP
@@ -274,7 +274,7 @@ require("gemini").setup {
       ".env",
     },
 
-    completion_delay = 200,
+    completion_delay = 500,
     insert_result_key = "<S-Tab>",
     move_cursor_end = true,
 
@@ -297,17 +297,20 @@ require("gemini").setup {
         .. "\n* When the document is written in LaTeX, preserve valid LaTeX syntax, "
         .. "commands, environments, labels, references, and citations."
         .. "\n* Return only the suggested continuation without explanation or commentary."
-    end,
-
+    end, -- end completion prompt
     get_prompt = function(bufnr, pos)
       local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
       local abs_path = vim.api.nvim_buf_get_name(bufnr)
-
       local filename = vim.fn.fnamemodify(abs_path, ":.")
 
       local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
 
+      if #lines == 0 then
+        return nil
+      end
+
+      -- Posisi cursor
       local line = pos[1]
       local col = pos[2]
 
@@ -317,30 +320,66 @@ require("gemini").setup {
         return nil
       end
 
-      lines[line] = target_line:sub(1, col) .. "<cursor></cursor>" .. target_line:sub(col + 1)
+      col = math.max(0, math.min(col, #target_line))
 
-      local document = vim.fn.join(lines, "\n")
+      -- Gabungkan dokumen untuk menghitung posisi cursor
+      -- dalam byte.
+      local document = table.concat(lines, "\n")
+      local cursor_offset = col
 
-      local prompt = "Below is the content of the current academic document."
-        .. "\n\n"
+      for i = 1, line - 1 do
+        cursor_offset = cursor_offset + #lines[i] + 1
+      end
+
+      -- Batasi konteks yang dikirim ke Gemini.
+      local MAX_CONTEXT_BEFORE = 4000
+      local MAX_CONTEXT_AFTER = 1000
+
+      local start_idx = math.max(1, cursor_offset - MAX_CONTEXT_BEFORE + 1)
+
+      local end_idx = math.min(#document, cursor_offset + MAX_CONTEXT_AFTER)
+
+      local context_before = document:sub(start_idx, cursor_offset)
+
+      local context_after = document:sub(cursor_offset + 1, end_idx)
+
+      -- Tambahkan penanda cursor.
+      local context = context_before .. "<cursor></cursor>" .. context_after
+
+      local truncated_before = start_idx > 1
+      local truncated_after = end_idx < #document
+
+      local context_note = ""
+
+      if truncated_before or truncated_after then
+        context_note = "Note: Only a limited context window around the cursor "
+          .. "is provided, not the entire document.\n\n"
+      end
+
+      local prompt = "You are continuing an academic document.\n\n"
         .. "File: "
         .. (filename ~= "" and filename or "[No Name]")
         .. "\n"
         .. "Filetype: "
         .. filetype
         .. "\n\n"
+        .. context_note
+        .. "Context:\n\n"
         .. "```"
         .. filetype
         .. "\n"
-        .. document
+        .. context
         .. "\n```\n\n"
-        .. "Suggest the most natural continuation at <cursor></cursor>."
-        .. "\n"
-        .. "Return ONLY the continuation text."
+        .. "Continue naturally from the position marked "
+        .. "<cursor></cursor>.\n"
+        .. "Follow the document's language, tone, terminology, "
+        .. "and academic style.\n"
+        .. "Do not repeat existing text or invent facts or citations.\n"
+        .. "Return ONLY the suggested continuation."
 
       return prompt
-    end,
-  },
+    end, -- end get_prompt
+  }, -- end completion
 
   instruction = {
     enabled = true,
@@ -349,7 +388,7 @@ require("gemini").setup {
     prompts = {
       {
         name = "Connect Sentences",
-        command_name = "GemConnectSentences",
+        command_name = "GemsConnectSentences",
         menu = "Connect Sentences 🔗",
         get_prompt = function(_, bufnr)
           return build_two_sentence_prompt(
@@ -361,7 +400,7 @@ require("gemini").setup {
       },
       {
         name = "Paraphrase",
-        command_name = "GemParaphrase",
+        command_name = "GemsParaphrase",
         menu = "Paraphrase ✍️",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -372,8 +411,8 @@ require("gemini").setup {
         end,
       },
       {
-        name = "Refine Sentence",
-        command_name = "GemRefineSentence",
+        name = "Refine",
+        command_name = "GemsRefineSentence",
         menu = "Refine Sentence ✨",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -385,7 +424,7 @@ require("gemini").setup {
       },
       {
         name = "Translate to English",
-        command_name = "GemTranslateEnglish",
+        command_name = "GemsTranslateEnglish",
         menu = "Translate to English 🌐",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -396,9 +435,34 @@ require("gemini").setup {
         end,
       },
       {
-        name = "Summarize",
-        command_name = "GemSUMMARIZE",
-        menu = "SUMMARIZE 📝",
+        name = "Translate to Bahasa",
+        command_name = "GemsTranslateBahasa",
+        menu = "Translate to Bahasa 🌐",
+        get_prompt = function(_, bufnr)
+          return build_sentence_prompt(
+            bufnr,
+            "Translate the sentence above into natural, accurate, and fluent Bahasa. Preserve the original meaning, tone, context, and level of formality.",
+            "ONLY the Bahasa translation. Do not provide explanations or quotation marks."
+          )
+        end,
+      }, --end sentence
+      {
+        name = "Paraphrase Selection",
+        command_name = "GemvParaphrase",
+        menu = "Paraphrase v ✍️",
+
+        get_prompt = function(_, bufnr)
+          return build_selected_text_prompt(
+            bufnr,
+            "Paraphrase the selected text using different wording and sentence structures. Preserve the original meaning, tone, clarity, terminology, and important information. Ensure the result sounds natural, coherent, and academically appropriate. Do not add new information or unsupported claims.",
+            "ONLY the paraphrased version. Preserve the original language of the selected text. Do not provide explanations or quotation marks."
+          )
+        end,
+      },
+      {
+        name = "Summarize Selection",
+        command_name = "GemvSummarize",
+        menu = "Summarize v 📝",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -408,9 +472,9 @@ require("gemini").setup {
         end,
       },
       {
-        name = "Grammar",
-        command_name = "GemGRAMMAR",
-        menu = "GRAMMAR ✅",
+        name = "Grammar Selection",
+        command_name = "GemvGrammar",
+        menu = "GRAMMAR v✅",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -420,9 +484,9 @@ require("gemini").setup {
         end,
       },
       {
-        name = "Refine Writing",
-        command_name = "GemREFINE",
-        menu = "REFINE Writing ✨",
+        name = "Refine Writing Selection",
+        command_name = "GemvRefine",
+        menu = "Refine v ✨",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -432,9 +496,9 @@ require("gemini").setup {
         end,
       },
       {
-        name = "Academic Outline",
-        command_name = "GemOUTLINE",
-        menu = "ACADEMIC OUTLINE 📚",
+        name = "Academic Outline Selection",
+        command_name = "GemvOutline",
+        menu = "Academic Outline v 📚",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
             bufnr,
@@ -444,9 +508,9 @@ require("gemini").setup {
         end,
       },
       {
-        name = "Main Idea",
-        command_name = "GemMAINIDEA",
-        menu = "MAIN IDEA 🎯",
+        name = "Main Idea Selection",
+        command_name = "GemvMainidea",
+        menu = "Main Idea v 🎯",
 
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
@@ -458,21 +522,9 @@ require("gemini").setup {
             "ONLY the main idea statement. Do not provide explanations, commentary, introductions, or quotation marks."
           )
         end,
-      },
-      {
-        name = "Translate to Bahasa",
-        command_name = "GemTranslateBahasa",
-        menu = "Translate to Bahasa 🌐",
-        get_prompt = function(_, bufnr)
-          return build_sentence_prompt(
-            bufnr,
-            "Translate the sentence above into natural, accurate, and fluent Bahasa. Preserve the original meaning, tone, context, and level of formality.",
-            "ONLY the Bahasa translation. Do not provide explanations or quotation marks."
-          )
-        end,
-      },
-    },
-  },
+      }, --end selection
+    }, --end of prompt
+  }, --end of instruction
   task = {
     enabled = true,
 

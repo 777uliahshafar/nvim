@@ -216,90 +216,44 @@ wk.add {
     -- { "<leader>ct", "<cmd>ChatGPTRun bahasa<cr>", desc = "Chat terjemahkan" },
     -- { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
     -- { "<leader>", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
-
+  }, -- end mode nv
+  {
+    mode = { "n" },
     -- ==========================================
-    -- GEMINI: PROMPTS (<leader>c*)
-    -- ==========================================A
-    {
-      "<leader>cf",
-      "<cmd>GemConnectSentences<cr>",
-      desc = "ai Connect Sentences",
-    },
-    {
-      "<leader>cl",
-      "<cmd>GemParaphrase<cr>",
-      desc = "ai Paraphrase Sentence",
-    },
-    {
-      "<leader>cR",
-      "<cmd>GemRefineSentence<cr>",
-      desc = "ai Refine Sentence",
-    },
-    {
-      "<leader>ct",
-      "<cmd>GemTranslateEnglish<cr>",
-      desc = "ai Translate to English",
-    },
-  }, -- end mode n v
+    -- Gemini:  PROMPTS
+    -- ==========================================
+
+    { "<leader>cf", "<cmd>GemsConnectSentences<cr>", desc = "AI Connect Sentences" },
+
+    { "<leader>cl", "<cmd>GemsParaphrase<cr>", desc = "AI Paraphrase Sentence" },
+
+    { "<leader>cR", "<cmd>GemsRefineSentence<cr>", desc = "AI Refine Sentence" },
+
+    { "<leader>ct", "<cmd>GemsTranslateEnglish<cr>", desc = "AI Translate to English" },
+
+    { "<leader>dt", "<cmd>GemsTranslateBahasa<cr>", desc = "AI Translate to Bahasa" },
+  }, --end mode n
+  {
+    mode = { "x" },
+
+    { "<leader>cL", ":<C-u>GemvParaphrase<CR>", desc = "AI Paraphrase Selection" },
+
+    { "<leader>cm", ":<C-u>GemvSummarize<CR>", desc = "AI Summarize Selection" },
+
+    { "<leader>cg", ":<C-u>GemvGrammar<CR>", desc = "AI Grammar Correction" },
+
+    { "<leader>cr", ":<C-u>GemvRefine<CR>", desc = "AI Refine Writing" },
+
+    { "<leader>co", ":<C-u>GemvOutline<CR>", desc = "AI Academic Outline" },
+
+    { "<leader>ca", ":<C-u>GemvMainidea<CR>", desc = "AI Main Idea" },
+  }, -- end mode x
   {
     mode = { "i" },
     { "<F2>", "<c-r>=strftime('%b%d')<cr>", desc = "Timestamp" },
     { "<F3>", "<C-r>*", desc = "Paste Clipboard" },
-  },
-
-  {
-    mode = { "x" },
-    -- ==========================================
-    -- GEMINI: PROMPTS (<leader>c*)
-    -- ==========================================
-    {
-      "<leader>cm",
-      "<cmd>GemSUMMARIZE<cr>",
-      desc = "ai Summarize (Visual)",
-    },
-    {
-      "<leader>cg",
-      "<cmd>GemGRAMMAR<cr>",
-      desc = "ai Grammar (Visual)",
-    },
-    {
-      "<leader>cr",
-      "<cmd>GemREFINE<cr>",
-      desc = "ai Refinewriting (Visual)",
-    },
-    {
-      "<leader>co",
-      "<cmd>GemOUTLINE<cr>",
-      desc = "ai Academicoutline (Visual)",
-    },
-    {
-      "<leader>ca",
-      "<cmd>GemMAINIDEA<cr>",
-      desc = "ai Mainidea (Visual)",
-    },
-
-    -- ==========================================
-    -- GEMINI: PROMPTS (<leader>d*)
-    -- ==========================================
-    {
-      "<leader>dt",
-      "<cmd>GemTranslateBahasa<cr>",
-      desc = "ai Translate to Bahasa",
-    },
-  },
-  -- {
-  --   mode = { "x" },
-  --   { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
-  -- },
+  }, -- end mode i
 } -- end wk add
-
--- ==========================================
--- Gemini:  PROMPTS
--- ==========================================
--- Memetakan <C-g> di Visual Mode untuk memanggil menu Gemini Instruction
-vim.keymap.set("v", "<C-g>", function()
-  require("gemini").show_instruction_menu()
-end, { desc = "Gemini Instruction Menu (Visual)" })
 
 -- ==========================================
 -- General
