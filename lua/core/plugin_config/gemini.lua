@@ -459,6 +459,18 @@ require("gemini").setup {
           )
         end,
       },
+      {
+        name = "Translate to Bahasa",
+        command_name = "GemTranslateBahasa",
+        menu = "Translate to Bahasa 🌐",
+        get_prompt = function(_, bufnr)
+          return build_sentence_prompt(
+            bufnr,
+            "Translate the sentence above into natural, accurate, and fluent Bahasa. Preserve the original meaning, tone, context, and level of formality.",
+            "ONLY the Bahasa translation. Do not provide explanations or quotation marks."
+          )
+        end,
+      },
     },
   },
   task = {

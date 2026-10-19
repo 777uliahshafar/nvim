@@ -277,12 +277,21 @@ wk.add {
       "<cmd>GemMAINIDEA<cr>",
       desc = "ai Mainidea (Visual)",
     },
+
+    -- ==========================================
+    -- GEMINI: PROMPTS (<leader>d*)
+    -- ==========================================
+    {
+      "<leader>dt",
+      "<cmd>GemTranslateBahasa<cr>",
+      desc = "ai Translate to Bahasa",
+    },
   },
   -- {
   --   mode = { "x" },
   --   { "<leader>cp", pantran.motion_translate, noremap = true, silent = true, expr = true, desc = "translate" },
   -- },
-}
+} -- end wk add
 
 -- ==========================================
 -- Gemini:  PROMPTS
