@@ -249,8 +249,9 @@ end
 require("gemini").setup {
   model_config = {
     model_id = "gemini-2.5-flash",
-    temperature = 0.10,
-    top_k = 128,
+    temperature = 0.80,
+    top_k = 60,
+    top_p = 0.95,
     response_mime_type = "text/plain",
   },
 
@@ -274,7 +275,7 @@ require("gemini").setup {
       ".env",
     },
 
-    completion_delay = 500,
+    completion_delay = 280,
     insert_result_key = "<S-Tab>",
     move_cursor_end = true,
 
@@ -282,6 +283,110 @@ require("gemini").setup {
       return gemini_completion_enabled and vim.fn.pumvisible() ~= 1
     end,
 
+    -- =========================================================
+    -- Satu jenis respon completion
+    -- =========================================================
+    -- get_system_text = function()
+    --   return "You are an academic writing assistant."
+    --     .. "\n* Continue the document naturally at the cursor location marked by <cursor></cursor>."
+    --     .. "\n* Use the surrounding document as the primary context."
+    --     .. "\n* Follow the document's dominant language, tone, terminology, "
+    --     .. "style, and level of formality."
+    --     .. "\n* Do not determine the response language from the user's instruction."
+    --     .. "\n* Continue the existing idea instead of changing its direction."
+    --     .. "\n* Do not repeat words, phrases, or sentences that already exist around the cursor."
+    --     .. "\n* Prefer concise, natural, and academically appropriate continuations."
+    --     .. "\n* Do not invent facts, citations, references, statistics, quotations, "
+    --     .. "or unsupported claims."
+    --     .. "\n* When the document is written in LaTeX, preserve valid LaTeX syntax, "
+    --     .. "commands, environments, labels, references, and citations."
+    --     .. "\n* If requested again or regenerated, provide a distinct and alternative phrasing or continuation while keeping the exact same context and meaning."
+    --     .. "\n* Return only the suggested continuation without explanation or commentary."
+    -- end, -- end completion prompt
+    -- get_prompt = function(bufnr, pos)
+    --   local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+    --
+    --   local abs_path = vim.api.nvim_buf_get_name(bufnr)
+    --   local filename = vim.fn.fnamemodify(abs_path, ":.")
+    --
+    --   local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+    --
+    --   if #lines == 0 then
+    --     return nil
+    --   end
+    --
+    --   -- Posisi cursor
+    --   local line = pos[1]
+    --   local col = pos[2]
+    --
+    --   local target_line = lines[line]
+    --
+    --   if not target_line then
+    --     return nil
+    --   end
+    --
+    --   col = math.max(0, math.min(col, #target_line))
+    --
+    --   -- Gabungkan dokumen untuk menghitung posisi cursor
+    --   -- dalam byte.
+    --   local document = table.concat(lines, "\n")
+    --   local cursor_offset = col
+    --
+    --   for i = 1, line - 1 do
+    --     cursor_offset = cursor_offset + #lines[i] + 1
+    --   end
+    --
+    --   -- Batasi konteks yang dikirim ke Gemini.
+    --   local MAX_CONTEXT_BEFORE = 4000
+    --   local MAX_CONTEXT_AFTER = 1000
+    --
+    --   local start_idx = math.max(1, cursor_offset - MAX_CONTEXT_BEFORE + 1)
+    --
+    --   local end_idx = math.min(#document, cursor_offset + MAX_CONTEXT_AFTER)
+    --
+    --   local context_before = document:sub(start_idx, cursor_offset)
+    --
+    --   local context_after = document:sub(cursor_offset + 1, end_idx)
+    --
+    --   -- Tambahkan penanda cursor.
+    --   local context = context_before .. "<cursor></cursor>" .. context_after
+    --
+    --   local truncated_before = start_idx > 1
+    --   local truncated_after = end_idx < #document
+    --
+    --   local context_note = ""
+    --
+    --   if truncated_before or truncated_after then
+    --     context_note = "Note: Only a limited context window around the cursor "
+    --       .. "is provided, not the entire document.\n\n"
+    --   end
+    --
+    --   local prompt = "You are continuing an academic document.\n\n"
+    --     .. "File: "
+    --     .. (filename ~= "" and filename or "[No Name]")
+    --     .. "\n"
+    --     .. "Filetype: "
+    --     .. filetype
+    --     .. "\n\n"
+    --     .. context_note
+    --     .. "Context:\n\n"
+    --     .. "```"
+    --     .. filetype
+    --     .. "\n"
+    --     .. context
+    --     .. "\n```\n\n"
+    --     .. "Continue naturally from the position marked "
+    --     .. "<cursor></cursor>.\n"
+    --     .. "Follow the document's language, tone, terminology, "
+    --     .. "and academic style.\n"
+    --     .. "Do not repeat existing text or invent facts or citations.\n"
+    --     .. "Return ONLY the suggested continuation."
+    --
+    --   return prompt
+    -- end, -- end get_prompt
+    -- =========================================================
+    -- Banyak jenis alternatif respon completion
+    -- =========================================================
     get_system_text = function()
       return "You are an academic writing assistant."
         .. "\n* Continue the document naturally at the cursor location marked by <cursor></cursor>."
@@ -298,6 +403,7 @@ require("gemini").setup {
         .. "commands, environments, labels, references, and citations."
         .. "\n* Return only the suggested continuation without explanation or commentary."
     end, -- end completion prompt
+
     get_prompt = function(bufnr, pos)
       local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
@@ -322,8 +428,7 @@ require("gemini").setup {
 
       col = math.max(0, math.min(col, #target_line))
 
-      -- Gabungkan dokumen untuk menghitung posisi cursor
-      -- dalam byte.
+      -- Gabungkan dokumen untuk menghitung posisi cursor dalam byte.
       local document = table.concat(lines, "\n")
       local cursor_offset = col
 
@@ -336,11 +441,9 @@ require("gemini").setup {
       local MAX_CONTEXT_AFTER = 1000
 
       local start_idx = math.max(1, cursor_offset - MAX_CONTEXT_BEFORE + 1)
-
       local end_idx = math.min(#document, cursor_offset + MAX_CONTEXT_AFTER)
 
       local context_before = document:sub(start_idx, cursor_offset)
-
       local context_after = document:sub(cursor_offset + 1, end_idx)
 
       -- Tambahkan penanda cursor.
@@ -356,12 +459,18 @@ require("gemini").setup {
           .. "is provided, not the entire document.\n\n"
       end
 
+      -- Tambahkan entropy seed unik menggunakan os.time / os.clock agar prompt selalu beda tiap request
+      local request_id = string.format("%d-%d", os.time(), math.random(1000, 9999))
+
       local prompt = "You are continuing an academic document.\n\n"
         .. "File: "
         .. (filename ~= "" and filename or "[No Name]")
         .. "\n"
         .. "Filetype: "
         .. filetype
+        .. "\n"
+        .. "Generation Seed: "
+        .. request_id
         .. "\n\n"
         .. context_note
         .. "Context:\n\n"
@@ -374,6 +483,7 @@ require("gemini").setup {
         .. "<cursor></cursor>.\n"
         .. "Follow the document's language, tone, terminology, "
         .. "and academic style.\n"
+        .. "Provide a fresh, natural phrasing variant for this completion.\n"
         .. "Do not repeat existing text or invent facts or citations.\n"
         .. "Return ONLY the suggested continuation."
 
