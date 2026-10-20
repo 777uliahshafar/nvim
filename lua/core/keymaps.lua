@@ -289,6 +289,8 @@ map("n", "<c-p>", "<CMD>bprevious<CR>", opts)
 map("n", "<c-n>", "<CMD>bnext<CR>", opts)
 map("n", "<leader><esc>", "<CMD>nohlsearch<CR>", opts)
 
+vim.keymap.set("n", "<c-N>", "<Nop>", { noremap = true, silent = true })
+
 --  navigate through popup pum menu
 vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<c-g>u<CR>"', { expr = true, noremap = true })
 vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true, noremap = true })
