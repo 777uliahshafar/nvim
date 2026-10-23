@@ -86,6 +86,20 @@ wk.add {
   { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>s", group = "Harpoon" },
   { "<leader>w", group = "Windows" },
+  {
+    "<leader>wm",
+    function()
+      -- Menggunakan variabel global Neovim untuk melacak status zoom
+      if vim.g.window_maximized then
+        vim.cmd "wincmd ="
+        vim.g.window_maximized = false
+      else
+        vim.cmd "wincmd _ | wincmd |"
+        vim.g.window_maximized = true
+      end
+    end,
+    desc = "Toggle Maximize Split",
+  },
   { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
   { "<leader>we", "<cmd>bd!<cr>", desc = "Quit unsaved buffer" },
   { "<leader>wj", "<C-w>t<C-w>H", desc = "Splits Vertically" },
