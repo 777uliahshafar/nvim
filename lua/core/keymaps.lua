@@ -87,6 +87,7 @@ wk.add {
   { "<leader>s", group = "Harpoon" },
   { "<leader>w", group = "Windows" },
   { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
+  { "<leader>we", "<cmd>bd!<cr>", desc = "Quit unsaved buffer" },
   { "<leader>wj", "<C-w>t<C-w>H", desc = "Splits Vertically" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "Splits Horizontally" },
   { "<leader>wv", "<cmd>vs<cr>", desc = "Vertical Split" },
