@@ -81,7 +81,13 @@ harpoon:setup {
     -- Jangan gunakan BufLeave bawaan Harpoon
     autocmds = {},
   },
-}
+} -- end setup harpoon
+
+-- =========================================================
+-- highlight the current active buffer
+-- =========================================================
+local harpoon_extensions = require "harpoon.extensions"
+harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
 
 -- =========================================================
 -- PREVIOUS / NEXT
