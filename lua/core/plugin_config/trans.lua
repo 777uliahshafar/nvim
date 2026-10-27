@@ -10,8 +10,8 @@ require("pantran").setup {
     },
     yandex = {
       fallback = {
-        default_source = "id",
-        default_target = "en",
+        default_source = "en",
+        default_target = "id",
       },
     },
   },

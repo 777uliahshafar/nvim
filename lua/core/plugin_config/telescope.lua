@@ -95,6 +95,11 @@ telescope.setup {
     live_grep = {
       theme = "dropdown",
     },
+    buffers = {
+      previewer = false,
+      -- Anda juga bisa menambahkan theme jika ingin tampilannya konsisten seperti dropdown:
+      theme = "dropdown",
+    },
   },
   extensions = {
     ["ui-select"] = {
