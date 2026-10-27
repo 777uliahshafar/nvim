@@ -23,7 +23,6 @@ local pantran = require "pantran"
 wk.add {
   -- { "<leader>a", group = "AlphaIndex" },
   -- { "<leader>ai", "<cmd>Alpha<cr>", desc = "Alphaindex" },
-  { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers| backlinks" },
   { "<leader>c", group = "Editing" },
   { "<leader>ci", "<cmd>setlocal spell! spelllang=id<cr>", desc = "bahasa spell" },
   { "<leader>ce", "<cmd>setlocal spell! spelllang=en_us<cr>", desc = "english spell" },
@@ -61,6 +60,34 @@ wk.add {
   { "<localleader>d", group = "Colorscheme" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
+  { "<leader>w", "<cmd>Telescope buffers<cr>", desc = "buffers" },
+  { "<localleader>w", group = "Windows" },
+  {
+    "<localleader>wm",
+    function()
+      -- Menggunakan variabel global Neovim untuk melacak status zoom
+      if vim.g.window_maximized then
+        vim.cmd "wincmd ="
+        vim.g.window_maximized = false
+      else
+        vim.cmd "wincmd _ | wincmd |"
+        vim.g.window_maximized = true
+      end
+    end,
+    desc = "Toggle Maximize Split",
+  },
+  { "<localleader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
+  { "<localleader>we", "<cmd>bd!<cr>", desc = "Quit unsaved buffer" },
+  { "<localleader>wj", "<C-w>t<C-w>H", desc = "Splits Vertically" },
+  { "<localleader>wk", "<C-w>t<C-w>K", desc = "Splits Horizontally" },
+  { "<localleader>wv", "<cmd>vs<cr>", desc = "Vertical Split" },
+  { "<localleader>wh", "<cmd>sp<cr>", desc = "Horizontal Split" },
+  { "<localleader>wu", "<cmd>res +5<cr>", desc = "Increase Window H" },
+  { "<localleader>wd", "<cmd>res -5<cr>", desc = "Decrease Window H" },
+  { "<localleader>wr", "<cmd>vertical res +5<cr>", desc = "Increase Window W" },
+  { "<localleader>wl", "<cmd>vertical res -5<cr>", desc = "Decrease Window W" },
+  { "<localleader>wq", "<cmd>tabclose<cr>", desc = "Close Tab" },
+
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   -- Git
   { "<leader>g", group = "Git" },
@@ -85,32 +112,21 @@ wk.add {
   { "<leader>m", group = "MarkdownObs" },
   { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>s", group = "Harpoon" },
-  { "<leader>w", group = "Windows" },
-  {
-    "<leader>wm",
-    function()
-      -- Menggunakan variabel global Neovim untuk melacak status zoom
-      if vim.g.window_maximized then
-        vim.cmd "wincmd ="
-        vim.g.window_maximized = false
-      else
-        vim.cmd "wincmd _ | wincmd |"
-        vim.g.window_maximized = true
-      end
-    end,
-    desc = "Toggle Maximize Split",
-  },
-  { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
-  { "<leader>we", "<cmd>bd!<cr>", desc = "Quit unsaved buffer" },
-  { "<leader>wj", "<C-w>t<C-w>H", desc = "Splits Vertically" },
-  { "<leader>wk", "<C-w>t<C-w>K", desc = "Splits Horizontally" },
-  { "<leader>wv", "<cmd>vs<cr>", desc = "Vertical Split" },
-  { "<leader>wh", "<cmd>sp<cr>", desc = "Horizontal Split" },
-  { "<leader>wu", "<cmd>res +5<cr>", desc = "Increase Window H" },
-  { "<leader>wd", "<cmd>res -5<cr>", desc = "Decrease Window H" },
-  { "<leader>wr", "<cmd>vertical res +5<cr>", desc = "Increase Window W" },
-  { "<leader>wl", "<cmd>vertical res -5<cr>", desc = "Decrease Window W" },
-  { "<leader>wq", "<cmd>tabclose<cr>", desc = "Close Tab" },
+  -- Harpoon Keymaps 1-9 (Hidden dari UI Which-Key)
+  unpack((function()
+    local h = {}
+    for i = 1, 9 do
+      table.insert(h, {
+        "<leader>" .. i,
+        function()
+          harpoon:list():select(i)
+        end,
+        desc = "harpoon " .. i,
+        hidden = true,
+      })
+    end
+    return h
+  end)()),
   {
     mode = { "n", "v" },
     { "<leader>c", group = "bahasa" },
@@ -289,10 +305,10 @@ map("n", "<c-k>", "<c-w>k")
 map("n", "<c-l>", "<c-w>l") -- "<c-w>w" cycle nav
 
 -- split resize
-map("n", "<leader>wu", "<cmd>res +5<CR>", opts)
-map("n", "<leader>wd", "<cmd>res -5<CR>", opts)
-map("n", "<leader>wu", "<cmd>vertical res +5<CR>", opts)
-map("n", "<leader>wd", "<cmd>vertical res -5<CR>", opts)
+map("n", "<localleader>wu", "<cmd>res +5<CR>", opts)
+map("n", "<localleader>wd", "<cmd>res -5<CR>", opts)
+map("n", "<localleader>wu", "<cmd>vertical res +5<CR>", opts)
+map("n", "<localleader>wd", "<cmd>vertical res -5<CR>", opts)
 
 -- working dir
 map("n", "<localleader>rd", "<CMD>lcd %:h<CR>")
