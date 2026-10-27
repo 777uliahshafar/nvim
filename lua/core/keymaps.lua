@@ -112,21 +112,78 @@ wk.add {
   { "<leader>m", group = "MarkdownObs" },
   { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>s", group = "Harpoon" },
-  -- Harpoon Keymaps 1-9 (Hidden dari UI Which-Key)
-  unpack((function()
-    local h = {}
-    for i = 1, 9 do
-      table.insert(h, {
-        "<leader>" .. i,
-        function()
-          harpoon:list():select(i)
-        end,
-        desc = "harpoon " .. i,
-        hidden = true,
-      })
-    end
-    return h
-  end)()),
+  {
+    "<leader>1",
+    function()
+      harpoon:list():select(1)
+    end,
+    desc = "harpoon 1",
+    hidden = true,
+  },
+  {
+    "<leader>2",
+    function()
+      harpoon:list():select(2)
+    end,
+    desc = "harpoon 2",
+    hidden = true,
+  },
+  {
+    "<leader>3",
+    function()
+      harpoon:list():select(3)
+    end,
+    desc = "harpoon 3",
+    hidden = true,
+  },
+  {
+    "<leader>4",
+    function()
+      harpoon:list():select(4)
+    end,
+    desc = "harpoon 4",
+    hidden = true,
+  },
+  {
+    "<leader>5",
+    function()
+      harpoon:list():select(5)
+    end,
+    desc = "harpoon 5",
+    hidden = true,
+  },
+  {
+    "<leader>6",
+    function()
+      harpoon:list():select(6)
+    end,
+    desc = "harpoon 6",
+    hidden = true,
+  },
+  {
+    "<leader>7",
+    function()
+      harpoon:list():select(7)
+    end,
+    desc = "harpoon 7",
+    hidden = true,
+  },
+  {
+    "<leader>8",
+    function()
+      harpoon:list():select(8)
+    end,
+    desc = "harpoon 8",
+    hidden = true,
+  },
+  {
+    "<leader>9",
+    function()
+      harpoon:list():select(9)
+    end,
+    desc = "harpoon 9",
+    hidden = true,
+  },
   {
     mode = { "n", "v" },
     { "<leader>c", group = "bahasa" },
