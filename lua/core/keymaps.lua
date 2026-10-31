@@ -405,12 +405,13 @@ map("n", "<localleader>dd", "<CMD>colorscheme catppuccin-latte<CR>", { desc = "c
 map("n", "<localleader>dz", "<CMD>colorscheme zenbones<CR>", { desc = "co zenbones" })
 map("n", "<localleader>dw", "<CMD>colorscheme zenwritten<CR>", { desc = "co zenwritten" })
 map("n", "<localleader>dp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
+map("n", "<localleader>ds", "<CMD>colorscheme dawnfox<CR>", { desc = "co dawnfox" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
 ---------------------------------------------
 -- nvim-tree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+map("n", "<localleader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 -- zen mode
 map("n", "zz", require("zen-mode").toggle)
