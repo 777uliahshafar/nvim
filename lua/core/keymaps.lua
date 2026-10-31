@@ -406,6 +406,7 @@ map("n", "<localleader>dz", "<CMD>colorscheme zenbones<CR>", { desc = "co zenbon
 map("n", "<localleader>dw", "<CMD>colorscheme zenwritten<CR>", { desc = "co zenwritten" })
 map("n", "<localleader>dp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
 map("n", "<localleader>ds", "<CMD>colorscheme dawnfox<CR>", { desc = "co dawnfox" })
+map("n", "<localleader>df", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
