@@ -60,10 +60,10 @@ wk.add {
   { "<localleader>d", group = "Colorscheme" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
-  { "<leader>w", "<cmd>Telescope buffers<cr>", desc = "buffers" },
-  { "<localleader>w", group = "Windows" },
+  { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers" },
+  { "<leader>w", group = "Windows" },
   {
-    "<localleader>wm",
+    "<leader>wm",
     function()
       -- Menggunakan variabel global Neovim untuk melacak status zoom
       if vim.g.window_maximized then
@@ -76,17 +76,17 @@ wk.add {
     end,
     desc = "Toggle Maximize Split",
   },
-  { "<localleader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
-  { "<localleader>we", "<cmd>bd!<cr>", desc = "Quit unsaved buffer" },
-  { "<localleader>wj", "<C-w>t<C-w>H", desc = "Splits Vertically" },
-  { "<localleader>wk", "<C-w>t<C-w>K", desc = "Splits Horizontally" },
-  { "<localleader>wv", "<cmd>vs<cr>", desc = "Vertical Split" },
-  { "<localleader>wh", "<cmd>sp<cr>", desc = "Horizontal Split" },
-  { "<localleader>wu", "<cmd>res +5<cr>", desc = "Increase Window H" },
-  { "<localleader>wd", "<cmd>res -5<cr>", desc = "Decrease Window H" },
-  { "<localleader>wr", "<cmd>vertical res +5<cr>", desc = "Increase Window W" },
-  { "<localleader>wl", "<cmd>vertical res -5<cr>", desc = "Decrease Window W" },
-  { "<localleader>wq", "<cmd>tabclose<cr>", desc = "Close Tab" },
+  { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
+  { "<leader>we", "<cmd>bd!<cr>", desc = "Quit unsaved buffer" },
+  { "<leader>wj", "<C-w>t<C-w>H", desc = "Swap Vertically" },
+  { "<leader>wk", "<C-w>t<C-w>K", desc = "Swap Horizontally" },
+  { "<leader>wv", "<cmd>vs<cr>", desc = "Vertical Split" },
+  { "<leader>wh", "<cmd>sp<cr>", desc = "Horizontal Split" },
+  { "<leader>wu", "<cmd>res +5<cr>", desc = "Heighten" },
+  { "<leader>wd", "<cmd>res -5<cr>", desc = "Shorten" },
+  { "<leader>wr", "<cmd>vertical res +5<cr>", desc = "Widen" },
+  { "<leader>wl", "<cmd>vertical res -5<cr>", desc = "Narrow" },
+  { "<leader>wq", "<cmd>tabclose<cr>", desc = "Close Tab" },
 
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   -- Git
