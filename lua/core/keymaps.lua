@@ -19,6 +19,21 @@ local pantran = require "pantran"
 --   end
 -- end
 
+-- //////////////////////
+-- Helper function to get the filename at a specific Harpoon index
+-- //////////////////////
+
+local function harpoon_file_name(index)
+  return function()
+    local item = harpoon:list():get(index)
+    if item and item.value then
+      -- Extracts just the filename (e.g., "init.lua") from the full path
+      return vim.fn.fnamemodify(item.value, ":t")
+    end
+    return "Empty"
+  end
+end
+
 -- which-key
 wk.add {
   -- { "<leader>a", group = "AlphaIndex" },
@@ -57,7 +72,7 @@ wk.add {
   },
   { "<leader>ck", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<cr>", desc = "toggle nvim-cmp" },
   -- { "<leader>d", group = "ChatGPT" },
-  { "<localleader>d", group = "Colorscheme" },
+  { "<localleader>c", group = "Colorscheme" },
   -- { "<leader>ff", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
   { "<localleader>f", "<cmd>Telescope live_grep<cr>", desc = "Live_grep" },
   { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "buffers" },
@@ -113,76 +128,67 @@ wk.add {
   { "<leader>o", "<cmd>e ~/obs/1714384690-MAIN.md<CR>", desc = "Obsidian Index" },
   { "<leader>s", group = "Harpoon" },
   {
-    "<leader>1",
+    "<localleader>1",
     function()
       harpoon:list():select(1)
     end,
-    desc = "harpoon 1",
-    hidden = true,
+    desc = harpoon_file_name(1),
   },
   {
-    "<leader>2",
+    "<localleader>2",
     function()
       harpoon:list():select(2)
     end,
-    desc = "harpoon 2",
-    hidden = true,
+    desc = harpoon_file_name(2),
   },
   {
-    "<leader>3",
+    "<localleader>3",
     function()
       harpoon:list():select(3)
     end,
-    desc = "harpoon 3",
-    hidden = true,
+    desc = harpoon_file_name(3),
   },
   {
-    "<leader>4",
+    "<localleader>4",
     function()
       harpoon:list():select(4)
     end,
-    desc = "harpoon 4",
-    hidden = true,
+    desc = harpoon_file_name(4),
   },
   {
-    "<leader>5",
+    "<localleader>5",
     function()
       harpoon:list():select(5)
     end,
-    desc = "harpoon 5",
-    hidden = true,
+    desc = harpoon_file_name(5),
   },
   {
-    "<leader>6",
+    "<localleader>6",
     function()
       harpoon:list():select(6)
     end,
-    desc = "harpoon 6",
-    hidden = true,
+    desc = harpoon_file_name(6),
   },
   {
-    "<leader>7",
+    "<localleader>7",
     function()
       harpoon:list():select(7)
     end,
-    desc = "harpoon 7",
-    hidden = true,
+    desc = harpoon_file_name(7),
   },
   {
-    "<leader>8",
+    "<localleader>8",
     function()
       harpoon:list():select(8)
     end,
-    desc = "harpoon 8",
-    hidden = true,
+    desc = harpoon_file_name(8),
   },
   {
-    "<leader>9",
+    "<localleader>9",
     function()
       harpoon:list():select(9)
     end,
-    desc = "harpoon 9",
-    hidden = true,
+    desc = harpoon_file_name(9),
   },
   {
     mode = { "n", "v" },
@@ -395,26 +401,26 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', 
 
 map("n", "<f2>", "<CMD>h mycheat<CR>")
 map("n", "<f5>", "<CMD>ToggleBackground<CR>")
-map("n", "<localleader>dg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox" })
+map("n", "<localleader>cg", "<CMD>colorscheme gruvbox<CR>", { desc = "co gruvbox" })
 -- map("n", "<localleader>cp", "<CMD>colorscheme PaperColor<CR>", { desc = "co papercolor" })
-map("n", "<localleader>dk", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
-map("n", "<localleader>da", "<CMD>colorscheme kanagawa-dragon<CR>", { desc = "co kanagawa-dragon" })
+map("n", "<localleader>ck", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanagawa-kanagawa" })
+map("n", "<localleader>ca", "<CMD>colorscheme kanagawa-dragon<CR>", { desc = "co kanagawa-dragon" })
 -- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
-map("n", "<localleader>dn", "<CMD>colorscheme nightfox<CR>", { desc = "co nightfox" })
-map("n", "<localleader>dr", "<CMD>colorscheme nordfox<CR>", { desc = "co nordfox" })
-map("n", "<localleader>dd", "<CMD>colorscheme catppuccin-latte<CR>", { desc = "co catppuccin" })
-map("n", "<localleader>dm", "<CMD>colorscheme catppuccin-mocha<CR>", { desc = "co capuccin-mocha" })
-map("n", "<localleader>dz", "<CMD>colorscheme zenbones<CR>", { desc = "co zenbones" })
-map("n", "<localleader>dw", "<CMD>colorscheme zenwritten<CR>", { desc = "co zenwritten" })
-map("n", "<localleader>dp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
-map("n", "<localleader>ds", "<CMD>colorscheme dawnfox<CR>", { desc = "co dawnfox" })
-map("n", "<localleader>df", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
+map("n", "<localleader>cn", "<CMD>colorscheme nightfox<CR>", { desc = "co nightfox" })
+map("n", "<localleader>cr", "<CMD>colorscheme nordfox<CR>", { desc = "co nordfox" })
+map("n", "<localleader>cd", "<CMD>colorscheme catppuccin-latte<CR>", { desc = "co catppuccin" })
+map("n", "<localleader>cm", "<CMD>colorscheme catppuccin-mocha<CR>", { desc = "co capuccin-mocha" })
+map("n", "<localleader>cz", "<CMD>colorscheme zenbones<CR>", { desc = "co zenbones" })
+map("n", "<localleader>cw", "<CMD>colorscheme zenwritten<CR>", { desc = "co zenwritten" })
+map("n", "<localleader>cp", "<CMD>colorscheme onedark<CR>", { desc = "co onedark" })
+map("n", "<localleader>cs", "<CMD>colorscheme dawnfox<CR>", { desc = "co dawnfox" })
+map("n", "<localleader>cf", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" })
 
 ---------------------------------------------
 -- PLUGIN KEYBINDING
 ---------------------------------------------
 -- nvim-tree
-map("n", "<localleader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 -- zen mode
 map("n", "zz", require("zen-mode").toggle)

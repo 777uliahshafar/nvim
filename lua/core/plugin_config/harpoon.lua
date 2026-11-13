@@ -129,7 +129,7 @@ end, {
 -- HARPOON BUILT-IN MENU
 -- =========================================================
 
-vim.keymap.set("n", "<leader>e", function()
+vim.keymap.set("n", "<localleader>e", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end, {
   desc = "Harpoon menu",
