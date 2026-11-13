@@ -5,7 +5,7 @@ local opt = vim.opt
 
 -- Map <leader> to space
 g.mapleader = " "
-g.maplocalleader = ","
+g.maplocalleader = ";"
 
 cmd "syntax on"
 vim.api.nvim_command "filetype plugin indent on"
