@@ -113,13 +113,13 @@ end, {
 -- ADD / DELETE
 -- =========================================================
 
-vim.keymap.set("n", "<leader>sa", function()
+vim.keymap.set("n", "<localleader>a", function()
   harpoon:list():add()
 end, {
   desc = "harpoon add file",
 })
 
-vim.keymap.set("n", "<leader>sd", function()
+vim.keymap.set("n", "<localleader>q", function()
   harpoon:list():remove()
 end, {
   desc = "harpoon delete mark",

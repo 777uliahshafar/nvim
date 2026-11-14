@@ -407,6 +407,7 @@ map("n", "<localleader>ck", "<CMD>colorscheme kanagawa<CR>", { desc = "co kanaga
 map("n", "<localleader>ca", "<CMD>colorscheme kanagawa-dragon<CR>", { desc = "co kanagawa-dragon" })
 -- map("n", "<localleader>cw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "co kanagawa-wave" })
 map("n", "<localleader>cn", "<CMD>colorscheme nightfox<CR>", { desc = "co nightfox" })
+map("n", "<localleader>cv", "<CMD>colorscheme morning<CR>", { desc = "co morning" })
 map("n", "<localleader>cr", "<CMD>colorscheme nordfox<CR>", { desc = "co nordfox" })
 map("n", "<localleader>cd", "<CMD>colorscheme catppuccin-latte<CR>", { desc = "co catppuccin" })
 map("n", "<localleader>cm", "<CMD>colorscheme catppuccin-mocha<CR>", { desc = "co capuccin-mocha" })
