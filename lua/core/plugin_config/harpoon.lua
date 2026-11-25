@@ -119,7 +119,7 @@ end, {
   desc = "harpoon add file",
 })
 
-vim.keymap.set("n", "<localleader>q", function()
+vim.keymap.set("n", "<localleader>x", function()
   harpoon:list():remove()
 end, {
   desc = "harpoon delete mark",
@@ -129,7 +129,7 @@ end, {
 -- HARPOON BUILT-IN MENU
 -- =========================================================
 
-vim.keymap.set("n", "<localleader>e", function()
+vim.keymap.set("n", "<localleader>s", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end, {
   desc = "Harpoon menu",

@@ -424,7 +424,7 @@ map("n", "<localleader>cf", "<CMD>colorscheme dayfox<CR>", { desc = "co dayfox" 
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 -- zen mode
-map("n", "zz", require("zen-mode").toggle)
+map("n", "<localleader>z", require("zen-mode").toggle)
 map("n", "<leader>z", "<CMD>Limelight!!<CR>", opts)
 -- map("n", "<localleader>z", require("twilight").toggle, opts)
 
