@@ -393,7 +393,7 @@ require("gemini").setup {
     prompts = {
       {
         name = "Connect Sentences",
-        command_name = "GemsConnectSentences",
+        command_name = "GemSConnect",
         menu = "Connect Sentences 🔗",
         get_prompt = function(_, bufnr)
           return build_two_sentence_prompt(
@@ -405,7 +405,7 @@ require("gemini").setup {
       },
       {
         name = "Paraphrase",
-        command_name = "GemsParaphrase",
+        command_name = "GemSParaphrase",
         menu = "Paraphrase ✍️",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -417,7 +417,7 @@ require("gemini").setup {
       },
       {
         name = "Refine",
-        command_name = "GemsRefineSentence",
+        command_name = "GemSRefine",
         menu = "Refine Sentence ✨",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -429,7 +429,7 @@ require("gemini").setup {
       },
       {
         name = "Translate to English",
-        command_name = "GemsTranslateEnglish",
+        command_name = "GemS2English",
         menu = "Translate to English 🌐",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -441,7 +441,7 @@ require("gemini").setup {
       },
       {
         name = "Translate to Bahasa",
-        command_name = "GemsTranslateBahasa",
+        command_name = "GemS2Bahasa",
         menu = "Translate to Bahasa 🌐",
         get_prompt = function(_, bufnr)
           return build_sentence_prompt(
@@ -453,7 +453,7 @@ require("gemini").setup {
       }, --end sentence
       {
         name = "Paraphrase Selection",
-        command_name = "GemvParaphrase",
+        command_name = "GemVParaphrase",
         menu = "Paraphrase v ✍️",
 
         get_prompt = function(_, bufnr)
@@ -466,7 +466,7 @@ require("gemini").setup {
       },
       {
         name = "Summarize Selection",
-        command_name = "GemvSummarize",
+        command_name = "GemVSummarize",
         menu = "Summarize v 📝",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
@@ -478,7 +478,7 @@ require("gemini").setup {
       },
       {
         name = "Grammar Selection",
-        command_name = "GemvGrammar",
+        command_name = "GemVGrammar",
         menu = "GRAMMAR v✅",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
@@ -490,7 +490,7 @@ require("gemini").setup {
       },
       {
         name = "Refine Writing Selection",
-        command_name = "GemvRefine",
+        command_name = "GemVRefine",
         menu = "Refine v ✨",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
@@ -502,7 +502,7 @@ require("gemini").setup {
       },
       {
         name = "Academic Outline Selection",
-        command_name = "GemvOutline",
+        command_name = "GemVOutline",
         menu = "Academic Outline v 📚",
         get_prompt = function(_, bufnr)
           return build_selected_text_prompt(
@@ -514,7 +514,7 @@ require("gemini").setup {
       },
       {
         name = "Main Idea Selection",
-        command_name = "GemvMainidea",
+        command_name = "GemVMainidea",
         menu = "Main Idea v 🎯",
 
         get_prompt = function(_, bufnr)

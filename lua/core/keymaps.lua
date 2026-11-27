@@ -311,36 +311,27 @@ wk.add {
     -- { "<leader>cq", "<cmd>ChatGPTRun tanya<cr>", desc = "Chat tanya" },
     -- { "<leader>", "<cmd>ChatGPT<cr>", desc = "ChatGPT Prompt" },
   }, -- end mode nv
+  -- ==========================================
+  -- Gemini:  PROMPTS
+  -- ==========================================
   {
     mode = { "n" },
-    -- ==========================================
-    -- Gemini:  PROMPTS
-    -- ==========================================
 
-    { "<leader>cf", "<cmd>GemsConnectSentences<cr>", desc = "AI Connect Sentences" },
-
-    { "<leader>cl", "<cmd>GemsParaphrase<cr>", desc = "AI Paraphrase Sentence" },
-
-    { "<leader>cR", "<cmd>GemsRefineSentence<cr>", desc = "AI Refine Sentence" },
-
-    { "<leader>ct", "<cmd>GemsTranslateEnglish<cr>", desc = "AI Translate to English" },
-
-    { "<leader>dt", "<cmd>GemsTranslateBahasa<cr>", desc = "AI Translate to Bahasa" },
+    { "<leader>cf", "<cmd>GemSConnect<cr>", desc = "AI Connect" },
+    { "<leader>cl", "<cmd>GemSParaphrase<cr>", desc = "AI Paraphrase" },
+    { "<leader>cr", "<cmd>GemSRefine<cr>", desc = "AI Refine" },
+    { "<leader>ct", "<cmd>GemS2English<cr>", desc = "AI to English" },
+    { "<leader>cb", "<cmd>GemS2Bahasa<cr>", desc = "AI to Bahasa" },
   }, --end mode n
   {
     mode = { "x" },
 
-    { "<leader>cL", ":<C-u>GemvParaphrase<CR>", desc = "AI Paraphrase Selection" },
-
-    { "<leader>cm", ":<C-u>GemvSummarize<CR>", desc = "AI Summarize Selection" },
-
-    { "<leader>cg", ":<C-u>GemvGrammar<CR>", desc = "AI Grammar Correction" },
-
-    { "<leader>cr", ":<C-u>GemvRefine<CR>", desc = "AI Refine Writing" },
-
-    { "<leader>co", ":<C-u>GemvOutline<CR>", desc = "AI Academic Outline" },
-
-    { "<leader>ca", ":<C-u>GemvMainidea<CR>", desc = "AI Main Idea" },
+    { "<leader>cl", ":<C-u>GemVParaphrase<CR>", desc = "AI Paraphrase" },
+    { "<leader>cr", ":<C-u>GemVRefine<CR>", desc = "AI Refine" },
+    { "<leader>cm", ":<C-u>GemVSummarize<CR>", desc = "AI Summarize" },
+    { "<leader>cg", ":<C-u>GemVGrammar<CR>", desc = "AI Grammar Correction" },
+    { "<leader>co", ":<C-u>GemVOutline<CR>", desc = "AI Academic Outline" },
+    { "<leader>ca", ":<C-u>GemVMainidea<CR>", desc = "AI Main Idea" },
   }, -- end mode x
   {
     mode = { "i" },
