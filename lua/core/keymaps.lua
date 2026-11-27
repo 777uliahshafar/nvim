@@ -92,7 +92,13 @@ wk.add {
     desc = "Toggle Maximize Split",
   },
   { "<leader>wt", "<cmd>TroubleToggle<cr>", desc = "Toggle Diagnostics" },
-  { "<leader>we", "<cmd>bd!<cr>", desc = "Quit unsaved buffer" },
+  {
+    "<leader>we",
+    function()
+      require("core.utils").close_other_tabs_and_buffers()
+    end,
+    desc = "Quit unsaved buffer",
+  },
   { "<leader>wj", "<C-w>t<C-w>H", desc = "Swap Vertically" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "Swap Horizontally" },
   { "<leader>wv", "<cmd>vs<cr>", desc = "Vertical Split" },
