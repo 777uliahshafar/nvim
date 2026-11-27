@@ -97,7 +97,7 @@ wk.add {
     function()
       require("core.utils").close_other_tabs_and_buffers()
     end,
-    desc = "Quit unsaved buffer",
+    desc = "Close other tab",
   },
   { "<leader>wj", "<C-w>t<C-w>H", desc = "Swap Vertically" },
   { "<leader>wk", "<C-w>t<C-w>K", desc = "Swap Horizontally" },
@@ -106,8 +106,9 @@ wk.add {
   { "<leader>wu", "<cmd>res +5<cr>", desc = "(+) Heighten" },
   { "<leader>wd", "<cmd>res -5<cr>", desc = "(-) Shorten" },
   { "<leader>wr", "<cmd>vertical res +5<cr>", desc = "(+) Widen" },
+  { "<leader>ws", "<cmd>Vt<cr>", desc = "Tabs 2 Split" },
   { "<leader>wl", "<cmd>vertical res -5<cr>", desc = "(-) Narrow" },
-  { "<leader>wq", "<cmd>tabclose<cr>", desc = "Close Tab" },
+  { "<leader>wq", "<cmd>q!<cr>", desc = "Close Buffer" },
 
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   -- Git

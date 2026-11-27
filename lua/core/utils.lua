@@ -33,4 +33,33 @@ function utils.close_other_tabs_and_buffers()
   end
 end
 
+-- utils untuk membuka tab sebelah kanan menjadi vertical split tanpa menutup tabnya
+function utils.merge_next_tab_vsplit()
+  local current_tab = vim.api.nvim_get_current_tabpage()
+  local tabs = vim.api.nvim_list_tabpages()
+
+  local current_idx
+  for i, t in ipairs(tabs) do
+    if t == current_tab then
+      current_idx = i
+      break
+    end
+  end
+
+  if current_idx and tabs[current_idx + 1] then
+    local next_tab = tabs[current_idx + 1]
+    local next_win = vim.api.nvim_tabpage_get_win(next_tab)
+    local next_buf = vim.api.nvim_win_get_buf(next_win)
+
+    vim.cmd "vsplit"
+    vim.api.nvim_win_set_buf(0, next_buf)
+  else
+    vim.notify("Tidak ada tab di sebelah kanan.", vim.log.levels.WARN)
+  end
+end
+
+vim.api.nvim_create_user_command("Vt", utils.merge_next_tab_vsplit, {
+  desc = "Buka tab sebelah kanan sebagai vertical split tanpa menutupnya",
+})
+
 return utils
