@@ -108,7 +108,13 @@ wk.add {
   { "<leader>wr", "<cmd>vertical res +5<cr>", desc = "(+) Widen" },
   { "<leader>ws", "<cmd>Vt<cr>", desc = "Tabs 2 Split" },
   { "<leader>wl", "<cmd>vertical res -5<cr>", desc = "(-) Narrow" },
-  { "<leader>wq", "<cmd>q!<cr>", desc = "Close Buffer" },
+  {
+    "<leader>wq",
+    function()
+      require("core.utils").close_unnamed_buffers()
+    end,
+    desc = "Close Unnamed Buffers",
+  },
 
   { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
   -- Git

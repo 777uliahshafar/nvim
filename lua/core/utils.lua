@@ -62,4 +62,21 @@ vim.api.nvim_create_user_command("Vt", utils.merge_next_tab_vsplit, {
   desc = "Buka tab sebelah kanan sebagai vertical split tanpa menutupnya",
 })
 
+-- utils untuk menutup buffer No Name / tanpa file selain buffer aktif
+function utils.close_unnamed_buffers()
+  local current_buf = vim.api.nvim_get_current_buf()
+
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if buf ~= current_buf and vim.api.nvim_buf_is_valid(buf) then
+      local name = vim.api.nvim_buf_get_name(buf)
+      local buftype = vim.bo[buf].buftype
+
+      -- Cek jika nama buffer kosong ([No Name]) dan merupakan buffer normal (bukan terminal/plugin sidebar)
+      if name == "" and buftype == "" then
+        pcall(vim.api.nvim_buf_delete, buf, { force = true })
+      end
+    end
+  end
+end
+
 return utils
